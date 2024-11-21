@@ -1,0 +1,676 @@
+---
+title: "Visualisations"
+output: html_document
+date: "2024-03-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r, include=FALSE}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(car)
+library(agricolae)
+library(Hmisc)
+library(GGally)
+library(ggcorrplot)
+library(gridExtra)
+library(patchwork)
+library(FSA)
+library(rcompanion)
+library(ggpubr)
+```
+
+
+## Table reading and preprocessing
+```{r}
+chains <- read.csv("chains_evaluation.csv", stringsAsFactors = TRUE) |>
+  dplyr::select(chain_id, pdb_id, label, sequence_length, method_of_acquisition,
+                AF_average_pLDDT, OF_average_pLDDT, EF_average_pLDDT,
+                AF_TM_score, OF_TM_score, EF_TM_score,
+                AF_RMSD, OF_RMSD, EF_RMSD,
+                AF_vs_OF_RMSD, OF_vs_EF_RMSD, EF_vs_AF_RMSD, AF_vs_OF_TM_score, OF_vs_EF_TM_score, EF_vs_AF_TM_score) |>
+  drop_na() |>
+  setNames(c("chain_id", "pdb_id", "label", "sequence_length", "method_of_acquisition",
+             "AlphaFold2_pLDDT", "OmegaFold_pLDDT", "ESMFold_pLDDT",
+             "AlphaFold2_TMscore", "OmegaFold_TMscore", "ESMFold_TMscore",
+             "AlphaFold2_RMSD", "OmegaFold_RMSD", "ESMFold_RMSD",
+             "AlphaFold2.vs.OmegaFold_RMSD", "OmegaFold.vs.ESMFold_RMSD", "ESMFold.vs.AlphaFold2_RMSD", "AlphaFold2.vs.OmegaFold_TMscore", "OmegaFold.vs.ESMFold_TMscore", "ESMFold.vs.AlphaFold2_TMscore")) 
+
+str(chains)
+```
+
+```{r}
+chains_longer <- chains |>
+  dplyr::select(chain_id, pdb_id, label, sequence_length, method_of_acquisition,
+                AlphaFold2_pLDDT, OmegaFold_pLDDT, ESMFold_pLDDT,
+                AlphaFold2_TMscore, OmegaFold_TMscore, ESMFold_TMscore,
+                AlphaFold2_RMSD, OmegaFold_RMSD, ESMFold_RMSD) |>
+  pivot_longer(cols = c(AlphaFold2_pLDDT, OmegaFold_pLDDT, ESMFold_pLDDT, AlphaFold2_TMscore, OmegaFold_TMscore, ESMFold_TMscore, AlphaFold2_RMSD, OmegaFold_RMSD, ESMFold_RMSD),
+                                        names_to = c("prediction_tool", "metrics"),
+                                        names_sep = "_",
+                                        values_to = "value")
+str(chains_longer)
+```
+
+
+```{r}
+chains_wider <- chains_longer |> 
+  pivot_wider(names_from = "metrics", values_from = "value")
+str(chains_wider)
+```
+
+## Desctiptive statistics
+```{r}
+summary(chains)
+```
+
+```{r}
+by(chains, chains$label, summary)
+```
+
+```{r}
+chains |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), fill = label)) + 
+    geom_bar(colour = "black", linewidth = 0.3) + 
+    labs(x = "label", y = "number of chains") +
+    theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+```{r}
+chains |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), y = sequence_length, fill = label)) + 
+    geom_boxplot() + 
+    labs(x = "label", y = "length of chain sequence") +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+```{r}
+chains |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), fill = method_of_acquisition)) + 
+    geom_bar(colour = "black", linewidth = 0.3, position = "stack") + 
+    labs(x = "label", y = "number of chains") +
+    theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+## Average pLDDT
+```{r}
+letter_sig <- FSA::dunnTest(chains_wider$pLDDT ~ chains_wider$prediction_tool, method="bonferroni")$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+
+plddt <- chains_wider |> 
+  ggplot(aes(x = prediction_tool, y = pLDDT, fill = factor(prediction_tool, level = c("AlphaFold2", "ESMFold", "OmegaFold")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.15, outlier.shape = NA, fill = "white") + 
+  #scale_fill_viridis(discrete = TRUE) +
+  labs(x = "prediction tool", y = "average pLDDT") +
+  #stat_compare_means(method = "kruskal.test", label.x = 0.7, label.y = 105) +
+  annotate("text", x = c(1, 2, 3), y = tapply(chains_wider$pLDDT, chains_wider$prediction_tool, FUN=function(x) max(x)) + 3, label = letter_sig$Letter) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        #text = element_text(size = 18),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+plddt
+ggsave("plddt.png", width = 15, height = 10, units = "cm")
+```
+
+Kruskal-Wallis test:
+```{r}
+KWtest <- kruskal.test(chains_wider$pLDDT, chains_wider$prediction_tool)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider$pLDDT ~ chains_wider$prediction_tool, method="bonferroni")
+dunn
+```
+
+
+## TM score
+```{r}
+letter_sig <- FSA::dunnTest(chains_wider$TMscore ~ chains_wider$prediction_tool)$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+
+tmscore <- chains_wider |>
+  ggplot(aes(x = prediction_tool, y = TMscore, fill = factor(prediction_tool, c("AlphaFold2", "ESMFold", "OmegaFold")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.1, outlier.shape = NA, fill = "white") + 
+  labs(x = "prediction tool", y = "TM score") +
+  scale_y_continuous(breaks=c(0, 0.25, 0.5, 0.75, 1)) +
+  #stat_compare_means(method = "kruskal.test", label.x = 0.7, label.y = 1.07) +
+  annotate("text", x = c(1, 2, 3), y = tapply(chains_wider$TMscore, chains_wider$prediction_tool, FUN=function(x) max(x)) + 0.04, label = letter_sig$Letter) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        #text = element_text(size = 18),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+tmscore
+ggsave("tmscore.png", width = 15, height = 10, units = "cm")
+```
+
+```{r}
+KWtest <- kruskal.test(chains_wider$TMscore, chains_wider$prediction_tool)
+KWtest
+```
+
+```{r}
+dunn <- FSA::dunnTest(chains_wider$TMscore ~ chains_wider$prediction_tool, method="bonferroni")
+dunn
+```
+
+
+## RMSD
+```{r}
+letter_sig <- FSA::dunnTest(chains_wider$RMSD ~ chains_wider$prediction_tool)$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+
+rmsd <- chains_wider |>
+  ggplot(aes(x = prediction_tool, y = RMSD, fill = factor(prediction_tool, c("AlphaFold2", "ESMFold", "OmegaFold")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.1, outlier.shape = NA, fill = "white") + 
+  ylim(0, 30) +
+  labs(x = "prediction tool", y = "RMSD (Å)") +
+  #stat_compare_means(method = "kruskal.test", label.x = 0.7, label.y = 30) +
+  annotate("text", x = c(1.1, 2.1, 3.1), y = c(27, 27, 27), label = letter_sig$Letter) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        #text = element_text(size = 18),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+rmsd
+ggsave("rmsd.png", width = 15, height = 10, units = "cm")
+```
+
+
+```{r}
+KWtest <- kruskal.test(chains_wider$RMSD, chains_wider$prediction_tool)
+KWtest
+```
+
+```{r}
+dunn <- FSA::dunnTest(chains_wider$RMSD ~ chains_wider$prediction_tool, method="bonferroni")
+dunn
+```
+
+## Correlations
+### AlphaFold
+```{r}
+chains_without_outliers <- chains[!(chains$chain_id %in% c("8TVL:A", "8P4Y:A", "8B2M:A")),]
+
+chains_without_outliers |>
+  dplyr::select(AlphaFold2_pLDDT, AlphaFold2_RMSD, AlphaFold2_TMscore, sequence_length) |>
+  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score", "sequence length")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+#### Pearson's correlation
+```{r}
+Z <- as.matrix(chains |> dplyr::select(sequence_length, AlphaFold2_TMscore, AlphaFold2_RMSD, AlphaFold2_pLDDT) |> setNames(c("sequence\nlength", "TM score", "RMSD", "pLDDT")))
+R <- rcorr(Z)
+diag(R$P) <- 0
+alphafold_pearson <- ggcorrplot(R$r, p.mat = R$P, title = "AlphaFold", 
+  lab = TRUE, lab_size = 5, type = "full", method = "square", outline.color = "white", show.legend = FALSE, pch.cex = 10) + 
+  theme(plot.title = element_text(size = 16, hjust = 0.5))
+alphafold_pearson
+```
+#### Spearman correlation
+```{r}
+R.Sp <- rcorr(Z, type = "spearman")
+diag(R.Sp$P) <- 0
+alphafold_spearman <- ggcorrplot(R.Sp$r, p.mat = R.Sp$P, title = "AlphaFold", 
+  lab = TRUE, lab_size = 5, type = "full", method = "square", outline.color = "white", show.legend = FALSE, pch.cex = 10) + 
+  theme(plot.title = element_text(size = 16, hjust = 0.5))
+alphafold_spearman
+```
+
+
+### ESMFold
+```{r}
+chains_without_outliers |>
+  dplyr::select(ESMFold_pLDDT, ESMFold_RMSD, ESMFold_TMscore, sequence_length) |>
+  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score", "sequence length")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+#### Pearson's correlations
+```{r}
+Z <- as.matrix(chains |> dplyr::select(sequence_length, ESMFold_TMscore, ESMFold_RMSD, ESMFold_pLDDT) |> setNames(c("sequence\nlength", "TM score", "RMSD", "pLDDT")))
+R <- rcorr(Z)
+diag(R$P) <- 0
+esmfold_pearson <- ggcorrplot(R$r, p.mat = R$P, title = "ESMFold", 
+  lab = TRUE, lab_size = 5, type = "full", method = "square", outline.color = "white", show.legend = FALSE, pch.cex = 10) + 
+  theme(plot.title = element_text(size = 16, hjust = 0.5))
+esmfold_pearson
+```
+#### Spearman's correlations
+```{r}
+R.Sp <- rcorr(Z, type = "spearman")
+diag(R.Sp$P) <- 0
+esmfold_spearman <- ggcorrplot(R.Sp$r, p.mat = R.Sp$P, title = "ESMFold", 
+  lab = TRUE, lab_size = 5, type = "full", method = "square", outline.color = "white", show.legend = FALSE, pch.cex = 10) + 
+  theme(plot.title = element_text(size = 16, hjust = 0.5))
+esmfold_spearman
+```
+
+
+### OmegaFold
+```{r}
+chains_without_outliers |>
+  dplyr::select(OmegaFold_pLDDT, OmegaFold_RMSD, OmegaFold_TMscore, sequence_length) |>
+  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score", "sequence length")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+#### Pearson's correlations
+```{r}
+Z <- as.matrix(chains |> dplyr::select(sequence_length, OmegaFold_TMscore, OmegaFold_RMSD, OmegaFold_pLDDT) |> setNames(c("sequence\nlength", "TM score", "RMSD", "pLDDT")))
+R <- rcorr(Z)
+diag(R$P) <- 0
+omegafold_pearson <- ggcorrplot(R$r, p.mat = R$P, title = "OmegaFold", legend.title = "Pearson's \ncorrelation \ncoefficient",
+  lab = TRUE, lab_size = 5, type = "full", method = "square", outline.color = "white", pch.cex = 10) +
+  theme(legend.title = element_text(size = 12),
+        plot.title = element_text(size = 16, hjust = 0.5))
+omegafold_pearson
+```
+
+```{r}
+R.Sp <- rcorr(Z, type = "spearman")
+diag(R.Sp$P) <- 0
+omegafold_spearman <- ggcorrplot(R.Sp$r, p.mat = R.Sp$P, title = "OmegaFold", legend.title = "Spearman's \ncorrelation \ncoefficient",
+  lab = TRUE, lab_size = 5, type = "full", method = "square", outline.color = "white", pch.cex = 10) +
+  theme(legend.title = element_text(size = 12),
+        plot.title = element_text(size = 16, hjust = 0.5))
+omegafold_spearman
+```
+
+
+
+```{r}
+alphafold_pearson + esmfold_pearson + omegafold_pearson
+ggsave("korelace_pearson.png", height = 5.5, width = 16)
+```
+
+```{r}
+alphafold_spearman + esmfold_spearman + omegafold_spearman
+ggsave("korelace_spearman.png", height = 5.5, width = 16)
+```
+
+
+## Prediction & labels
+### Average pLDDT
+```{r}
+chains_wider_AF <- chains_wider[chains_wider$prediction_tool == "AlphaFold2", ]
+KWtest <- kruskal.test(chains_wider_AF$pLDDT, chains_wider_AF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_AF$pLDDT ~ chains_wider_AF$label, method="bonferroni")
+dunn
+```
+```{r}
+label_AF_pLDDT <- chains_wider_AF |>
+  ggplot(aes(x = prediction_tool, y = pLDDT, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 101) +
+  labs(y = "average pLDDT", fill = "label") +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "a", "a")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_AF_pLDDT
+```
+```{r}
+chains_wider_EF <- chains_wider[chains_wider$prediction_tool == "ESMFold", ]
+KWtest <- kruskal.test(chains_wider_EF$pLDDT, chains_wider_EF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_EF$pLDDT ~ chains_wider_EF$label, method="bonferroni")
+dunn
+```
+
+```{r}
+label_EF_pLDDT <- chains_wider_EF |>
+  ggplot(aes(x = prediction_tool, y = pLDDT, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 101) +
+  labs(y = "average pLDDT", fill = "label") +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "b", "a")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_EF_pLDDT
+```
+
+```{r}
+chains_wider_OF <- chains_wider[chains_wider$prediction_tool == "OmegaFold", ]
+KWtest <- kruskal.test(chains_wider_OF$pLDDT, chains_wider_OF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_OF$pLDDT ~ chains_wider_OF$label, method="bonferroni")
+dunn
+```
+
+```{r}
+label_OF_pLDDT <- chains_wider_OF |>
+  ggplot(aes(x = prediction_tool, y = pLDDT, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 101) +
+  labs(y = "average pLDDT", fill = "label") +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "b", "c")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_OF_pLDDT
+```
+
+
+### TM score
+```{r}
+KWtest <- kruskal.test(chains_wider_AF$TMscore, chains_wider_AF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_AF$TMscore ~ chains_wider_AF$label, method="bonferroni")
+dunn
+```
+```{r}
+label_AF_TMscore <- chains_wider_AF |>
+  ggplot(aes(x = prediction_tool, y = TMscore, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 1.03) +
+  labs(y = "TM score", fill = "label") +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "a", "b")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_AF_TMscore
+```
+```{r}
+KWtest <- kruskal.test(chains_wider_EF$TMscore, chains_wider_EF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_EF$TMscore ~ chains_wider_EF$label, method="bonferroni")
+dunn
+```
+
+```{r}
+label_EF_TMscore <- chains_wider_EF |>
+  ggplot(aes(x = prediction_tool, y = TMscore, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 1.03) +
+  labs(y = "TM score", fill = "label") +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "b", "a")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_EF_TMscore
+```
+
+```{r}
+KWtest <- kruskal.test(chains_wider_OF$TMscore, chains_wider_OF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_OF$TMscore ~ chains_wider_OF$label, method="bonferroni")
+dunn
+```
+
+```{r}
+label_OF_TMscore <- chains_wider_OF |>
+  ggplot(aes(x = prediction_tool, y = TMscore, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot() + 
+  ylim(0, 1.03) +
+  labs(y = "TMscore") +
+  scale_fill_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "b", "a")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_OF_TMscore
+```
+
+### RMSD
+```{r}
+KWtest <- kruskal.test(chains_wider_AF$RMSD, chains_wider_AF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_AF$RMSD ~ chains_wider_AF$label, method="bonferroni")
+dunn
+```
+```{r}
+label_AF_RMSD <- chains_wider_AF |>
+  ggplot(aes(x = prediction_tool, y = RMSD, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 30) +
+  labs(y = "RMSD", fill = "label") +
+  annotate("text", x = c(0.8, 1.05, 1.3), y = rep(4.5, 3), label = c("a", "a", "a")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_AF_RMSD
+```
+```{r}
+KWtest <- kruskal.test(chains_wider_EF$RMSD, chains_wider_EF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_EF$RMSD ~ chains_wider_EF$label, method="bonferroni")
+dunn
+```
+
+```{r}
+label_EF_RMSD <- chains_wider_EF |>
+  ggplot(aes(x = prediction_tool, y = RMSD, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 30) +
+  labs(x = "prediction tool", y = "RMSD", fill = "label") +
+  annotate("text", x = c(0.8, 1.05, 1.3), y = c(5.5, 7.5, 3.9), label = c("a", "b", "c")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_EF_RMSD
+```
+
+```{r}
+KWtest <- kruskal.test(chains_wider_OF$RMSD, chains_wider_OF$label)
+KWtest
+```
+```{r}
+dunn <- FSA::dunnTest(chains_wider_OF$RMSD ~ chains_wider_OF$label, method="bonferroni")
+dunn
+```
+
+```{r}
+label_OF_RMSD <- chains_wider_OF |>
+  ggplot(aes(x = prediction_tool, y = RMSD, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
+  geom_boxplot(show.legend = FALSE) + 
+  ylim(0, 30) +
+  labs(y = "TMscore", fill = "label") +
+  annotate("text", x = c(0.8, 1.05, 1.3), y = c(6.3, 7.5, 3.9), label = c("a", "b", "c")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+label_OF_RMSD
+```
+```{r}
+(label_AF_pLDDT | label_EF_pLDDT | label_OF_pLDDT) / (label_AF_TMscore| label_EF_TMscore | label_OF_TMscore) / (label_AF_RMSD| label_EF_RMSD | label_OF_RMSD)
+ggsave("labels_grid.png", height = 8.5, width = 8.5)
+```
+
+
+## Method of acquisition
+```{r}
+chains |> ggplot(aes(x = label, y = AlphaFold2_pLDDT, fill = method_of_acquisition)) + 
+  geom_boxplot() + 
+  labs(x = "Prediction tool", y = "RMSD", fill = "label") +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+## Tools between each other
+```{r}
+chains_longer.between_tools <- chains |>
+  dplyr::select(chain_id, pdb_id, label, sequence_length, method_of_acquisition,
+                AlphaFold2.vs.OmegaFold_RMSD, OmegaFold.vs.ESMFold_RMSD, ESMFold.vs.AlphaFold2_RMSD,
+                AlphaFold2.vs.OmegaFold_TMscore, OmegaFold.vs.ESMFold_TMscore, ESMFold.vs.AlphaFold2_TMscore) |>
+  pivot_longer(cols = c(AlphaFold2.vs.OmegaFold_RMSD, OmegaFold.vs.ESMFold_RMSD, ESMFold.vs.AlphaFold2_RMSD,
+                        AlphaFold2.vs.OmegaFold_TMscore, OmegaFold.vs.ESMFold_TMscore, ESMFold.vs.AlphaFold2_TMscore),
+                                        names_to = c("prediction_tools", "metrics"),
+                                        names_sep = "_",
+                                        values_to = "value")
+str(chains_longer.between_tools)
+```
+
+```{r}
+chains_wider.between_tools <- chains_longer.between_tools |> 
+  pivot_wider(names_from = "metrics", values_from = "value")
+
+str(chains_wider.between_tools)
+```
+
+```{r}
+RMSD.between_tools <- chains_wider.between_tools |> 
+  ggplot(aes(x = prediction_tools, y = RMSD, fill = prediction_tools)) + 
+  geom_boxplot() + 
+  ylim(0, 30) +
+  labs(x = NULL, y = "RMSD", title = "RMSD") +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        text = element_text(size = 18),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+RMSD.between_tools
+```
+ 
+```{r}
+TMscore.between_tools <- chains_wider.between_tools |> 
+  ggplot(aes(x = prediction_tools, y = TMscore, fill = prediction_tools)) + 
+  geom_boxplot() + 
+  labs(x = NULL, y = "TM score", title = "TMscore") +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        text = element_text(size = 18),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+TMscore.between_tools
+```
+
+
+```{r}
+comparison <- rep(c("AlphaFold2 vs. ESMFold", "AlphaFold2 vs. OmegaFold", "ESMFold vs. OmegaFold"), each = 1462)
+better_predicted_by <- c(rep(c("AlphaFold2"), 1022), rep(c("ESMFold"), 440), rep(c("AlphaFold2"), 1091), rep(c("OmegaFold"), 371), rep(c("ESMFold"), 869), rep(c("OmegaFold"), 593))
+
+TM_score <- data.frame(comparison, better_predicted_by)
+
+TM_score |> ggplot(aes(x = comparison, fill = better_predicted_by)) + 
+    geom_bar(colour = "black", linewidth = 0.3, position = "stack") + 
+    labs(x = "prediction tool", y = "number of protein chains") +
+    theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

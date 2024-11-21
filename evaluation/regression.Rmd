@@ -1,0 +1,390 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+
+```{r, include=FALSE}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(car)
+library(agricolae)
+library(Hmisc)
+library(GGally)
+library(ggcorrplot)
+library(gridExtra)
+library(patchwork)
+library(rgl)
+library(predict3d)
+```
+
+
+## Table reading and preprocessing
+```{r}
+chains <- read.csv("chains_evaluation.csv", stringsAsFactors = TRUE) |>
+  dplyr::select(chain_id, pdb_id, label, sequence_length, method_of_acquisition, AF_average_pLDDT, OF_average_pLDDT, EF_average_pLDDT, AF_TM_score, OF_TM_score, EF_TM_score, AF_RMSD, OF_RMSD, EF_RMSD) |>
+  setNames(c("chain_id", "pdb_id", "label", "sequence_length", "method_of_acquisition",
+             "AlphaFold_pLDDT", "OmegaFold_pLDDT", "ESMFold_pLDDT",
+             "AlphaFold_TMscore", "OmegaFold_TMscore", "ESMFold_TMscore",
+             "AlphaFold_RMSD", "OmegaFold_RMSD", "ESMFold_RMSD"))
+
+str(chains)
+```
+
+```{r}
+chains_without_outliers <- chains[!(chains$chain_id %in% c("8TVL:A", "8P4Y:A", "8B2M:A")),]
+```
+
+## AlphaFold
+### RMSD
+```{r}
+chains.AF.RMSD <- chains_without_outliers |> 
+  dplyr::select(label, sequence_length, AlphaFold_pLDDT, AlphaFold_RMSD)
+AF_model.RMSD <- lm(AlphaFold_RMSD ~ ., data = chains.AF.RMSD)
+AF_model.RMSD.back <- step(AF_model.RMSD, direction = "backward", trace = 1)
+```
+
+```{r}
+AF_model.RMSD.0 <- update(AF_model.RMSD, . ~ 1)
+AF_model.RMSD.forw <- step(AF_model.RMSD.0, scope = formula(AF_model.RMSD), direction = "forward", trace = 1)
+```
+
+
+```{r}
+AF_model.RMSD.pLDDT <- lm(AlphaFold_RMSD ~ AlphaFold_pLDDT, data = chains_without_outliers)
+summary(AF_model.RMSD.pLDDT)
+```
+
+
+```{r}
+new.data <- data.frame(
+    AlphaFold_pLDDT = seq(35, 100, by = 1)
+  )
+CI <- predict(AF_model.RMSD.pLDDT, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(AF_model.RMSD.pLDDT, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+chains_without_outliers |> ggplot() + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI,  fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = AlphaFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = AlphaFold_pLDDT, y = AlphaFold_RMSD)) + 
+  labs(x = "pLDDT", y = "RMSD")
+```
+
+
+```{r}
+summary(AF_model.RMSD.forw)
+```
+
+```{r}
+new.data <- expand_grid(
+    AlphaFold_pLDDT = seq(35, 100, by = 1), 
+    label = c("monomer", "complex", "synthetic")
+  )
+CI <- predict(AF_model.RMSD.forw, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(AF_model.RMSD.forw, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+chains_without_outliers |> ggplot(aes(group = label, color = label, fill = label)) + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI, alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = AlphaFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = AlphaFold_pLDDT, y = AlphaFold_RMSD), pch = 21, color = "black", size = 2.0) + 
+  labs(x = "pLDDT", y = "RMSD")
+```
+
+```{r}
+RMSD_model.AF.poly_label <- lm(AlphaFold_RMSD ~ 1 + poly(AlphaFold_pLDDT, 2) + label, data = chains_without_outliers)
+summary(RMSD_model.AF.poly_label)
+```
+
+
+```{r}
+new.data <- data.frame(
+    AlphaFold_pLDDT = seq(35, 100, by = 1), 
+    label = c("monomer", "complex", "synthetic")
+  )
+CI <- predict(RMSD_model.AF.poly_label, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(RMSD_model.AF.poly_label, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+
+chains_without_outliers |> ggplot(aes(group = label, color = label, fill = label)) + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI, alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = AlphaFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = AlphaFold_pLDDT, y = AlphaFold_RMSD), pch = 21, color = "black", size = 2.0) + 
+  labs(x = "pLDDT", y = "RMSD")
+```
+
+### TM score
+```{r}
+chains.AF.TMscore <- chains_without_outliers |> 
+  dplyr::select(label, sequence_length, AlphaFold_pLDDT, AlphaFold_TMscore)
+```
+
+```{r}
+AF_model.TMscore <- lm(AlphaFold_TMscore ~ ., data = chains.AF.TMscore)
+AF_model.TMscore.back <- step(AF_model.TMscore, direction = "backward", trace = 1)
+```
+
+```{r}
+AF_model.TMscore.0 <- update(AF_model.TMscore, . ~ 1)
+AF_model.TMscore.forw <- step(AF_model.TMscore.0, scope = formula(AF_model.TMscore), direction = "forward", trace = 1)
+```
+
+
+```{r}
+AF_model.TMscore.pLDDT <- lm(AlphaFold_TMscore ~ AlphaFold_pLDDT, data = chains_without_outliers)
+summary(AF_model.TMscore.pLDDT)
+```
+```{r}
+new.data <- data.frame(
+    AlphaFold_pLDDT = seq(35, 100, by = 1)
+  )
+CI <- predict(AF_model.TMscore.pLDDT, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(AF_model.TMscore.pLDDT, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+chains_without_outliers |> ggplot() + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = AlphaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI,  fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = AlphaFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = AlphaFold_pLDDT, y = AlphaFold_TMscore)) + 
+  labs(x = "pLDDT", y = "TMscore")
+```
+
+```{r}
+AF_model.TMscore.all <- lm(AlphaFold_TMscore ~ AlphaFold_pLDDT + sequence_length + label, data = chains_without_outliers)
+summary(AF_model.TMscore.all)
+```
+
+```{r}
+predict3d(AF_model.TMscore.all, radius=1, show.subtitle = FALSE)
+rglwidget(elementId = "1st")
+```
+
+
+
+## OmegaFold
+### RMSD
+```{r}
+chains.OF.RMSD <- chains_without_outliers |> 
+  dplyr::select(label, sequence_length, OmegaFold_pLDDT, OmegaFold_RMSD)
+OF_model.RMSD <- lm(OmegaFold_RMSD ~ ., data = chains.OF.RMSD)
+OF_model.RMSD.back <- step(OF_model.RMSD, direction = "backward", trace = 1)
+```
+
+```{r}
+OF_model.RMSD.0 <- update(OF_model.RMSD, . ~ 1)
+OF_model.RMSD.forw <- step(OF_model.RMSD.0, scope = formula(OF_model.RMSD), direction = "forward", trace = 1)
+```
+
+
+```{r}
+OF_model.RMSD.pLDDT <- lm(OmegaFold_RMSD ~ OmegaFold_pLDDT, data = chains_without_outliers)
+summary(OF_model.RMSD.pLDDT)
+```
+
+
+```{r}
+new.data <- data.frame(
+    OmegaFold_pLDDT = seq(10, 100, by = 1)
+  )
+CI <- predict(OF_model.RMSD.pLDDT, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(OF_model.RMSD.pLDDT, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+chains_without_outliers |> ggplot() + 
+  geom_ribbon(aes(x = OmegaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = OmegaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI,  fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = OmegaFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = OmegaFold_pLDDT, y = OmegaFold_RMSD)) + 
+  labs(x = "pLDDT", y = "RMSD")
+```
+
+
+```{r}
+summary(OF_model.RMSD.forw)
+```
+
+
+```{r}
+predict3d(OF_model.RMSD.forw, radius=1, show.subtitle = FALSE)
+rglwidget(elementId = "1st")
+```
+
+### TM score
+```{r}
+chains.OF.TMscore <- chains_without_outliers |> 
+  dplyr::select(label, sequence_length, OmegaFold_pLDDT, OmegaFold_TMscore)
+OF_model.TMscore <- lm(OmegaFold_TMscore ~ ., data = chains.OF.TMscore)
+OF_model.TMscore.back <- step(OF_model.TMscore, direction = "backward", trace = 1)
+```
+
+```{r}
+OF_model.TMscore.0 <- update(OF_model.TMscore, . ~ 1)
+OF_model.TMscore.forw <- step(OF_model.TMscore.0, scope = formula(OF_model.TMscore), direction = "forward", trace = 1)
+```
+
+
+
+```{r}
+OF_model.TMscore.pLDDT <- lm(OmegaFold_TMscore ~ OmegaFold_pLDDT, data = chains_without_outliers)
+summary(OF_model.TMscore.pLDDT)
+```
+
+```{r}
+new.data <- data.frame(
+    OmegaFold_pLDDT = seq(10, 100, by = 1)
+  )
+CI <- predict(OF_model.TMscore.pLDDT, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(OF_model.TMscore.pLDDT, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+chains_without_outliers |> ggplot() + 
+  geom_ribbon(aes(x = OmegaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = OmegaFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI,  fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = OmegaFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = OmegaFold_pLDDT, y = OmegaFold_TMscore)) + 
+  labs(x = "pLDDT", y = "TMscore")
+```
+
+```{r}
+OF_model.TMscore.sequence <- lm(OmegaFold_TMscore ~ OmegaFold_pLDDT + sequence_length, data = chains_without_outliers)
+summary(OF_model.TMscore.sequence)
+```
+
+```{r}
+predict3d(OF_model.TMscore.sequence, radius=1, show.subtitle = FALSE)
+rglwidget(elementId = "1st")
+```
+
+```{r}
+summary(OF_model.TMscore.back)
+```
+
+
+
+## ESMFold
+### RMSD
+```{r}
+chains.EF.RMSD <- chains_without_outliers |> 
+  dplyr::select(label, sequence_length, ESMFold_pLDDT, ESMFold_RMSD)
+EF_model.RMSD <- lm(ESMFold_RMSD ~ ., data = chains.EF.RMSD)
+EF_model.RMSD.back <- step(EF_model.RMSD, direction = "backward", trace = 1)
+```
+
+```{r}
+EF_model.RMSD.0 <- update(EF_model.RMSD, . ~ 1)
+EF_model.RMSD.forw <- step(EF_model.RMSD.0, scope = formula(EF_model.RMSD), direction = "forward", trace = 1)
+```
+
+```{r}
+EF_model.RMSD.pLDDT <- lm(ESMFold_RMSD ~ ESMFold_pLDDT, data = chains_without_outliers)
+summary(EF_model.RMSD.pLDDT)
+```
+
+
+```{r}
+new.data <- data.frame(
+    ESMFold_pLDDT = seq(10, 100, by = 1)
+  )
+CI <- predict(EF_model.RMSD.pLDDT, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(EF_model.RMSD.pLDDT, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+chains_without_outliers |> ggplot() + 
+  geom_ribbon(aes(x = ESMFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = ESMFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI,  fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = ESMFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = ESMFold_pLDDT, y = ESMFold_RMSD)) + 
+  labs(x = "pLDDT", y = "RMSD")
+```
+
+```{r}
+EF_model.RMSD.sequence <- lm(ESMFold_RMSD ~ ESMFold_pLDDT + sequence_length, data = chains_without_outliers)
+summary(EF_model.RMSD.sequence)
+```
+
+```{r}
+predict3d(EF_model.RMSD.sequence, radius=1, show.subtitle = FALSE)
+rglwidget(elementId = "1st", )
+```
+
+
+```{r}
+summary(EF_model.RMSD.back)
+```
+
+
+### TM score
+```{r}
+chains.EF.TMscore <- chains_without_outliers |> 
+  dplyr::select(label, sequence_length, ESMFold_pLDDT, ESMFold_TMscore)
+EF_model.TMscore <- lm(ESMFold_TMscore ~ ., data = chains.EF.TMscore)
+EF_model.TMscore.back <- step(EF_model.TMscore, direction = "backward", trace = 1)
+```
+
+```{r}
+EF_model.TMscore.0 <- update(EF_model.TMscore, . ~ 1)
+EF_model.TMscore.forw <- step(EF_model.TMscore.0, scope = formula(EF_model.TMscore), direction = "forward", trace = 1)
+```
+
+
+```{r}
+EF_model.TMscore.pLDDT <- lm(ESMFold_TMscore ~ ESMFold_pLDDT, data = chains_without_outliers)
+summary(EF_model.TMscore.pLDDT)
+```
+
+
+```{r}
+new.data <- data.frame(
+    ESMFold_pLDDT = seq(10, 100, by = 1)
+  )
+CI <- predict(EF_model.TMscore.pLDDT, newdata = new.data, se.fit = TRUE, interval = "confidence") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+PI <- predict(EF_model.TMscore.pLDDT, newdata = new.data, se.fit = TRUE, interval = "prediction") |> 
+  as.data.frame() |> 
+  cbind(new.data)
+chains_without_outliers |> ggplot() + 
+  geom_ribbon(aes(x = ESMFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = CI, fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "longdash") + 
+  geom_ribbon(aes(x = ESMFold_pLDDT, ymin = fit.lwr, ymax = fit.upr), data = PI,  fill = "orange", color = "black", alpha = 0.3, linewidth = 0.5, linetype = "dashed") + 
+  geom_line(aes(x = ESMFold_pLDDT, y = fit.fit), data = CI, linewidth = 0.8) + 
+  geom_point(aes(x = ESMFold_pLDDT, y = ESMFold_TMscore)) + 
+  labs(x = "pLDDT", y = "TM score")
+```
+
+```{r}
+EF_model.TMscore.sequence <- lm(ESMFold_TMscore ~ ESMFold_pLDDT + sequence_length, data = chains_without_outliers)
+summary(EF_model.TMscore.sequence)
+```
+
+```{r}
+predict3d(EF_model.TMscore.sequence, radius=1, show.subtitle = FALSE)
+rglwidget(elementId = "1st", )
+```
+
+
+```{r}
+summary(EF_model.TMscore.back)
+```
+
+
+
