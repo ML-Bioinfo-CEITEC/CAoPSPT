@@ -1,0 +1,2754 @@
+xref_interpro,count,interpro_name
+,271,
+IPR027417,125,P-loop containing nucleoside triphosphate hydrolase (homologous_superfamily)
+IPR011009,72,Protein kinase-like domain superfamily (homologous_superfamily)
+IPR000719,71,Protein kinase domain (domain)
+IPR017441,56,"Protein kinase, ATP binding site (binding_site)"
+IPR029063,50,S-adenosyl-L-methionine-dependent methyltransferase superfamily (homologous_superfamily)
+IPR011025,47,"G protein alpha subunit, helical insertion (homologous_superfamily)"
+IPR001019,47,"Guanine nucleotide binding protein (G-protein), alpha subunit (family)"
+IPR013783,45,Immunoglobulin-like fold (homologous_superfamily)
+IPR043502,42,DNA/RNA polymerase superfamily (homologous_superfamily)
+IPR009003,42,"Peptidase S1, PA clan (homologous_superfamily)"
+IPR043504,38,"Peptidase S1, PA clan, chymotrypsin-like fold (homologous_superfamily)"
+IPR007094,36,"RNA-directed RNA polymerase, catalytic domain (domain)"
+IPR008271,33,"Serine/threonine-protein kinase, active site (active_site)"
+IPR001205,31,"RNA-directed RNA polymerase, C-terminal domain (domain)"
+IPR007110,31,Immunoglobulin-like domain (domain)
+IPR002589,30,Macro domain (domain)
+IPR043472,30,Macro domain-like (homologous_superfamily)
+IPR044371,30,"Non-structural protein 3, X-domain-like (domain)"
+IPR001245,30,"Serine-threonine/tyrosine-protein kinase, catalytic domain (domain)"
+IPR008266,29,"Tyrosine-protein kinase, active site (active_site)"
+IPR036179,29,Immunoglobulin-like domain superfamily (homologous_superfamily)
+IPR027351,29,(+) RNA virus helicase core domain (domain)
+IPR029058,28,Alpha/Beta hydrolase fold (homologous_superfamily)
+IPR014828,27,"Non-structural protein NSP7, coronavirus (domain)"
+IPR043611,27,"Coronavirus replicase NSP3, C-terminal (domain)"
+IPR014822,27,"Non-structural protein NSP9, coronavirus (domain)"
+IPR014829,27,"Non-structural protein NSP8, coronavirus (domain)"
+IPR043610,27,"Non-structural protein 6, coronavirus (domain)"
+IPR038123,27,"Non-structural protein NSP4, C-terminal superfamily, coronavirus (homologous_superfamily)"
+IPR043503,27,"Papain-like viral protease, palm and finger domains, coronavirus (homologous_superfamily)"
+IPR043477,27,"Peptidase C30, domain 3, coronavirus (homologous_superfamily)"
+IPR043178,27,"Papain-like protease, thumb domain superfamily, coronavirus (homologous_superfamily)"
+IPR018995,27,"RNA synthesis protein NSP10, coronavirus (domain)"
+IPR013016,27,"Peptidase C16, coronavirus (domain)"
+IPR037230,27,"Non-structural protein NSP8 superfamily, coronavirus (homologous_superfamily)"
+IPR037204,27,"Non-structural protein NSP7 superfamily, coronavirus (homologous_superfamily)"
+IPR029071,27,Ubiquitin-like domain superfamily (homologous_superfamily)
+IPR032505,27,"Non-structural protein NSP4, C-terminal, coronavirus (domain)"
+IPR036499,27,"Non-structural protein NSP9 superfamily, coronavirus (homologous_superfamily)"
+IPR036291,27,NAD(P)-binding domain superfamily (homologous_superfamily)
+IPR036333,27,"RNA synthesis protein NSP10 superfamily, coronavirus (homologous_superfamily)"
+IPR047566,27,"Coronavirus replicase NSP3, Y domain (domain)"
+IPR043612,27,"Non-structural protein NSP4, N-terminal, coronavirus (domain)"
+IPR049894,27,"Coronavirus NSP3, 3Ecto domain (domain)"
+IPR008740,27,"Peptidase C30, coronavirus (domain)"
+IPR048672,26,"Nonstructural protein 13, zinc-binding domain, coronavirus (domain)"
+IPR044351,26,"RNA-dependent RNA polymerase, SARS-CoV-like (domain)"
+IPR043609,26,"NendoU domain, nidovirus (domain)"
+IPR044863,26,Nidovirus RdRp-associated nucleotidyl transferase (NiRAN) domain (domain)
+IPR022733,26,"DPUP/SUD, C-terminal, betacoronavirus (domain)"
+IPR044401,26,"NSP15, NendoU domain, coronavirus (domain)"
+IPR044389,26,"Non-structural protein 2, SARS-CoV-like (domain)"
+IPR021590,26,"NSP1, globular domain, betacoronavirus (domain)"
+IPR044367,26,"Non-structural protein 6, betacoronavirus (domain)"
+IPR041679,26,"DNA2/NAM7 helicase-like, C-terminal (domain)"
+IPR044357,26,"NSP3, first ubiquitin-like (Ubl) domain, coronavirus (domain)"
+IPR044353,26,"NSP3, second ubiquitin-like (Ubl) domain, coronavirus (domain)"
+IPR042515,26,"Non-structural protein NSP15, N-terminal domain superfamily, coronavirus (homologous_superfamily)"
+IPR044343,26,"Nonstructural protein 13, 1B domain, coronavirus (domain)"
+IPR038400,26,"Non-structural protein NSP3, SUD-M domain superfamily, betacoronavirus (homologous_superfamily)"
+IPR042570,26,"Non-structural protein NSP3, nucleic acid-binding domain superfamily, betacoronavirus (homologous_superfamily)"
+IPR044330,26,"Nonstructural protein 15, N-terminal domain, alpha/beta-coronavirus (domain)"
+IPR043174,26,"Non-structural protein NSP15, middle domain superfamily (homologous_superfamily)"
+IPR044322,26,"Nonstructural protein 15, middle domain, alpha/betacoronavirus (domain)"
+IPR044315,26,"Nonstructural protein 14, betacoronavirus (domain)"
+IPR043177,26,"Papain-like protease, N-terminal domain superfamily, coronavirus (homologous_superfamily)"
+IPR043478,26,"Non-structural protein NSP3, SUD-N (Mac2) domain superfamily, betacoronavirus (homologous_superfamily)"
+IPR043615,26,"Nonstructural protein 2, N-terminal domain, coronavirus (domain)"
+IPR009469,26,"RNA-dependent RNA polymerase, N-terminal, coronavirus (domain)"
+IPR043613,26,"Non-structural protein 2, C-terminal domain, coronavirus (domain)"
+IPR043606,26,"Coronavirus replicase NSP15, N-terminal oligomerization (domain)"
+IPR024358,26,"Non-structural protein NSP3, N-terminal, betacoronavirus (domain)"
+IPR044864,26,"Non-structural protein NSP3, SUD-N (Mac2) domain, betacoronavirus (domain)"
+IPR043608,26,"Nonstructural protein 15, middle domain, coronavirus (domain)"
+IPR032592,26,"Non-structural protein NSP3, nucleic acid-binding domain, betacoronavirus (domain)"
+IPR050534,26,Coronaviruses polyprotein 1ab (family)
+IPR027352,26,"Nonstructural protein 13, zinc-binding domain, coronavirus-like (domain)"
+IPR046443,26,"NSP1, globular domain, alpha/betacoronavirus (domain)"
+IPR046442,26,"NSP1, C-terminal domain, betacoronavirus (domain)"
+IPR047570,26,"NSP12, interface domain, coronavirus (domain)"
+IPR046441,26,"RNA-dependent RNA polymerase, coronavirus (domain)"
+IPR046440,26,Arterivirus Nsp11 N-terminal/Coronavirus NSP15 middle domain (domain)
+IPR024375,26,"Non-structural protein NSP3, SUD-M domain, betacoronavirus (domain)"
+IPR046438,26,Nidovirus 2-O-methyltransferase (domain)
+IPR046436,26,Nidovirus 3'-5' exoribonuclease domain (domain)
+IPR046435,26,"NSP14, guanine-N7-methyltransferase domain, coronavirus (domain)"
+IPR009461,26,"Non-structural protein NSP16, coronavirus-like (domain)"
+IPR037227,26,Endoribonuclease EndoU-like (homologous_superfamily)
+IPR009466,26,"Non-structural protein 14, coronavirus (domain)"
+IPR038030,26,"NSP1 globular domain superfamily, betacoronavirus (homologous_superfamily)"
+IPR048673,26,"Nonstructural protein 13, stalk domain, coronavirus (domain)"
+IPR038083,26,Non-structural protein NSP3A domain-like superfamily (homologous_superfamily)
+IPR047573,26,"Non-structural protein 2, middle domain, coronavirus (domain)"
+IPR038166,26,"Polyprotein cleavage domain PL2pro superfamily, betacoronavirus (homologous_superfamily)"
+IPR001408,26,"G-protein alpha subunit, group I (family)"
+IPR047567,26,"Non-structural protein NSP3, group 2-specific marker domain, betacoronavirus (domain)"
+IPR003599,25,Immunoglobulin domain subtype (domain)
+IPR013083,22,"Zinc finger, RING/FYVE/PHD-type (homologous_superfamily)"
+IPR020635,21,"Tyrosine-protein kinase, catalytic domain (domain)"
+IPR000626,20,Ubiquitin-like domain (domain)
+IPR011993,20,PH-like domain superfamily (homologous_superfamily)
+IPR003593,18,AAA+ ATPase domain (domain)
+IPR001841,18,"Zinc finger, RING-type (domain)"
+IPR017853,17,Glycoside hydrolase superfamily (homologous_superfamily)
+IPR013106,17,Immunoglobulin V-set domain (domain)
+IPR003598,16,Immunoglobulin subtype 2 (domain)
+IPR036388,16,Winged helix-like DNA-binding domain superfamily (homologous_superfamily)
+IPR012338,16,Beta-lactamase/transpeptidase-like (homologous_superfamily)
+IPR015943,15,WD40/YVTN repeat-like-containing domain superfamily (homologous_superfamily)
+IPR000367,15,"G-protein alpha subunit, group S (family)"
+IPR044874,14,"Spike glycoprotein S2, coronavirus, heptad repeat 2 (domain)"
+IPR044366,14,"Spike (S) protein S1 subunit, receptor-binding domain, SARS-CoV-2 (domain)"
+IPR018548,14,"Spike (S) protein S1 subunit, receptor-binding domain, betacoronavirus (domain)"
+IPR042578,14,"Spike glycoprotein, betacoronavirus (family)"
+IPR043002,14,"Spike glycoprotein, N-terminal domain superfamily (homologous_superfamily)"
+IPR044341,14,"Spike (S) protein S1 subunit, N-terminal domain, SARS-CoV-like (domain)"
+IPR003961,14,Fibronectin type III (domain)
+IPR032500,14,"Spike glycoprotein S1, N-terminal domain, betacoronavirus-like (domain)"
+IPR002552,14,"Spike glycoprotein S2, coronavirus (domain)"
+IPR036116,14,Fibronectin type III superfamily (homologous_superfamily)
+IPR013320,14,Concanavalin A-like lectin/glucanase domain superfamily (homologous_superfamily)
+IPR043473,14,"Spike glycoprotein S2 superfamily, coronavirus (homologous_superfamily)"
+IPR044873,14,"Spike glycoprotein S2, coronavirus, heptad repeat 1 (domain)"
+IPR039049,14,Elongin B (family)
+IPR036326,14,"Spike S1 subunit, receptor binding domain superfamily, betacoronavirus (homologous_superfamily)"
+IPR036390,14,Winged helix DNA-binding domain superfamily (homologous_superfamily)
+IPR043607,14,"Coronavirus spike glycoprotein S1, C-terminal (domain)"
+IPR000980,12,SH2 domain (domain)
+IPR000536,12,"Nuclear hormone receptor, ligand-binding domain (domain)"
+IPR001611,12,Leucine-rich repeat (repeat)
+IPR038765,12,Papain-like cysteine peptidase superfamily (homologous_superfamily)
+IPR036860,12,SH2 domain superfamily (homologous_superfamily)
+IPR032675,12,Leucine-rich repeat domain superfamily (homologous_superfamily)
+IPR013088,12,"Zinc finger, NHR/GATA-type (homologous_superfamily)"
+IPR035500,12,Nuclear hormone receptor-like domain superfamily (homologous_superfamily)
+IPR001628,12,"Zinc finger, nuclear hormone receptor-type (domain)"
+IPR013098,12,Immunoglobulin I-set (domain)
+IPR014756,12,Immunoglobulin E-set (homologous_superfamily)
+IPR013785,11,Aldolase-type TIM barrel (homologous_superfamily)
+IPR017907,11,"Zinc finger, RING-type, conserved site (conserved_site)"
+IPR000073,11,Alpha/beta hydrolase fold-1 (domain)
+IPR001723,11,Nuclear hormone receptor (family)
+IPR036249,10,Thioredoxin-like superfamily (homologous_superfamily)
+IPR036322,10,WD40-repeat-containing domain superfamily (homologous_superfamily)
+IPR003591,10,"Leucine-rich repeat, typical subtype (repeat)"
+IPR036890,10,Histidine kinase/HSP90-like ATPase superfamily (homologous_superfamily)
+IPR050234,10,Nuclear hormone receptor family NR1 subfamily (family)
+IPR003594,10,Histidine kinase/HSP90-like ATPase domain (domain)
+IPR036465,10,von Willebrand factor A-like domain superfamily (homologous_superfamily)
+IPR036028,10,SH3-like domain superfamily (homologous_superfamily)
+IPR050122,10,Receptor Tyrosine Kinase (family)
+IPR001452,10,SH3 domain (domain)
+IPR003550,9,Claudin-4 (family)
+IPR029053,9,Viral coat protein subunit (homologous_superfamily)
+IPR033703,9,Picornavirus/Calicivirus coat protein (domain)
+IPR004031,9,PMP-22/EMP/MP20/Claudin (family)
+IPR006187,9,Claudin (family)
+IPR005225,9,Small GTP-binding domain (domain)
+IPR009030,9,Growth factor receptor cysteine-rich domain superfamily (homologous_superfamily)
+IPR043128,9,Reverse transcriptase/Diguanylate cyclase domain (homologous_superfamily)
+IPR002035,9,"von Willebrand factor, type A (domain)"
+IPR000871,9,"Beta-lactamase, class-A (family)"
+IPR012674,9,Calycin (homologous_superfamily)
+IPR045155,9,"Beta-lactamase class A, catalytic domain (domain)"
+IPR017974,9,"Claudin, conserved site (conserved_site)"
+IPR001357,8,BRCT domain (domain)
+IPR002955,8,Microtubule-associated protein Tau (family)
+IPR003597,8,Immunoglobulin C1-set (domain)
+IPR002460,8,Alpha-synuclein (family)
+IPR035963,8,"FERM superfamily, second domain (homologous_superfamily)"
+IPR018247,8,"EF-Hand 1, calcium-binding site (binding_site)"
+IPR001058,8,Synuclein (family)
+IPR050261,8,FrsA esterase (family)
+IPR000299,8,FERM domain (domain)
+IPR036427,8,Bromodomain-like superfamily (homologous_superfamily)
+IPR017871,8,"ABC transporter-like, conserved site (conserved_site)"
+IPR005467,8,Histidine kinase domain (domain)
+IPR011029,8,Death-like domain superfamily (homologous_superfamily)
+IPR001279,8,Metallo-beta-lactamase (domain)
+IPR003439,8,"ABC transporter-like, ATP-binding domain (domain)"
+IPR036236,8,Zinc finger C2H2 superfamily (homologous_superfamily)
+IPR019749,8,Band 4.1 domain (domain)
+IPR001680,8,WD40 repeat (repeat)
+IPR046357,8,Peptidyl-prolyl cis-trans isomerase domain superfamily (homologous_superfamily)
+IPR036866,8,Ribonuclease Z/Hydroxyacylglutathione hydrolase-like (homologous_superfamily)
+IPR003006,8,"Immunoglobulin/major histocompatibility complex, conserved site (conserved_site)"
+IPR001487,8,Bromodomain (domain)
+IPR027324,8,Microtubule associated protein MAP2/MAP4/Tau (family)
+IPR001509,8,NAD-dependent epimerase/dehydratase (domain)
+IPR001084,8,"Microtubule associated protein, tubulin-binding repeat (repeat)"
+IPR000742,8,EGF-like domain (domain)
+IPR008949,7,Isoprenoid synthase domain superfamily (homologous_superfamily)
+IPR017972,7,"Cytochrome P450, conserved site (conserved_site)"
+IPR004168,7,PPAK motif (repeat)
+IPR027275,7,PRC-barrel domain (domain)
+IPR001806,7,Small GTPase (family)
+IPR023650,7,"Beta-lactamase, class-A active site (active_site)"
+IPR001478,7,PDZ domain (domain)
+IPR023214,7,HAD superfamily (homologous_superfamily)
+IPR019775,7,"WD40 repeat, conserved site (conserved_site)"
+IPR002397,7,"Cytochrome P450, B-class (family)"
+IPR036097,7,"Signal transduction histidine kinase, dimerisation/phosphoacceptor domain superfamily (homologous_superfamily)"
+IPR036034,7,PDZ superfamily (homologous_superfamily)
+IPR003661,7,"Signal transduction histidine kinase, dimerisation/phosphoacceptor domain (domain)"
+IPR015129,7,"Titin, Z repeat (repeat)"
+IPR013087,7,Zinc finger C2H2-type (domain)
+IPR032466,7,Metal-dependent hydrolase (homologous_superfamily)
+IPR019748,7,FERM central domain (domain)
+IPR002110,7,Ankyrin repeat (repeat)
+IPR011033,7,PRC-barrel-like superfamily (homologous_superfamily)
+IPR004358,7,"Signal transduction histidine kinase-related protein, C-terminal (domain)"
+IPR036396,7,Cytochrome P450 superfamily (homologous_superfamily)
+IPR040849,7,"MyBP-C, tri-helix bundle domain (domain)"
+IPR000566,7,Lipocalin/cytosolic fatty-acid binding domain (domain)
+IPR036770,7,Ankyrin repeat-containing domain superfamily (homologous_superfamily)
+IPR050198,7,Non-receptor tyrosine kinases involved in cell signaling (family)
+IPR001128,7,Cytochrome P450 (family)
+IPR036420,7,BRCT domain superfamily (homologous_superfamily)
+IPR043129,7,"ATPase, nucleotide binding domain (homologous_superfamily)"
+IPR001179,7,FKBP-type peptidyl-prolyl cis-trans isomerase domain (domain)
+IPR036412,7,HAD-like superfamily (homologous_superfamily)
+IPR031259,6,Intracellular lipid binding protein (family)
+IPR036397,6,Ribonuclease H superfamily (homologous_superfamily)
+IPR000605,6,"Helicase, superfamily 3, single-stranded DNA/RNA virus (domain)"
+IPR016024,6,Armadillo-type fold (homologous_superfamily)
+IPR012337,6,Ribonuclease H-like superfamily (homologous_superfamily)
+IPR005123,6,Oxoglutarate/iron-dependent dioxygenase domain (domain)
+IPR015810,6,"Photosynthetic reaction centre, H subunit, N-terminal (domain)"
+IPR012317,6,"Poly(ADP-ribose) polymerase, catalytic domain (domain)"
+IPR000654,6,"G-protein alpha subunit, group Q (family)"
+IPR003074,6,Peroxisome proliferator-activated receptor (family)
+IPR011992,6,EF-hand domain pair (homologous_superfamily)
+IPR013761,6,Sterile alpha motif/pointed domain superfamily (homologous_superfamily)
+IPR005652,6,"Photosynthetic reaction centre, H subunit (family)"
+IPR017937,6,"Thioredoxin, conserved site (conserved_site)"
+IPR013766,6,Thioredoxin domain (domain)
+IPR011011,6,"Zinc finger, FYVE/PHD-type (homologous_superfamily)"
+IPR018359,6,"Bromodomain, conserved site (conserved_site)"
+IPR037097,6,"Photosynthetic reaction centre, H subunit, N-terminal domain superfamily (homologous_superfamily)"
+IPR050425,6,NAD(P)-dependent dehydratase-like (family)
+IPR000463,6,Cytosolic fatty-acid binding (domain)
+IPR014747,6,"Bacterial photosynthetic reaction centre, H-chain, C-terminal (homologous_superfamily)"
+IPR050855,6,Metallo-beta-lactamase type 2-like (family)
+IPR001965,6,"Zinc finger, PHD-type (domain)"
+IPR006439,6,"HAD hydrolase, subfamily IA (family)"
+IPR011042,6,"Six-bladed beta-propeller, TolB-like (homologous_superfamily)"
+IPR014759,5,"Helicase, superfamily 3, single-stranded RNA virus (domain)"
+IPR000504,5,RNA recognition motif domain (domain)
+IPR015854,5,"ABC transporter, lipoprotein release, LolD-like (family)"
+IPR044067,5,Picornavirales 3C/3C-like protease domain (domain)
+IPR016130,5,"Protein-tyrosine phosphatase, active site (active_site)"
+IPR000698,5,Arrestin (family)
+IPR017864,5,"Arrestin, conserved site (conserved_site)"
+IPR014753,5,"Arrestin, N-terminal (homologous_superfamily)"
+IPR017925,5,Dihydrofolate reductase conserved site (conserved_site)
+IPR000859,5,CUB domain (domain)
+IPR019787,5,"Zinc finger, PHD-finger (domain)"
+IPR002048,5,EF-hand domain (domain)
+IPR022590,5,"Peroxisome proliferator-activated receptor gamma, N-terminal (domain)"
+IPR001849,5,Pleckstrin homology domain (domain)
+IPR000477,5,Reverse transcriptase domain (domain)
+IPR000387,5,Tyrosine-specific protein phosphatases domain (domain)
+IPR014752,5,"Arrestin-like, C-terminal (homologous_superfamily)"
+IPR011050,5,Pectin lyase fold/virulence factor (homologous_superfamily)
+IPR005286,5,Cell division protein FtsE (family)
+IPR000014,5,PAS domain (domain)
+IPR004005,5,Calicivirus coat protein (domain)
+IPR003959,5,"ATPase, AAA-type, core (domain)"
+IPR003660,5,HAMP domain (domain)
+IPR009050,5,Globin-like superfamily (homologous_superfamily)
+IPR003595,5,"Protein-tyrosine phosphatase, catalytic (domain)"
+IPR000199,5,"Peptidase C3A/C3B, picornaviral (domain)"
+IPR011006,5,CheY-like superfamily (homologous_superfamily)
+IPR011021,5,"Arrestin-like, N-terminal (domain)"
+IPR011022,5,Arrestin C-terminal-like domain (domain)
+IPR011250,5,"Outer membrane protein/outer membrane enzyme PagP, beta-barrel (homologous_superfamily)"
+IPR014352,5,FERM/acyl-CoA-binding protein superfamily (homologous_superfamily)
+IPR011989,5,Armadillo-like helical (homologous_superfamily)
+IPR000242,5,"Tyrosine-specific protein phosphatase, PTPase domain (domain)"
+IPR012259,5,Dihydrofolate reductase (family)
+IPR012334,5,Pectin lyase fold (homologous_superfamily)
+IPR012340,5,"Nucleic acid-binding, OB-fold (homologous_superfamily)"
+IPR012677,5,Nucleotide-binding alpha-beta plait domain superfamily (homologous_superfamily)
+IPR000315,5,B-box-type zinc finger (domain)
+IPR003077,5,Peroxisome proliferator-activated receptor gamma (family)
+IPR024072,5,Dihydrofolate reductase-like domain superfamily (homologous_superfamily)
+IPR013643,5,Calicivirus coat protein C-terminal (domain)
+IPR014001,5,"Helicase superfamily 1/2, ATP-binding domain (domain)"
+IPR001796,5,Dihydrofolate reductase domain (domain)
+IPR001638,5,Solute-binding protein family 3/N-terminal domain of MltF (domain)
+IPR035979,5,RNA-binding domain superfamily (homologous_superfamily)
+IPR001650,5,"Helicase, C-terminal domain-like (domain)"
+IPR035914,5,"Spermadhesin, CUB domain superfamily (homologous_superfamily)"
+IPR001547,5,"Glycoside hydrolase, family 5 (domain)"
+IPR029021,5,Protein-tyrosine phosphatase-like (homologous_superfamily)
+IPR035965,5,PAS domain superfamily (homologous_superfamily)
+IPR029046,5,Lipoprotein localisation LolA/LolB/LppX (homologous_superfamily)
+IPR010999,4,Retroviral matrix protein (homologous_superfamily)
+IPR016087,4,Chalcone isomerase (domain)
+IPR016088,4,"Chalcone isomerase, 3-layer sandwich (homologous_superfamily)"
+IPR001223,4,"Glycoside hydrolase family 18, catalytic domain (domain)"
+IPR050208,4,Antigen-presenting and immune regulatory MHC class I-related (family)
+IPR002475,4,Bcl2-like (family)
+IPR000209,4,Peptidase S8/S53 domain (domain)
+IPR016181,4,Acyl-CoA N-acyltransferase (homologous_superfamily)
+IPR016187,4,C-type lectin fold (homologous_superfamily)
+IPR000639,4,Epoxide hydrolase-like (family)
+IPR050279,4,Plant defense and hormone signaling protein (family)
+IPR036616,4,"Poly(ADP-ribose) polymerase, regulatory domain superfamily (homologous_superfamily)"
+IPR050515,4,Bacterial Transpeptidases and Beta-Lactamases (family)
+IPR003527,4,"Mitogen-activated protein (MAP) kinase, conserved site (conserved_site)"
+IPR009081,4,Phosphopantetheine binding ACP domain (domain)
+IPR036909,4,Cytochrome c-like domain superfamily (homologous_superfamily)
+IPR027443,4,Isopenicillin N synthase-like superfamily (homologous_superfamily)
+IPR009057,4,Homedomain-like superfamily (homologous_superfamily)
+IPR002347,4,Short-chain dehydrogenase/reductase SDR (family)
+IPR009056,4,Cytochrome c-like domain (domain)
+IPR037055,4,MHC class I-like antigen recognition-like superfamily (homologous_superfamily)
+IPR017947,4,"Aryldialkylphosphatase, zinc-binding site (binding_site)"
+IPR004564,4,Outer membrane lipoprotein carrier protein LolA-like (family)
+IPR008979,4,Galactose-binding-like domain superfamily (homologous_superfamily)
+IPR018114,4,"Serine proteases, trypsin family, histidine active site (active_site)"
+IPR018313,4,"Solute-binding protein family 3, conserved site (conserved_site)"
+IPR018338,4,"Carbonic anhydrase, alpha-class, conserved site (conserved_site)"
+IPR027370,4,"Zinc finger, RING-type, eukaryotic (domain)"
+IPR000157,4,Toll/interleukin-1 receptor homology (TIR) domain (domain)
+IPR044846,4,Glycoside hydrolase family 10 (family)
+IPR008916,4,"Retrovirus capsid, C-terminal (homologous_superfamily)"
+IPR015797,4,NUDIX hydrolase-like domain superfamily (homologous_superfamily)
+IPR032695,4,Integrin domain superfamily (homologous_superfamily)
+IPR050117,4,Mitogen-activated protein kinase (family)
+IPR036812,4,NADP-dependent oxidoreductase domain superfamily (homologous_superfamily)
+IPR033116,4,"Serine proteases, trypsin family, serine active site (active_site)"
+IPR036736,4,ACP-like superfamily (homologous_superfamily)
+IPR036834,4,Bcl-2-like superfamily (homologous_superfamily)
+IPR036852,4,Peptidase S8/S53 domain superfamily (homologous_superfamily)
+IPR012292,4,Globin/Protoglobin (homologous_superfamily)
+IPR013111,4,"EGF-like domain, extracellular (domain)"
+IPR036734,4,Neurotransmitter-gated ion-channel ligand-binding domain superfamily (homologous_superfamily)
+IPR046371,4,"Bcl-2, Bcl-2 homology region 1-3 (domain)"
+IPR035897,4,Toll/interleukin-1 receptor homology (TIR) domain superfamily (homologous_superfamily)
+IPR013217,4,Methyltransferase type 12 (domain)
+IPR011162,4,MHC classes I/II-like antigen recognition protein (homologous_superfamily)
+IPR011161,4,MHC class I-like antigen recognition-like (domain)
+IPR001155,4,"NADH:flavin oxidoreductase/NADH oxidase, N-terminal (domain)"
+IPR001148,4,Alpha carbonic anhydrase domain (domain)
+IPR045345,4,"Retroviral nucleocapsid Gag protein p24, C-terminal domain (domain)"
+IPR013806,4,Kringle-like fold (homologous_superfamily)
+IPR026298,4,Bcl-2 family (family)
+IPR014722,4,"Large ribosomal subunit protein uL2, domain 2 (homologous_superfamily)"
+IPR036875,4,"Zinc finger, CCHC-type superfamily (homologous_superfamily)"
+IPR001559,4,Phosphotriesterase (family)
+IPR000483,4,"Cysteine-rich flanking region, C-terminal (domain)"
+IPR050167,4,Serine/threonine-protein kinase (family)
+IPR044861,4,"Isopenicillin N synthase-like, Fe(2+) 2OG dioxygenase domain (domain)"
+IPR015500,4,"Peptidase S8, subtilisin-related (family)"
+IPR008919,4,"Retrovirus capsid, N-terminal (homologous_superfamily)"
+IPR001460,4,"Penicillin-binding protein, transpeptidase (domain)"
+IPR020568,4,Ribosomal protein uS5 domain 2-type superfamily (homologous_superfamily)
+IPR001000,4,Glycoside hydrolase family 10 domain (domain)
+IPR001676,4,Picornavirus capsid (domain)
+IPR006311,4,"Twin-arginine translocation pathway, signal sequence (conserved_site)"
+IPR020717,4,"Apoptosis regulator, Bcl-2, BH1 motif, conserved site (conserved_site)"
+IPR020726,4,"Apoptosis regulator, Bcl-2, BH2 motif, conserved site (conserved_site)"
+IPR026992,4,Non-haem dioxygenase N-terminal domain (domain)
+IPR020728,4,"Apoptosis regulator, Bcl-2, BH3 motif, conserved site (conserved_site)"
+IPR020806,4,"Polyketide synthase-like, phosphopantetheine-binding domain (domain)"
+IPR001039,4,"MHC class I alpha chain, alpha1 alpha2 domains (domain)"
+IPR006202,4,Neurotransmitter-gated ion-channel ligand-binding domain (domain)
+IPR023561,4,"Carbonic anhydrase, alpha-class (family)"
+IPR023393,4,START-like domain superfamily (homologous_superfamily)
+IPR020902,4,Actin/actin-like conserved site (conserved_site)
+IPR006201,4,Neurotransmitter-gated ion-channel (family)
+IPR001969,4,"Aspartic peptidase, active site (active_site)"
+IPR000086,4,NUDIX hydrolase domain (domain)
+IPR021109,4,Aspartic peptidase domain superfamily (homologous_superfamily)
+IPR023346,4,Lysozyme-like domain superfamily (homologous_superfamily)
+IPR006140,4,"D-isomer specific 2-hydroxyacid dehydrogenase, NAD-binding domain (domain)"
+IPR022398,4,"Peptidase S8, subtilisin, His-active site (active_site)"
+IPR004102,4,"Poly(ADP-ribose) polymerase, regulatory domain (domain)"
+IPR006139,4,"D-isomer specific 2-hydroxyacid dehydrogenase, catalytic domain (domain)"
+IPR022742,4,"Serine aminopeptidase, S33 (domain)"
+IPR001878,4,"Zinc finger, CCHC-type (domain)"
+IPR020472,4,G-protein beta WD-40 repeat (repeat)
+IPR023210,4,NADP-dependent oxidoreductase domain (domain)
+IPR001254,4,"Serine proteases, trypsin domain (domain)"
+IPR019931,4,LPXTG cell wall anchor domain (domain)
+IPR023828,4,"Peptidase S8, subtilisin, Ser-active site (active_site)"
+IPR000961,4,"AGC-kinase, C-terminal (domain)"
+IPR001789,4,"Signal transduction response regulator, receiver domain (domain)"
+IPR051044,4,Monoacylglycerol and Diacylglycerol Lipase (family)
+IPR000971,4,Globin (domain)
+IPR005877,4,YSIRK Gram-positive signal peptide (domain)
+IPR036298,4,Chalcone isomerase superfamily (homologous_superfamily)
+IPR036398,4,Alpha carbonic anhydrase domain superfamily (homologous_superfamily)
+IPR051540,4,S-2-haloalkanoic acid dehalogenase (family)
+IPR004000,4,Actin family (family)
+IPR004001,4,"Actin, conserved site (conserved_site)"
+IPR006328,4,L-2-Haloacid dehalogenase (family)
+IPR004825,3,Insulin (family)
+IPR035959,3,RutC-like superfamily (homologous_superfamily)
+IPR032710,3,NTF2-like domain superfamily (homologous_superfamily)
+IPR050130,3,ATP-dependent Clp protease/Chaperone ClpA/ClpB (family)
+IPR004575,3,Cdk-activating kinase assembly factor MAT1/Tfb3 (family)
+IPR005135,3,Endonuclease/exonuclease/phosphatase (domain)
+IPR036719,3,Neurotransmitter-gated ion-channel transmembrane domain superfamily (homologous_superfamily)
+IPR011032,3,GroES-like superfamily (homologous_superfamily)
+IPR054843,3,"Slam-dependent hemophilin, C-terminal domain (domain)"
+IPR011696,3,Huwentoxin-1 family (family)
+IPR054536,3,"HphA, C-terminal domain (domain)"
+IPR011583,3,"Chitinase II/V-like, catalytic domain (domain)"
+IPR011070,3,"Globular protein, non-globular alpha/beta subunit (homologous_superfamily)"
+IPR035814,3,"Procollagen C-endopeptidase enhancer, NTR domain (domain)"
+IPR035892,3,C2 domain superfamily (homologous_superfamily)
+IPR011990,3,Tetratricopeptide-like helical domain superfamily (homologous_superfamily)
+IPR036282,3,"Glutathione S-transferase, C-terminal domain superfamily (homologous_superfamily)"
+IPR006028,3,Gamma-aminobutyric acid A receptor/Glycine receptor alpha (family)
+IPR006056,3,RidA family (family)
+IPR011178,3,"Amyloidogenic glycoprotein, copper-binding (domain)"
+IPR006059,3,Bacterial-type extracellular solute-binding protein (family)
+IPR008798,3,Avirulence B/C (family)
+IPR054535,3,"HphA, N-terminal heme-binding domain (domain)"
+IPR050131,3,Subtilisin-like serine protease (family)
+IPR008967,3,"p53-like transcription factor, DNA-binding domain superfamily (homologous_superfamily)"
+IPR036176,3,E2 domain superfamily (homologous_superfamily)
+IPR050491,3,Bacterial Cell Wall Synthesis and Modification (family)
+IPR012354,3,Esterase/lipase (family)
+IPR051497,3,Developmental and Hematopoietic Transcription Factors (family)
+IPR008993,3,"Tissue inhibitor of metalloproteinases-like, OB-fold (homologous_superfamily)"
+IPR051286,3,Janus Kinase (JAK) (family)
+IPR008154,3,"Amyloidogenic glycoprotein, extracellular (domain)"
+IPR006061,3,"Solute-binding family 1, conserved site (conserved_site)"
+IPR050689,3,FKBP-type Peptidyl-prolyl cis-trans Isomerase (family)
+IPR008155,3,Amyloidogenic glycoprotein (family)
+IPR036443,3,"Zinc finger, RanBP2-type superfamily (homologous_superfamily)"
+IPR008688,3,"ATP synthase, F0 complex, subunit B/MI25 (family)"
+IPR036454,3,"Amyloidogenic glycoprotein, heparin-binding domain superfamily (homologous_superfamily)"
+IPR050841,3,
+IPR036203,3,"Poliovirus core protein 3a, soluble domain (homologous_superfamily)"
+IPR007060,3,Septum formation initiator FtsL/DivIC (family)
+IPR036231,3,Avirulence B/C superfamily (homologous_superfamily)
+IPR050386,3,Glycosyl Hydrolase 5 (Cellulase A) (family)
+IPR050380,3,Immune Recognition and Response Modulators (family)
+IPR050284,3,Histone deacetylase and polyamine deacetylase (family)
+IPR036438,3,Insulin-like superfamily (homologous_superfamily)
+IPR050231,3,Iron/ascorbate-dependent oxidoreductase (family)
+IPR036628,3,"Clp, N-terminal domain superfamily (homologous_superfamily)"
+IPR010345,3,Interleukin-17 family (family)
+IPR053495,3,Avirulence B/C-like (family)
+IPR036669,3,"Amyloidogenic glycoprotein, copper-binding domain superfamily (homologous_superfamily)"
+IPR035983,3,"HECT, E3 ligase catalytic domain (homologous_superfamily)"
+IPR006175,3,YjgF/YER057c/UK114 family (family)
+IPR006162,3,Phosphopantetheine attachment site (ptm)
+IPR036691,3,Endonuclease/exonuclease/phosphatase superfamily (homologous_superfamily)
+IPR050134,3,NAD-dependent sirtuin protein deacylases (family)
+IPR038178,3,Kringle superfamily (homologous_superfamily)
+IPR014710,3,RmlC-like jelly roll fold (homologous_superfamily)
+IPR050095,3,Energy-coupling factor transporter ATP-binding (family)
+IPR019747,3,FERM conserved site (conserved_site)
+IPR020471,3,Aldo-keto reductase (family)
+IPR000008,3,C2 domain (domain)
+IPR020454,3,Diacylglycerol/phorbol-ester binding (domain)
+IPR020440,3,"Interleukin-17, chordata (family)"
+IPR020084,3,"NUDIX hydrolase, conserved site (conserved_site)"
+IPR019897,3,"RidA, conserved site (conserved_site)"
+IPR037138,3,Histone deacetylase domain superfamily (homologous_superfamily)
+IPR019786,3,"Zinc finger, PHD-type, conserved site (conserved_site)"
+IPR041408,3,Hemolysin coregulated protein (Hcp) TssD (family)
+IPR042080,3,"RNA 2'-phosphotransferase, N-terminal domain (homologous_superfamily)"
+IPR019745,3,"Amyloidogenic glycoprotein, intracellular domain, conserved site (conserved_site)"
+IPR048633,3,"Integrin alpha-X-like, third Ig-like domain (domain)"
+IPR019744,3,"Amyloidogenic glycoprotein, copper-binding domain conserved site (conserved_site)"
+IPR019543,3,Beta-amyloid precursor protein C-terminal (domain)
+IPR019489,3,"Clp ATPase, C-terminal (domain)"
+IPR042081,3,"RNA 2'-phosphotransferase, C-terminal domain (homologous_superfamily)"
+IPR018980,3,"FERM, C-terminal PH-like domain (domain)"
+IPR018979,3,"FERM, N-terminal (domain)"
+IPR018933,3,"Netrin module, non-TIMP type (domain)"
+IPR042379,3,Programmed cell death protein 1 (family)
+IPR018184,3,"Integrin alpha chain, C-terminal cytoplasmic region, conserved site (conserved_site)"
+IPR018061,3,Retropepsins (domain)
+IPR041381,3,"JAK1-3/TYK2, pleckstrin homology-like domain (domain)"
+IPR041161,3,"Tenascin, EGF-like domain (domain)"
+IPR020843,3,"Polyketide synthase, enoylreductase domain (domain)"
+IPR020901,3,"Proteinase inhibitor I2, Kunitz, conserved site (conserved_site)"
+IPR025661,3,"Cysteine peptidase, asparagine active site (active_site)"
+IPR025660,3,"Cysteine peptidase, histidine active site (active_site)"
+IPR024810,3,MAB21L/Cyclic GMP-AMP synthase-like receptor (family)
+IPR038372,3,"Influenza RNA-dependent RNA polymerase subunit PA, endonuclease domain (homologous_superfamily)"
+IPR039261,3,"Ferredoxin-NADP reductase (FNR), nucleotide-binding domain (homologous_superfamily)"
+IPR024329,3,"Amyloidogenic glycoprotein, E2 domain (domain)"
+IPR026444,3,Secretion system C-terminal sorting domain (domain)
+IPR026590,3,"Sirtuin family, catalytic core domain (domain)"
+IPR039417,3,Papain-like cysteine endopeptidase (domain)
+IPR023827,3,"Peptidase S8, subtilisin, Asp-active site (active_site)"
+IPR023801,3,Histone deacetylase domain (domain)
+IPR023696,3,Ureohydrolase domain superfamily (homologous_superfamily)
+IPR041033,3,"SpaA-like, prealbumin fold domain subgroup 1 (domain)"
+IPR023081,3,Cell division protein FtsB (family)
+IPR041046,3,"JAK, FERM F2 lobe domain (domain)"
+IPR038050,3,Neuronal acetylcholine receptor (homologous_superfamily)
+IPR022353,3,"Insulin, conserved site (conserved_site)"
+IPR022352,3,Insulin family (family)
+IPR041155,3,FERM F1 lobe ubiquitin-like domain (domain)
+IPR037197,3,WWE domain superfamily (homologous_superfamily)
+IPR020904,3,"Short-chain dehydrogenase/reductase, conserved site (conserved_site)"
+IPR018056,3,"Kringle, conserved site (conserved_site)"
+IPR043519,3,Nucleotidyltransferase superfamily (homologous_superfamily)
+IPR017938,3,Riboflavin synthase-like beta-barrel (homologous_superfamily)
+IPR045247,3,Oxidoreductase Oye-like (family)
+IPR029070,3,Chitinase insertion domain superfamily (homologous_superfamily)
+IPR014720,3,Double-stranded RNA-binding domain (domain)
+IPR029753,3,"D-isomer specific 2-hydroxyacid dehydrogenase, NAD-binding domain conserved site (conserved_site)"
+IPR030947,3,Energy-coupling factor transporter ATP-binding protein EcfA1 (family)
+IPR013837,3,"ATP synthase, F0 complex, subunit B (family)"
+IPR031158,3,"Glycosyl hydrolases family 10, active site (active_site)"
+IPR013649,3,"Integrin alpha, first immunoglubulin-like domain (domain)"
+IPR036873,3,Rhodanese-like domain superfamily (homologous_superfamily)
+IPR013519,3,Integrin alpha beta-propellor (repeat)
+IPR013517,3,FG-GAP repeat (repeat)
+IPR046328,3,ETS family (family)
+IPR046349,3,C1-like domain superfamily (homologous_superfamily)
+IPR013201,3,Cathepsin propeptide inhibitor domain (I29) (domain)
+IPR013151,3,Immunoglobulin-like beta-sandwich domain (domain)
+IPR013149,3,"Alcohol dehydrogenase-like, C-terminal (domain)"
+IPR013128,3,Peptidase C1A (family)
+IPR013112,3,FAD-binding 8 (domain)
+IPR036862,3,"Integrase, C-terminal domain superfamily, retroviral (homologous_superfamily)"
+IPR046903,3,"Mab-21-like, nucleotidyltransferase domain (domain)"
+IPR046906,3,"Mab-21-like, HhH/H2TH-like domain (domain)"
+IPR048285,3,"Integrin alpha, second immunoglobulin-like domain (domain)"
+IPR036880,3,Pancreatic trypsin inhibitor Kunitz domain superfamily (homologous_superfamily)
+IPR036895,3,Uracil-DNA glycosylase-like domain superfamily (homologous_superfamily)
+IPR017927,3,"FAD-binding domain, ferredoxin reductase-type (domain)"
+IPR014838,3,Poliovirus 3A protein-like (domain)
+IPR037011,3,Phycoerythrin-like alpha chain superfamily (homologous_superfamily)
+IPR044066,3,TRIAD supradomain (domain)
+IPR017892,3,"Protein kinase, C-terminal (domain)"
+IPR028082,3,Periplasmic binding protein-like I (homologous_superfamily)
+IPR017452,3,"GPCR, rhodopsin-like, 7TM (domain)"
+IPR036377,3,Gp120 core superfamily (homologous_superfamily)
+IPR017241,3,Toll-like receptor (family)
+IPR016461,3,O-methyltransferase COMT-type (family)
+IPR028994,3,"Integrin alpha, N-terminal (homologous_superfamily)"
+IPR016251,3,"Tyrosine-protein kinase, non-receptor Jak/Tyk2 (family)"
+IPR016201,3,PSI domain (domain)
+IPR016186,3,C-type lectin-like/link domain superfamily (homologous_superfamily)
+IPR016179,3,Insulin-like (domain)
+IPR029016,3,GAF-like domain superfamily (homologous_superfamily)
+IPR016039,3,Thiolase-like (homologous_superfamily)
+IPR029033,3,Histidine phosphatase superfamily (homologous_superfamily)
+IPR015877,3,"Cdk-activating kinase assembly factor MAT1, centre (domain)"
+IPR015856,3,"ABC transporter, CbiO/EcfA subunit (domain)"
+IPR029034,3,Cystine-knot cytokine (homologous_superfamily)
+IPR029035,3,DHS-like NAD/FAD-binding domain superfamily (homologous_superfamily)
+IPR015849,3,"Amyloidogenic glycoprotein, heparin-binding (domain)"
+IPR044156,3,Galectin-like (family)
+IPR000001,3,Kringle (domain)
+IPR001296,3,"Glycosyl transferase, family 1 (domain)"
+IPR001037,3,"Integrase, C-terminal, retroviral (domain)"
+IPR004176,3,"Clp, repeat (R) domain (domain)"
+IPR003138,3,Picornavirus coat protein VP4 (family)
+IPR001763,3,Rhodanese-like domain (domain)
+IPR001009,3,Influenza RNA-dependent RNA polymerase subunit PA (family)
+IPR002527,3,Picornavirus 2B protein (domain)
+IPR000668,3,"Peptidase C1A, papain C-terminal (domain)"
+IPR002223,3,Pancreatic trypsin inhibitor Kunitz domain (domain)
+IPR001134,3,Netrin domain (domain)
+IPR000569,3,HECT domain (domain)
+IPR001660,3,Sterile alpha motif domain (domain)
+IPR002219,3,"Protein kinase C-like, phorbol ester/diacylglycerol-binding domain (domain)"
+IPR001425,3,Archaeal/bacterial/fungal rhodopsins (family)
+IPR001876,3,"Zinc finger, RanBP2-type (domain)"
+IPR004228,3,Phycoerythrin alpha chain (domain)
+IPR000169,3,"Cysteine peptidase, cysteine active site (active_site)"
+IPR000418,3,Ets domain (domain)
+IPR000413,3,Integrin alpha chain (family)
+IPR001356,3,Homeodomain (domain)
+IPR003118,3,Pointed domain (domain)
+IPR002507,3,Reovirus non-structural protein sigma NS (family)
+IPR001610,3,PAC motif (repeat)
+IPR004170,3,WWE domain (domain)
+IPR001788,3,"RNA-dependent RNA polymerase, alsuviricetes (domain)"
+IPR000700,3,"PAS-associated, C-terminal (domain)"
+IPR001466,3,Beta-lactamase-related (domain)
+IPR001018,3,"Beta-lactamase, class-B, conserved site (conserved_site)"
+IPR001584,3,"Integrase, catalytic core (domain)"
+IPR002999,3,Tudor domain (domain)
+IPR003000,3,Sirtuin family (family)
+IPR000777,3,"Human immunodeficiency virus 1, envelope glycoprotein Gp120 (domain)"
+IPR001995,3,"Peptidase A2A, retrovirus, catalytic (domain)"
+IPR002909,3,IPT domain (domain)
+IPR002588,3,Alphavirus-like methyltransferase domain (domain)
+IPR001079,3,"Galectin, carbohydrate recognition domain (domain)"
+IPR000092,3,Polyprenyl synthetase-like (family)
+IPR000286,3,Histone deacetylase family (family)
+IPR002156,3,Ribonuclease H domain (domain)
+IPR002745,3,Phosphotransferase KptA/Tpt1 (family)
+IPR001314,3,"Peptidase S1A, chymotrypsin family (family)"
+IPR000081,3,"Peptidase C3, picornavirus core protein 2A (domain)"
+IPR001315,3,CARD domain (domain)
+IPR001270,3,ClpA/B family (family)
+IPR003903,3,Ubiquitin interacting motif (conserved_site)
+IPR000276,3,"G protein-coupled receptor, rhodopsin-like (family)"
+IPR003308,3,"Integrase, N-terminal zinc-binding domain (domain)"
+IPR001258,3,NHL repeat (repeat)
+IPR023168,2,"Aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase, C-terminal, domain 2 (homologous_superfamily)"
+IPR013210,2,"Leucine-rich repeat-containing N-terminal, plant-type (domain)"
+IPR014031,2,"Beta-ketoacyl synthase, C-terminal (domain)"
+IPR000390,2,Small drug/metabolite transporter protein family (family)
+IPR014030,2,"Beta-ketoacyl synthase-like, N-terminal (domain)"
+IPR000404,2,Flavivirus non-structural protein NS4A (domain)
+IPR013178,2,Histone acetyltransferase Rtt109/CBP (family)
+IPR037103,2,"Tubulin/FtsZ-like, C-terminal domain (homologous_superfamily)"
+IPR002901,2,Mannosyl-glycoprotein endo-beta-N-acetylglucosamidase-like domain (domain)
+IPR013154,2,"Alcohol dehydrogenase-like, N-terminal (domain)"
+IPR014043,2,Acyl transferase domain (domain)
+IPR014046,2,Diadenylate cyclase (family)
+IPR037071,2,"Amyloidogenic glycoprotein, amyloid-beta peptide superfamily (homologous_superfamily)"
+IPR003008,2,"Tubulin/FtsZ, GTPase domain (domain)"
+IPR003018,2,GAF domain (domain)
+IPR023148,2,"tRNA (guanine-N(1)-)-methyltransferase, C-terminal domain superfamily (homologous_superfamily)"
+IPR000487,2,"Non-structural protein NS2B, flavivirus (domain)"
+IPR023594,2,"Haloalkane dehalogenase, subfamily 2 (family)"
+IPR037045,2,Peptidase S8 propeptide/proteinase inhibitor I9 superfamily (homologous_superfamily)
+IPR046811,2,"RNA-directed RNA polymerase, thumb subdomain, flavivirus (domain)"
+IPR013162,2,"CD80-like, immunoglobulin C2-set (domain)"
+IPR023198,2,"Phosphoglycolate phosphatase-like, domain 2 (homologous_superfamily)"
+IPR045324,2,Small multidrug resistance protein (family)
+IPR013656,2,PAS fold-4 (domain)
+IPR013803,2,"Amyloidogenic glycoprotein, amyloid-beta peptide (domain)"
+IPR037172,2,Flavivirus capsid protein C superfamily (homologous_superfamily)
+IPR013815,2,"ATP-grasp fold, subdomain 1 (homologous_superfamily)"
+IPR013756,2,"Flaviviral glycoprotein E, central domain, subdomain 2 (homologous_superfamily)"
+IPR013755,2,"Flaviviral glycoprotein E, central domain, subdomain 1 (homologous_superfamily)"
+IPR013830,2,SGNH hydrolase-type esterase domain (domain)
+IPR002883,2,CBM10/dockerin domain (domain)
+IPR045851,2,"AMP-binding enzyme, C-terminal domain superfamily (homologous_superfamily)"
+IPR013694,2,VIT domain (domain)
+IPR001850,2,"Non-structural protein NS3, peptidase S7, flavivirus (domain)"
+IPR023365,2,Sortase domain superfamily (homologous_superfamily)
+IPR001870,2,B30.2/SPRY domain (domain)
+IPR045864,2,Class II Aminoacyl-tRNA synthetase/Biotinyl protein ligase (BPL) and lipoyl protein ligase (LPL) (homologous_superfamily)
+IPR013872,2,p53 transactivation domain (domain)
+IPR046341,2,SET domain superfamily (homologous_superfamily)
+IPR002919,2,"Trypsin Inhibitor-like, cysteine rich domain (domain)"
+IPR001881,2,EGF-like calcium-binding domain (domain)
+IPR045585,2,"Diadenylate cyclase CdaA, N-terminal domain (domain)"
+IPR002925,2,Dienelactone hydrolase (domain)
+IPR023213,2,Chloramphenicol acetyltransferase-like domain superfamily (homologous_superfamily)
+IPR002877,2,"Ribosomal RNA methyltransferase, FtsJ domain (domain)"
+IPR013520,2,"Exonuclease, RNase T/DNA polymerase III (domain)"
+IPR037151,2,Alpha-ketoglutarate-dependent dioxygenase AlkB-like superfamily (homologous_superfamily)
+IPR046350,2,Cystatin superfamily (homologous_superfamily)
+IPR000336,2,"Flavivirus/Alphavirus glycoprotein, immunoglobulin-like domain superfamily (homologous_superfamily)"
+IPR029026,2,"tRNA (guanine-N1-)-methyltransferase, N-terminal (homologous_superfamily)"
+IPR013043,2,Domain of unknown function DUF1595 (domain)
+IPR011098,2,G5 domain (domain)
+IPR011047,2,Quinoprotein alcohol dehydrogenase-like superfamily (homologous_superfamily)
+IPR048875,2,"BIRC2/3-like, UBA domain (domain)"
+IPR003347,2,JmjC domain (domain)
+IPR011051,2,RmlC-like cupin domain superfamily (homologous_superfamily)
+IPR025157,2,Hemagglutinin repeat (repeat)
+IPR025155,2,WxxW domain (domain)
+IPR025110,2,"AMP-binding enzyme, C-terminal domain (domain)"
+IPR024949,2,Bet v I type allergen (family)
+IPR013042,2,Domain of unknown function DUF1592 (domain)
+IPR048498,2,"USP8, WW domain (domain)"
+IPR036888,2,"DNA integrity scanning protein, DisA, N-terminal domain superfamily (homologous_superfamily)"
+IPR011330,2,"Glycoside hydrolase/deacetylase, beta/alpha-barrel (homologous_superfamily)"
+IPR024757,2,"Cell division protein FtsZ, C-terminal (domain)"
+IPR011492,2,"Non-structural protein NS3-like, DEAD box helicase, flavivirus (domain)"
+IPR024657,2,"COMPASS complex Set1 subunit, N-SET domain (domain)"
+IPR011545,2,DEAD/DEAH box helicase domain (domain)
+IPR048891,2,"Non-structural protein 3, zinc-binding domain (domain)"
+IPR001157,2,"Non-structural protein NS1, flavivirus (domain)"
+IPR025662,2,"Sigma-54 interaction domain, ATP-binding site 1 (binding_site)"
+IPR036861,2,Endochitinase-like superfamily (homologous_superfamily)
+IPR036779,2,LysM domain superfamily (homologous_superfamily)
+IPR026264,2,Type IV secretion system protein VirB8/PtlE (family)
+IPR026045,2,Ferric binding protein (family)
+IPR025997,2,Periplasmic binding protein (domain)
+IPR049883,2,NOTCH1 EGF-like calcium-binding domain (domain)
+IPR010982,2,"Lambda repressor-like, DNA-binding domain superfamily (homologous_superfamily)"
+IPR010987,2,"Glutathione S-transferase, C-terminal-like (domain)"
+IPR010991,2,"p53, tetramerisation domain (domain)"
+IPR010994,2,RuvA domain 2-like (homologous_superfamily)
+IPR001178,2,"Pesticidal crystal protein, domain II (domain)"
+IPR011008,2,Dimeric alpha-beta barrel (homologous_superfamily)
+IPR049486,2,"Flavivridae NS3 helicase, C-terminal helical domain (domain)"
+IPR049329,2,"Tomato mosaic virus helicase, N-terminal domain (domain)"
+IPR049296,2,"PARP1-like, PADR1 domain, N-terminal helical subdomain (domain)"
+IPR003390,2,"DNA integrity scanning protein, DisA, N-terminal (domain)"
+IPR024600,2,"Notch, C-terminal (domain)"
+IPR036908,2,RlpA-like domain superfamily (homologous_superfamily)
+IPR001122,2,"Capsid protein C, flavivirus (domain)"
+IPR012347,2,Ferritin-like (homologous_superfamily)
+IPR047252,2,TP53-binding protein 1-like (family)
+IPR047250,2,"TP53-binding protein 1-like, second BRCT domain (domain)"
+IPR012745,2,Pseudoazurin (family)
+IPR047249,2,"TP53-binding protein 1-like, first BRCT domain (domain)"
+IPR036957,2,"Zinc finger, PARP-type superfamily (homologous_superfamily)"
+IPR047191,2,"Stimulator of interferon genes protein, C-terminal (domain)"
+IPR047153,2,TRIM45/56/19-like (family)
+IPR014347,2,Tautomerase/MIF superfamily (homologous_superfamily)
+IPR036959,2,"Peptidase C12, ubiquitin carboxyl-terminal hydrolase superfamily (homologous_superfamily)"
+IPR047024,2,"Gamma-aminobutyric acid receptor subunit alpha 1-6, transmembrane domain (domain)"
+IPR012982,2,"PARP1-like, PADR1 domain, zinc ribbon fold (domain)"
+IPR001846,2,"von Willebrand factor, type D domain (domain)"
+IPR013032,2,"EGF-like, conserved site (conserved_site)"
+IPR013036,2,Domain of unknown function DUF1587 (domain)
+IPR013039,2,Domain of unknown function DUF1588 (domain)
+IPR047311,2,"RNA-dependent RNA polymerase, togavirus (domain)"
+IPR012346,2,"p53/RUNT-type transcription factor, DNA-binding domain superfamily (homologous_superfamily)"
+IPR011615,2,"p53, DNA-binding domain (domain)"
+IPR012344,2,"Matrix protein, lentiviral and alpha-retroviral, N-terminal (homologous_superfamily)"
+IPR036917,2,"Orange carotenoid-binding protein, N-terminal domain superfamily (homologous_superfamily)"
+IPR000328,2,Retroviral envelope protein GP41-like (domain)
+IPR011656,2,"Notch, NODP domain (domain)"
+IPR047559,2,"Heme-oxidized IRP2 ubiquitin ligase 1, modified RING finger, HC subclass (domain)"
+IPR011761,2,ATP-grasp fold (domain)
+IPR047558,2,"Heme-oxidized IRP2 ubiquitin ligase 1, BRcat domain (domain)"
+IPR047557,2,"Heme-oxidized IRP2 ubiquitin ligase 1, Rcat domain (domain)"
+IPR003139,2,Delta-retroviral matrix protein (domain)
+IPR011998,2,"Envelope glycoprotein E, central and dimerisation domain, flavivirus (domain)"
+IPR036930,2,WGR domain superfamily (homologous_superfamily)
+IPR047530,2,"RNA-dependent RNA polymerase, flavivirus (domain)"
+IPR024079,2,"Metallopeptidase, catalytic domain superfamily (homologous_superfamily)"
+IPR003126,2,"Zinc finger, UBR-type (domain)"
+IPR036941,2,Receptor L-domain superfamily (homologous_superfamily)
+IPR003116,2,Raf-like Ras-binding (domain)
+IPR001824,2,"Tyrosine-protein kinase, receptor class III, conserved site (conserved_site)"
+IPR000494,2,Receptor L-domain (domain)
+IPR014392,2,"Protein-tyrosine phosphatase, non-receptor type-14/21 (family)"
+IPR018170,2,"Aldo/keto reductase, conserved site (conserved_site)"
+IPR020693,2,"Tyrosine-protein kinase, non-receptor Jak2 (family)"
+IPR000916,2,Bet v I/Major latex protein (domain)
+IPR001007,2,VWFC domain (domain)
+IPR000923,2,Blue (type 1) copper domain (domain)
+IPR017970,2,"Homeobox, conserved site (conserved_site)"
+IPR017977,2,"Zona pellucida domain, conserved site (conserved_site)"
+IPR002049,2,Laminin-type EGF domain (domain)
+IPR018000,2,"Neurotransmitter-gated ion-channel, conserved site (conserved_site)"
+IPR042235,2,"Zona pellucida, ZP-C domain (homologous_superfamily)"
+IPR018085,2,"Uracil-DNA glycosylase, active site (active_site)"
+IPR018087,2,"Glycoside hydrolase, family 5, conserved site (conserved_site)"
+IPR001002,2,"Chitin-binding, type 1 (domain)"
+IPR018097,2,"EGF-like calcium-binding, conserved site (conserved_site)"
+IPR018119,2,"Strictosidine synthase, conserved region (domain)"
+IPR042184,2,"YqeY/Aim41, N-terminal domain (homologous_superfamily)"
+IPR042635,2,MEGF10/SREC1/2-like (family)
+IPR002017,2,Spectrin repeat (repeat)
+IPR002345,2,Lipocalin (family)
+IPR043058,2,"KRIT, N-terminal NPxY motif-rich domain superfamily (homologous_superfamily)"
+IPR000873,2,AMP-dependent synthetase/ligase domain (domain)
+IPR017360,2,Anthrax toxin receptor (family)
+IPR020831,2,Glyceraldehyde/Erythrose phosphate dehydrogenase family (family)
+IPR020830,2,"Glyceraldehyde 3-phosphate dehydrogenase, active site (active_site)"
+IPR020829,2,"Glyceraldehyde 3-phosphate dehydrogenase, catalytic domain (domain)"
+IPR020828,2,"Glyceraldehyde 3-phosphate dehydrogenase, NAD(P) binding domain (domain)"
+IPR042972,2,Insulinoma-associated protein 1/2 (family)
+IPR002350,2,Kazal domain (domain)
+IPR002376,2,"Formyl transferase, N-terminal (domain)"
+IPR017508,2,"HipA, N-terminal subdomain 1 (domain)"
+IPR020805,2,"Cell division protein FtsZ, conserved site (conserved_site)"
+IPR002372,2,Pyrrolo-quinoline quinone repeat (repeat)
+IPR017856,2,"Integrase-like, N-terminal (homologous_superfamily)"
+IPR002011,2,"Tyrosine-protein kinase, receptor class II, conserved site (conserved_site)"
+IPR018159,2,Spectrin/alpha-actinin (repeat)
+IPR018200,2,"Ubiquitin specific protease, conserved site (conserved_site)"
+IPR014412,2,"Genome polyprotein, Flavivirus (family)"
+IPR018201,2,"Beta-ketoacyl synthase, active site (active_site)"
+IPR000939,2,"Adenoviral fibre protein, repeat/shaft region (repeat)"
+IPR041668,2,Rh5 coiled-coil domain (domain)
+IPR019829,2,"Macrophage migration inhibitory factor, conserved site (conserved_site)"
+IPR041569,2,"AAA ATPase, AAA+ lid domain (domain)"
+IPR040557,2,"VIP1, N-terminal (domain)"
+IPR041546,2,"ClpA/ClpB, AAA lid domain (domain)"
+IPR041489,2,PDZ domain 6 (domain)
+IPR040632,2,"Sulfotransferase, S. mansonii-type (family)"
+IPR002172,2,Low-density lipoprotein (LDL) receptor class A repeat (repeat)
+IPR040926,2,"Cellular tumor antigen p53, transactivation domain 2 (domain)"
+IPR002165,2,Plexin repeat (repeat)
+IPR019004,2,Uncharacterised protein YqeY/Aim41 (family)
+IPR002117,2,p53 tumour suppressor family (family)
+IPR041100,2,T-Q ester bond containing domain (domain)
+IPR019587,2,Polyketide cyclase/dehydrase (family)
+IPR041782,2,"PTPN14/21, FERM domain C-lobe (domain)"
+IPR041791,2,"Krev interaction trapped protein 1, FERM domain C-lobe (domain)"
+IPR019954,2,Ubiquitin conserved site (conserved_site)
+IPR042002,2,Sortase C (family)
+IPR042098,2,Taurine dioxygenase TauD-like superfamily (homologous_superfamily)
+IPR000931,2,Adenovirus fibre protein (family)
+IPR018229,2,"Rhodopsin, retinal binding site (binding_site)"
+IPR020103,2,"Pseudouridine synthase, catalytic domain superfamily (homologous_superfamily)"
+IPR040079,2,Glutathione transferase family (family)
+IPR018316,2,"Tubulin/FtsZ, 2-layer sandwich domain (domain)"
+IPR040205,2,HIN-200 family (family)
+IPR019956,2,Ubiquitin domain (domain)
+IPR002181,2,"Fibrinogen, alpha/beta/gamma chain, C-terminal globular domain (domain)"
+IPR041906,2,"Ribosomal S6 kinase, N-terminal catalytic domain (domain)"
+IPR018371,2,"Chitin-binding, type 1, conserved site (conserved_site)"
+IPR018389,2,TRAP transporter solute receptor DctP (family)
+IPR018391,2,Pyrrolo-quinoline quinone beta-propeller repeat (repeat)
+IPR018392,2,LysM domain (domain)
+IPR000867,2,"Insulin-like growth factor-binding protein, IGFBP (domain)"
+IPR002386,2,Amicyanin/Pseudoazurin (family)
+IPR020841,2,"Polyketide synthase, beta-ketoacyl synthase domain (domain)"
+IPR017182,2,Methyltransferase METTL16/PsiM (family)
+IPR044570,2,Histone-lysine N-methyltransferase Set1-like (family)
+IPR015063,2,USP8 dimerisation domain (domain)
+IPR015125,2,Tumour suppressor p53-binding protein-1 Tudor domain (domain)
+IPR015233,2,"Orange carotenoid-binding protein, N-terminal (domain)"
+IPR038055,2,"Flaviviral glycoprotein E, dimerisation domain (homologous_superfamily)"
+IPR044399,2,"Myoglobin-like, M family globin domain (domain)"
+IPR038063,2,"L,D-transpeptidase catalytic domain-like (homologous_superfamily)"
+IPR002620,2,Alphavirus nsp2 protease domain (domain)
+IPR044374,2,"Non-structural protein 3, SUD-N macrodomain, SARS-CoV (domain)"
+IPR001926,2,"Tryptophan synthase beta chain-like, PALP domain (domain)"
+IPR002557,2,Chitin binding domain (domain)
+IPR002535,2,Flavivirus polyprotein propeptide (domain)
+IPR001031,2,Thioesterase (domain)
+IPR015947,2,PUA-like superfamily (homologous_superfamily)
+IPR016009,2,tRNA methyltransferase TRMD/TRM10-type domain (domain)
+IPR044611,2,Ubiquitin-protein ligase E3A/B/C-like (family)
+IPR037841,2,"Histone-lysine N-methyltransferase SETD1A/B-like, SET domain (domain)"
+IPR037838,2,"JAK2, FERM domain C-lobe (domain)"
+IPR044936,2,Alphavirus nsP2 protease domain superfamily (homologous_superfamily)
+IPR045168,2,YTH domain containing protein (family)
+IPR000488,2,Death domain (domain)
+IPR014716,2,"Fibrinogen, alpha/beta/gamma chain, C-terminal globular, subdomain 1 (homologous_superfamily)"
+IPR014721,2,"Small ribosomal subunit protein uS5 domain 2-type fold, subgroup (homologous_superfamily)"
+IPR022928,2,"RNA 2'-phosphotransferase KptA, putative (family)"
+IPR045061,2,Tubulin-like protein FtsZ/CetZ (family)
+IPR010661,2,Reverse transcriptase thumb (domain)
+IPR014895,2,Alginate lyase 2 (domain)
+IPR037446,2,"Histidine acid phosphatase, VIP1 family (family)"
+IPR037527,2,Envelope glycoprotein Gp160 (family)
+IPR037534,2,Polymerase acidic protein (family)
+IPR000560,2,"Histidine phosphatase superfamily, clade-2 (family)"
+IPR002649,2,tRNA (guanine-N1-)-methyltransferase TrmD (family)
+IPR014853,2,"VWF/SSPO/Zonadhesin-like, cysteine-rich domain (domain)"
+IPR016035,2,Acyl transferase/acyl hydrolase/lysophospholipase (homologous_superfamily)
+IPR016036,2,"Malonyl-CoA ACP transacylase, ACP-binding (homologous_superfamily)"
+IPR002509,2,NodB homology domain (domain)
+IPR038688,2,Flavivirus polyprotein propeptide superfamily (homologous_superfamily)
+IPR043508,2,"Brdt, bromodomain, repeat I (domain)"
+IPR038623,2,"Stimulator of interferon genes protein, C-terminal domain superfamily (homologous_superfamily)"
+IPR016248,2,Fibroblast growth factor receptor family (family)
+IPR038650,2,"PADR1, C-terminal domain superfamily (homologous_superfamily)"
+IPR000800,2,Notch domain (domain)
+IPR001977,2,Dephospho-CoA kinase (family)
+IPR020849,2,"Small GTPase, Ras-type (family)"
+IPR016244,2,"Tyrosine-protein kinase, HGF/MSP receptor (family)"
+IPR020848,2,"AP endonuclease 1, conserved site (conserved_site)"
+IPR020847,2,"AP endonuclease 1, binding site (binding_site)"
+IPR043149,2,"CDP-glycerol glycerophosphotransferase, N-terminal domain (homologous_superfamily)"
+IPR043148,2,"CDP-glycerol glycerophosphotransferase, C-terminal domain (homologous_superfamily)"
+IPR020845,2,"AMP-binding, conserved site (conserved_site)"
+IPR043136,2,B30.2/SPRY domain superfamily (homologous_superfamily)
+IPR043509,2,"Brdt, bromodomain, repeat II (domain)"
+IPR016239,2,Ribosomal protein S6 kinase II (family)
+IPR038280,2,"Telomere resolvase ResT/TelK, catalytic domain superfamily (homologous_superfamily)"
+IPR016135,2,Ubiquitin-conjugating enzyme/RWD-like (homologous_superfamily)
+IPR038286,2,Inositol polyphosphate kinase superfamily (homologous_superfamily)
+IPR038302,2,"Envelope glycoprotein M superfamily, flavivirus (homologous_superfamily)"
+IPR038336,2,NET domain superfamily (homologous_superfamily)
+IPR016089,2,"Chalcone isomerase, orthogonal bundle domain superfamily (homologous_superfamily)"
+IPR038345,2,"Flavivirus envelope glycoprotein E, Stem/Anchor domain superfamily (homologous_superfamily)"
+IPR001940,2,Peptidase S1C (family)
+IPR034701,2,Diadenylate cyclase CdaA (family)
+IPR038586,2,Tctex-1-like superfamily (homologous_superfamily)
+IPR038404,2,TRAP transporter solute receptor DctP superfamily (homologous_superfamily)
+IPR016185,2,Pre-ATP-grasp domain superfamily (homologous_superfamily)
+IPR000752,2,Flavivirus non-structural protein NS2A (domain)
+IPR000757,2,Glycoside hydrolase family 16 (domain)
+IPR001943,2,UVR domain (domain)
+IPR000772,2,"Ricin B, lectin domain (domain)"
+IPR026470,2,"Flavivirus envelope glycoprotein E, Stem/Anchor domain (domain)"
+IPR000978,2,"Adenoviral fibre protein, knob (domain)"
+IPR010660,2,"Notch, NOD domain (domain)"
+IPR005746,2,Thioredoxin (family)
+IPR008280,2,"Tubulin/FtsZ, C-terminal (homologous_superfamily)"
+IPR003819,2,TauD/TfdA-like domain (domain)
+IPR052659,2,Nectin and Poliovirus Receptor (family)
+IPR001242,2,Condensation domain (domain)
+IPR050614,2,Synaptic Scaffolding LAP/MAGUK Families (family)
+IPR050629,2,STE20/SPS1-related Proline-Alanine-rich Kinase (family)
+IPR001562,2,"Zinc finger, Btk motif (conserved_site)"
+IPR003877,2,SPRY domain (domain)
+IPR003879,2,"Butyrophylin-like, SPRY domain (domain)"
+IPR005638,2,"Pesticidal crystal protein, domain III (domain)"
+IPR029062,2,Class I glutamine amidotransferase-like (homologous_superfamily)
+IPR005639,2,"Pesticidal crystal protein, domain I (domain)"
+IPR029158,2,Stimulator of interferon genes protein (family)
+IPR007275,2,YTH domain (domain)
+IPR005754,2,Sortase family (family)
+IPR005788,2,"Protein disulfide-isomerase, thioredoxin-like domain (domain)"
+IPR052489,2,Leucine-rich repeat and WD repeat-containing protein 1 (family)
+IPR036399,2,"Pesticidal crystal protein, central domain superfamily (homologous_superfamily)"
+IPR050736,2,Sensor Histidine Kinase Regulatory (family)
+IPR007554,2,CDP-glycerol glycerophosphotransferase (family)
+IPR029431,2,Tumour protein p53-inducible nuclear protein (family)
+IPR050759,2,Serine proteases and regulators with kringle domains (family)
+IPR001528,2,Flavivirus non-structural protein NS4B (domain)
+IPR007430,2,Bacterial virulence protein VirB8 (domain)
+IPR050780,2,Mucin/von Willebrand/Thrombospondin superfamily (family)
+IPR050784,2,Inhibitor of Apoptosis (family)
+IPR008288,2,Poly [ADP-ribose] polymerase (family)
+IPR008297,2,Notch (family)
+IPR005522,2,Inositol polyphosphate kinase (family)
+IPR001235,2,"Blue (type 1) copper protein, plastocyanin-type (family)"
+IPR008854,2,TPMT family (family)
+IPR000158,2,Cell division protein FtsZ (family)
+IPR050436,2,Iron-regulated surface determinant protein A (family)
+IPR005384,2,Duffy antigen/chemokine receptor (family)
+IPR028871,2,"Blue (type 1) copper protein, binding site (binding_site)"
+IPR028889,2,Ubiquitin specific protease domain (domain)
+IPR005435,2,"Gamma-aminobutyric-acid A receptor, alpha 5 subunit (family)"
+IPR028949,2,Novel toxin 15 (domain)
+IPR003789,2,Aspartyl/glutamyl-tRNA amidotransferase subunit B-like (homologous_superfamily)
+IPR000152,2,EGF-type aspartate/asparagine hydroxylation site (ptm)
+IPR004182,2,GRAM domain (domain)
+IPR001607,2,"Zinc finger, UBP-type (domain)"
+IPR050494,2,Serine/threonine and dual-specificity kinase (family)
+IPR036477,2,"Formyl transferase, N-terminal domain superfamily (homologous_superfamily)"
+IPR000064,2,"Endopeptidase, NLPC/P60 domain (domain)"
+IPR036457,2,PPM-type phosphatase-like domain superfamily (homologous_superfamily)
+IPR001586,2,"Beta-lactamase, class-C active site (active_site)"
+IPR008400,2,"Anthrax toxin receptor, extracellular domain (domain)"
+IPR035899,2,Dbl homology (DH) domain superfamily (homologous_superfamily)
+IPR001227,2,Acyl transferase domain superfamily (homologous_superfamily)
+IPR029028,2,Alpha/beta knot methyltransferases (homologous_superfamily)
+IPR008352,2,Mitogen-activated protein (MAP) kinase p38-like (family)
+IPR001579,2,"Glycosyl hydrolase family 18, active site (active_site)"
+IPR005490,2,"L,D-transpeptidase catalytic domain (domain)"
+IPR001578,2,"Peptidase C12, ubiquitin carboxyl-terminal hydrolase (domain)"
+IPR050800,2,ADP-ribosyltransferase diphtheria toxin-like (family)
+IPR007210,2,"ABC-type glycine betaine transport system, substrate-binding domain (domain)"
+IPR005334,2,Dynein light chain Tctex-1 like (family)
+IPR032022,2,"KRIT, N-terminal NPxY motif-rich region (domain)"
+IPR051594,2,KRIT1/FRMD8 (family)
+IPR001510,2,"Zinc finger, PARP-type (domain)"
+IPR032047,2,"Telomere resolvase ResT/TelK, catalytic domain (domain)"
+IPR000069,2,"Envelope glycoprotein M, flavivirus (domain)"
+IPR006574,2,SPRY-associated (domain)
+IPR001507,2,Zona pellucida domain (domain)
+IPR036253,2,"Flavivirus glycoprotein, central and dimerisation domain superfamily (homologous_superfamily)"
+IPR051200,2,Multi-functional host-pathogen interaction and enzymatic activity protein (family)
+IPR051532,2,Diverse Ester Hydrolysis Enzymes (family)
+IPR004089,2,Methyl-accepting chemotaxis protein (MCP) signalling domain (domain)
+IPR031273,2,Protein mono-ADP-ribosyltransferase PARP4 (family)
+IPR006424,2,"Glyceraldehyde-3-phosphate dehydrogenase, type I (family)"
+IPR004088,2,"K Homology domain, type 1 (domain)"
+IPR007197,2,Radical SAM (domain)
+IPR006170,2,Pheromone/general odorant binding protein (family)
+IPR004087,2,K Homology domain (domain)
+IPR004020,2,DAPIN domain (domain)
+IPR031856,2,Bacterial antitoxin YdaS-like (family)
+IPR036188,2,FAD/NAD(P)-binding domain superfamily (homologous_superfamily)
+IPR031477,2,E domain (domain)
+IPR000071,2,"Immunodeficiency lentiviral matrix, N-terminal (domain)"
+IPR031815,2,Protein of unknown function DUF5074 (family)
+IPR006212,2,Furin-like repeat (repeat)
+IPR006211,2,Furin-like cysteine-rich domain (domain)
+IPR006207,2,"Cystine knot, C-terminal (domain)"
+IPR004021,2,HIN-200/IF120x (domain)
+IPR001370,2,BIR repeat (repeat)
+IPR051612,2,Teichoic Acid Biosynthesis Enzymes (family)
+IPR051628,2,Linear Ubiquitination-Associated E3 Ligases (family)
+IPR036084,2,Serine protease inhibitor-like superfamily (homologous_superfamily)
+IPR001304,2,C-type lectin-like (domain)
+IPR032821,2,"Polyketide synthase, C-terminal extension (domain)"
+IPR001398,2,Macrophage migration inhibitory factor (family)
+IPR001394,2,"Peptidase C19, ubiquitin carboxyl-terminal hydrolase (domain)"
+IPR035992,2,Ricin B-like lectins (homologous_superfamily)
+IPR052091,2,Beta-alanine Activation and Resistance (family)
+IPR035993,2,Notch-like domain superfamily (homologous_superfamily)
+IPR001390,2,"Gamma-aminobutyric-acid A receptor, alpha subunit (family)"
+IPR050906,2,Notch signaling pathway (family)
+IPR001387,2,Cro/C1-type helix-turn-helix domain (domain)
+IPR006029,2,Neurotransmitter-gated ion-channel transmembrane domain (domain)
+IPR050935,2,Bromodomain-containing chromatin reader (family)
+IPR003960,2,"ATPase, AAA-type, conserved site (conserved_site)"
+IPR036352,2,Sema domain superfamily (homologous_superfamily)
+IPR036052,2,"Tryptophan synthase beta chain-like, PALP domain superfamily (homologous_superfamily)"
+IPR004143,2,"Biotinyl protein ligase (BPL) and lipoyl protein ligase (LPL), catalytic domain (domain)"
+IPR050991,2,Extracellular Matrix Regulatory Proteins (family)
+IPR051024,2,GlcNAc and Chitin Interaction and Degradation (family)
+IPR006689,2,"Small GTPase superfamily, ARF/SAR type (family)"
+IPR006680,2,Amidohydrolase-related (domain)
+IPR006060,2,"Maltose/Cyclodextrin ABC transporter, substrate-binding protein (family)"
+IPR001320,2,"Ionotropic glutamate receptor, C-terminal (domain)"
+IPR036055,2,LDL receptor-like superfamily (homologous_superfamily)
+IPR036056,2,"Fibrinogen-like, C-terminal (homologous_superfamily)"
+IPR036058,2,Kazal domain superfamily (homologous_superfamily)
+IPR050415,2,Multicomponent Reductase Electron Transfer (family)
+IPR008399,2,"Anthrax toxin receptor, C-terminal (domain)"
+IPR008893,2,WGR domain (domain)
+IPR001627,2,Sema domain (domain)
+IPR001433,2,Oxidoreductase FAD/NAD(P)-binding (domain)
+IPR004808,2,AP endonuclease 1 (family)
+IPR054759,2,"RickCE-like, catalytic domain (domain)"
+IPR050214,2,Cysteine synthase/Cystathionine beta-synthase (family)
+IPR036674,2,p53-like tetramerisation domain superfamily (homologous_superfamily)
+IPR036508,2,Chitin binding domain superfamily (homologous_superfamily)
+IPR027353,2,NET domain (domain)
+IPR035574,2,"Tyrosine-protein kinase BTK, SH3 domain (domain)"
+IPR050227,2,Ras-related protein Rab (family)
+IPR035588,2,"Janus kinase 2, pseudokinase domain (domain)"
+IPR034170,2,Retropepsin-like catalytic domain (domain)
+IPR035589,2,"Janus kinase 2, catalytic domain (domain)"
+IPR003614,2,"Knottin, scorpion toxin-like (domain)"
+IPR009079,2,"Four-helical cytokine-like, core (homologous_superfamily)"
+IPR009078,2,Ferritin-like superfamily (homologous_superfamily)
+IPR033749,2,"Polyprenyl synthetase, conserved site (conserved_site)"
+IPR005122,2,Uracil-DNA glycosylase-like (domain)
+IPR003616,2,Post-SET domain (domain)
+IPR050259,2,Short-chain dehydrogenases/reductases (family)
+IPR000182,2,GNAT domain (domain)
+IPR000208,2,"RNA-directed RNA polymerase, fingers/palm subdomains, flavivirus (domain)"
+IPR001214,2,SET domain (domain)
+IPR036612,2,"K Homology domain, type 1 superfamily (homologous_superfamily)"
+IPR003578,2,Small GTPase Rho (family)
+IPR010659,2,Reverse transcriptase connection (domain)
+IPR055251,2,"SOS1/NGEF-like, PH domain (domain)"
+IPR026490,2,mRNA cap 0/1 methyltransferase (domain)
+IPR026496,2,Putative ATP-grasp target RiPP (domain)
+IPR050091,2,Polyketide and Nonribosomal Peptide Biosynthesis Enzymes (family)
+IPR010496,2,3-keto-disaccharide hydrolase (domain)
+IPR050108,2,Cyclin-dependent kinase (family)
+IPR026591,2,"Sirtuin, catalytic core small domain superfamily (homologous_superfamily)"
+IPR010386,2,tRNA-hydroxylase MiaE (family)
+IPR010286,2,METTL16/RlmF family (family)
+IPR050194,2,Glycosyltransferase group 1 (family)
+IPR000219,2,Dbl homology (DH) domain (domain)
+IPR004682,2,"TRAP transporter solute receptor, DctP family (family)"
+IPR010071,2,Amino acid adenylation domain (domain)
+IPR050143,2,Tripartite motif-containing (family)
+IPR036728,2,Pheromone/general odorant binding protein superfamily (homologous_superfamily)
+IPR050158,2,Ubiquitin and ubiquitin-like (family)
+IPR036716,2,"Pesticidal crystal protein, N-terminal domain superfamily (homologous_superfamily)"
+IPR027287,2,"Glycoprotein E, immunoglobulin-like domain, flavivirus (domain)"
+IPR050185,2,Ubiquitin carboxyl-terminal hydrolase (family)
+IPR004302,2,"Cellulose/chitin-binding protein, N-terminal (domain)"
+IPR004045,2,"Glutathione S-transferase, N-terminal (domain)"
+IPR003649,2,"B-box, C-terminal (domain)"
+IPR028299,2,"ClpA/B, conserved site 2 (conserved_site)"
+IPR036525,2,"Tubulin/FtsZ, GTPase domain superfamily (homologous_superfamily)"
+IPR008982,2,"Adenovirus pIV-like, attachment domain (homologous_superfamily)"
+IPR036574,2,"Knottin, scorpion toxin-like superfamily (homologous_superfamily)"
+IPR033689,2,NAD-dependent formate dehydrogenase (family)
+IPR003653,2,"Ulp1 protease family, C-terminal catalytic domain (domain)"
+IPR005199,2,"Glycoside hydrolase, family 79 (family)"
+IPR050338,2,DNA integrity scanning protein DisA (family)
+IPR008972,2,Cupredoxin (homologous_superfamily)
+IPR036529,2,"Coactivator CBP, KIX domain superfamily (homologous_superfamily)"
+IPR050351,2,Two-component sensor protein kinase (family)
+IPR036514,2,SGNH hydrolase superfamily (homologous_superfamily)
+IPR009013,2,Attachment protein shaft domain superfamily (homologous_superfamily)
+IPR050314,2,Glycosyl Hydrolase Family 18 (family)
+IPR008966,2,Adhesion domain superfamily (homologous_superfamily)
+IPR035860,2,"Tyrosine-protein kinase JAK2, SH2 domain (domain)"
+IPR050339,2,Cell Cycle and Stress Response Kinase (family)
+IPR001375,1,"Peptidase S9, prolyl oligopeptidase, catalytic domain (domain)"
+IPR036138,1,"Penicillin-binding protein, dimerisation domain superfamily (homologous_superfamily)"
+IPR000998,1,MAM domain (domain)
+IPR040844,1,Phosphodiesterase 4 upstream conserved regions (UCR) (domain)
+IPR035898,1,TAZ domain superfamily (homologous_superfamily)
+IPR040706,1,"MYST, zinc finger domain (domain)"
+IPR039944,1,"VSIG4, immunoglobulin variable (IgV)-like domain (domain)"
+IPR039413,1,"RON, Sema domain (domain)"
+IPR035092,1,"EV matrix protein, C-terminal (homologous_superfamily)"
+IPR035100,1,"Transcription elongation factor, IIS-type (family)"
+IPR038665,1,Voltage-dependent anion channel superfamily (homologous_superfamily)
+IPR040622,1,"Integrin beta, epidermal growth factor-like domain 1 (domain)"
+IPR039512,1,"RCHY1, zinc-ribbon (domain)"
+IPR038704,1,YEATS superfamily (homologous_superfamily)
+IPR035243,1,"TamA, POTRA domain 1 (domain)"
+IPR038718,1,"SNF2-like, N-terminal domain superfamily (homologous_superfamily)"
+IPR039724,1,WD repeat-containing protein 91 (family)
+IPR035057,1,"SH2B1, SH2 domain (domain)"
+IPR036140,1,Profilin superfamily (homologous_superfamily)
+IPR035001,1,"PTBP1, RNA recognition motif 3 (domain)"
+IPR035000,1,"PTBP1, RNA recognition motif 1 (domain)"
+IPR039448,1,Right handed beta helix domain (domain)
+IPR039510,1,Vint domain (domain)
+IPR034732,1,Extended PHD (ePHD) domain (domain)
+IPR035852,1,"Tyrosine-protein kinase Lyn, SH2 domain (domain)"
+IPR001025,1,Bromo adjacent homology (BAH) domain (domain)
+IPR038383,1,"CGT/MARTX, cysteine protease (CPD) domain superfamily (homologous_superfamily)"
+IPR041089,1,SUB1 protease prodomain ProdP9 (domain)
+IPR041086,1,YAP binding domain (domain)
+IPR000985,1,"Legume lectin, alpha chain, conserved site (conserved_site)"
+IPR000994,1,Peptidase M24 (domain)
+IPR041029,1,N-acetylglucosamine binding protein A domain 2 (domain)
+IPR001367,1,"Iron dependent repressor, metal binding and dimerisation domain (domain)"
+IPR035896,1,AN1-like Zinc finger (homologous_superfamily)
+IPR038468,1,"Transport accessory protein MmpS, C-terminal (homologous_superfamily)"
+IPR038476,1,"UvrC, RNAse H endonuclease domain superfamily (homologous_superfamily)"
+IPR001424,1,"Superoxide dismutase, copper/zinc binding domain (domain)"
+IPR038482,1,Periplasmic metal-binding protein Tp34-type superfamily (homologous_superfamily)
+IPR038507,1,YcnI-like superfamily (homologous_superfamily)
+IPR038537,1,TRAP transporter T-component superfamily (homologous_superfamily)
+IPR038547,1,"CBP/p300, atypical RING domain superfamily (homologous_superfamily)"
+IPR034750,1,CULT domain (domain)
+IPR036149,1,"APC, N-terminal coiled-coil domain superfamily (homologous_superfamily)"
+IPR041015,1,Toll-like receptor 3 trans-membrane domain (domain)
+IPR040969,1,"Insulin receptor, trans-membrane domain (domain)"
+IPR040930,1,"AF-9, ANC1 homology domain (domain)"
+IPR038720,1,"YprB, ribonuclease H-like domain (domain)"
+IPR034968,1,Reelin (family)
+IPR035246,1,"Spermidine synthase, tetramerisation domain (domain)"
+IPR035461,1,GmhA/DiaA (family)
+IPR001015,1,Ferrochelatase (family)
+IPR035825,1,"Alpha Spectrin, SH3 domain (domain)"
+IPR035680,1,"Hydroxyacylglutathione hydrolase, MBL domain (domain)"
+IPR035686,1,"Carbamoyl-phosphate synthase small subunit, GATase1 domain (domain)"
+IPR040393,1,Three-prime repair exonuclease 1/2 (family)
+IPR039363,1,Zinc finger protein 750 (family)
+IPR001404,1,Heat shock protein Hsp90 family (family)
+IPR035906,1,MetI-like superfamily (homologous_superfamily)
+IPR039910,1,Surface antigen D15-like (family)
+IPR039008,1,"Intermediate filament, rod domain (domain)"
+IPR040265,1,Protein CHUP1/IPGA1-like (family)
+IPR001406,1,"Pseudouridine synthase I, TruA (family)"
+IPR039022,1,Circadian clock protein KaiB-like (family)
+IPR035937,1,"MutM-like, N-terminal (homologous_superfamily)"
+IPR035748,1,"Tyrosine-protein kinase Lyn, SH3 domain (domain)"
+IPR039264,1,Tellurite resistance protein TehA (family)
+IPR035925,1,BSD domain superfamily (homologous_superfamily)
+IPR001426,1,"Tyrosine-protein kinase, receptor class V, conserved site (conserved_site)"
+IPR001415,1,Parathyroid hormone/parathyroid hormone-related protein (family)
+IPR039064,1,"Zinc finger protein 750-like, zinc finger (domain)"
+IPR039939,1,V-set and immunoglobulin domain-containing protein 4 (family)
+IPR040102,1,WD repeat-containing protein 41 (family)
+IPR035787,1,"E3 ubiquitin-protein ligase TRIM58, PRY/SPRY domain (domain)"
+IPR039128,1,Activating signal cointegrator 1-like (family)
+IPR039175,1,Mitochondrial import inner membrane translocase subunit TIM22 (family)
+IPR035907,1,"7,8-Dihydro-6-hydroxymethylpterin-pyrophosphokinase HPPK superfamily (homologous_superfamily)"
+IPR039176,1,Osteocalcin (family)
+IPR001401,1,"Dynamin, GTPase domain (domain)"
+IPR040457,1,"Gamma tubulin complex component, C-terminal (domain)"
+IPR035441,1,TFIIS/LEDGF domain superfamily (homologous_superfamily)
+IPR039373,1,Transferrin receptor protein 1/Glutamate carboxypeptidase 2-like (family)
+IPR036051,1,KRAB domain superfamily (homologous_superfamily)
+IPR036041,1,Ribosome-inactivating protein superfamily (homologous_superfamily)
+IPR036038,1,"Aminotransferase-like, PLP-dependent enzymes (homologous_superfamily)"
+IPR040477,1,"Lysine-specific demethylase 4-like, Tudor domain (domain)"
+IPR039726,1,Pre-mRNA-processing factor Prp40 (family)
+IPR038770,1,Sodium/solute symporter superfamily (homologous_superfamily)
+IPR036020,1,WW domain superfamily (homologous_superfamily)
+IPR036005,1,Creatinase/aminopeptidase-like (homologous_superfamily)
+IPR039399,1,"Deltex, C-terminal domain superfamily (homologous_superfamily)"
+IPR039398,1,Deltex family (family)
+IPR040468,1,"TRAF3-interacting protein 1, N-terminal (domain)"
+IPR035985,1,Ubiquitin-activating enzyme (homologous_superfamily)
+IPR035570,1,"UPF0234, N-terminal (homologous_superfamily)"
+IPR040464,1,"Inositol 1,3,4-trisphosphate 5/6-kinase, ATP-grasp domain (domain)"
+IPR038355,1,Tumor necrosis factor alpha-induced protein 8-like superfamily (homologous_superfamily)
+IPR035571,1,"UPF0234-like, C-terminal (homologous_superfamily)"
+IPR035838,1,"SYK/ZAP-70, N-terminal SH2 domain (domain)"
+IPR035976,1,Sushi/SCR/CCP superfamily (homologous_superfamily)
+IPR038785,1,Mitogen-activated protein kinase 13 (family)
+IPR039396,1,"Deltex, C-terminal (domain)"
+IPR035901,1,GIY-YIG endonuclease superfamily (homologous_superfamily)
+IPR035837,1,"Tyrosine-protein kinase ABL, SH2 domain (domain)"
+IPR039733,1,Protein N-terminal glutamine amidohydrolase (family)
+IPR035587,1,"DUS-like, FMN-binding domain (domain)"
+IPR035972,1,Gamma-carboxyglutamic acid-rich (GLA) domain superfamily (homologous_superfamily)
+IPR038970,1,Polysaccharide lyase 8 (family)
+IPR037532,1,"Peptidoglycan D,D-transpeptidase FtsI (family)"
+IPR036183,1,YajQ-like superfamily (homologous_superfamily)
+IPR036540,1,Poxvirus chemokine inhibitor superfamily (homologous_superfamily)
+IPR036943,1,Fibronectin type II domain superfamily (homologous_superfamily)
+IPR036575,1,"Transcription elongation factor S-II, central domain superfamily (homologous_superfamily)"
+IPR036939,1,"Copper type II, ascorbate-dependent monooxygenase, N-terminal domain superfamily (homologous_superfamily)"
+IPR036594,1,Methionine synthase domain (homologous_superfamily)
+IPR036938,1,Phosphatidic acid phosphatase type 2/haloperoxidase superfamily (homologous_superfamily)
+IPR036937,1,Fimbrial-type adhesion domain superfamily (homologous_superfamily)
+IPR036601,1,CBM10 superfamily (homologous_superfamily)
+IPR036604,1,Phosphoribosylformylglycinamidine synthase subunit PurS-like superfamily (homologous_superfamily)
+IPR036936,1,CRIB domain superfamily (homologous_superfamily)
+IPR036924,1,Prion/Doppel beta-ribbon domain superfamily (homologous_superfamily)
+IPR001220,1,Legume lectin domain (domain)
+IPR036922,1,Rieske [2Fe-2S] iron-sulphur domain superfamily (homologous_superfamily)
+IPR001218,1,"Nucleocapsid protein, coronavirus (family)"
+IPR036634,1,PRD domain superfamily (homologous_superfamily)
+IPR036641,1,HPT domain superfamily (homologous_superfamily)
+IPR036921,1,"PurM-like, N-terminal domain superfamily (homologous_superfamily)"
+IPR036648,1,Nitrile hydratase alpha /Thiocyanate hydrolase gamma superfamily (homologous_superfamily)
+IPR036944,1,"Peptidyl-prolyl cis-trans isomerase, FKBP-type, N-terminal domain superfamily (homologous_superfamily)"
+IPR036947,1,POLO box domain superfamily (homologous_superfamily)
+IPR000975,1,Interleukin-1 family (family)
+IPR036517,1,FF domain superfamily (homologous_superfamily)
+IPR036444,1,Phospholipase A2 domain superfamily (homologous_superfamily)
+IPR001093,1,IMP dehydrogenase/GMP reductase (domain)
+IPR037080,1,"Capsid protein VP4 superfamily, Picornavirus (homologous_superfamily)"
+IPR037073,1,"Nuclear receptor coactivator, CREB-bp-like, interlocking domain superfamily (homologous_superfamily)"
+IPR001226,1,"Flavodoxin, conserved site (conserved_site)"
+IPR037059,1,"Rel homology domain (RHD), DNA-binding domain superfamily (homologous_superfamily)"
+IPR001103,1,Androgen receptor (family)
+IPR036480,1,"Carbamoyl-phosphate synthase small subunit, N-terminal domain superfamily (homologous_superfamily)"
+IPR037019,1,"Glycoside hydrolase family 7, catalytic domain superfamily (homologous_superfamily)"
+IPR001119,1,S-layer homology domain (domain)
+IPR036988,1,Picornavirus coat protein VP4 superfamily (homologous_superfamily)
+IPR001222,1,"Zinc finger, TFIIS-type (domain)"
+IPR036505,1,N-acetylmuramoyl-L-alanine amidase/PGRP domain superfamily (homologous_superfamily)
+IPR036987,1,SRA-YDG superfamily (homologous_superfamily)
+IPR036971,1,"3'5'-cyclic nucleotide phosphodiesterase, catalytic domain superfamily (homologous_superfamily)"
+IPR036964,1,"Ras guanine-nucleotide exchange factor, catalytic domain superfamily (homologous_superfamily)"
+IPR036961,1,Kinesin motor domain superfamily (homologous_superfamily)
+IPR036914,1,Methylglyoxal synthase-like domain superfamily (homologous_superfamily)
+IPR036649,1,Inorganic pyrophosphatase superfamily (homologous_superfamily)
+IPR036186,1,Serpin superfamily (homologous_superfamily)
+IPR001190,1,SRCR domain (domain)
+IPR001162,1,"UvrC, RNAse H endonuclease domain (domain)"
+IPR036859,1,CAP Gly-rich domain superfamily (homologous_superfamily)
+IPR036759,1,"Thiamin pyrophosphokinase, catalytic domain superfamily (homologous_superfamily)"
+IPR036857,1,Thyroglobulin type-1 superfamily (homologous_superfamily)
+IPR001165,1,T4-type lysozyme (family)
+IPR036844,1,Hint domain superfamily (homologous_superfamily)
+IPR001188,1,Spermidine/putrescine-binding periplasmic protein (family)
+IPR036771,1,"F0F1 ATP synthase delta/epsilon subunit, N-terminal (homologous_superfamily)"
+IPR036821,1,Peptide deformylase superfamily (homologous_superfamily)
+IPR036820,1,Archease domain superfamily (homologous_superfamily)
+IPR036817,1,Transthyretin/hydroxyisourate hydrolase domain superfamily (homologous_superfamily)
+IPR036815,1,14-3-3 domain superfamily (homologous_superfamily)
+IPR001180,1,Citron homology (CNH) domain (domain)
+IPR036803,1,"Porphobilinogen deaminase, C-terminal domain superfamily (homologous_superfamily)"
+IPR036772,1,SRCR-like domain superfamily (homologous_superfamily)
+IPR036794,1,"ATP synthase delta/epsilon subunit, C-terminal domain superfamily (homologous_superfamily)"
+IPR036790,1,Frizzled cysteine-rich domain superfamily (homologous_superfamily)
+IPR036757,1,"Transferrin receptor-like, dimerisation domain superfamily (homologous_superfamily)"
+IPR001158,1,DIX domain (domain)
+IPR001216,1,"Cysteine synthase/cystathionine beta-synthase, pyridoxal-phosphate attachment site (binding_site)"
+IPR036865,1,CRAL-TRIO lipid binding domain superfamily (homologous_superfamily)
+IPR036901,1,Aspartate/ornithine carbamoyltransferase superfamily (homologous_superfamily)
+IPR036897,1,"Carbamoyl-phosphate synthetase, large subunit oligomerisation domain superfamily (homologous_superfamily)"
+IPR001126,1,UmuC domain (domain)
+IPR036892,1,L27 domain superfamily (homologous_superfamily)
+IPR036676,1,"PurM-like, C-terminal domain superfamily (homologous_superfamily)"
+IPR001130,1,3'-5' ssDNA/RNA exonuclease TatD-like (family)
+IPR036679,1,FlgN-like superfamily (homologous_superfamily)
+IPR036885,1,SWIB/MDM2 domain superfamily (homologous_superfamily)
+IPR036684,1,Calcium-mediated lectin superfamily (homologous_superfamily)
+IPR036883,1,PDCD5-like superfamily (homologous_superfamily)
+IPR036876,1,UVR domain superfamily (homologous_superfamily)
+IPR001137,1,Glycoside hydrolase family 11 (family)
+IPR001156,1,Transferrin-like domain (domain)
+IPR001202,1,WW domain (domain)
+IPR036724,1,Cobalamin-binding domain superfamily (homologous_superfamily)
+IPR036871,1,PX domain superfamily (homologous_superfamily)
+IPR001199,1,Cytochrome b5-like heme/steroid binding domain (domain)
+IPR037104,1,Annexin superfamily (homologous_superfamily)
+IPR037123,1,"Phosphoribosylglycinamide synthetase, C-domain superfamily (homologous_superfamily)"
+IPR037132,1,"Protein N-terminal glutamine amidohydrolase, alpha beta roll superfamily (homologous_superfamily)"
+IPR001328,1,Peptidyl-tRNA hydrolase (family)
+IPR001045,1,Spermidine/spermine synthases (family)
+IPR001064,1,Beta/gamma crystallin (domain)
+IPR038028,1,Nucleosome-remodeling factor subunit BPTF (family)
+IPR001325,1,Interleukin-4/interleukin-13 (family)
+IPR037963,1,"Apoptotic Protease-Activating Factor 1, CARD domain (domain)"
+IPR001322,1,Lamin tail domain (domain)
+IPR037934,1,"RIP1, Death domain (domain)"
+IPR036305,1,RGS domain superfamily (homologous_superfamily)
+IPR037899,1,"SNX25, PX domain (domain)"
+IPR037883,1,Knr4/Smi1-like domain superfamily (homologous_superfamily)
+IPR037770,1,Cyclin-dependent kinase 7 (family)
+IPR036344,1,Fungal immunomodulatory protein FIP-Fve superfamily (homologous_superfamily)
+IPR036349,1,Integrin beta tail domain superfamily (homologous_superfamily)
+IPR037682,1,"TonB, C-terminal (domain)"
+IPR037595,1,Reversibly glycosylated polypeptide family (family)
+IPR036775,1,"DNA polymerase, Y-family, little finger domain superfamily (homologous_superfamily)"
+IPR037523,1,Vicinal oxygen chelate (VOC) domain (domain)
+IPR036290,1,Phenylalanine zipper superfamily (homologous_superfamily)
+IPR038057,1,EV matrix domain superfamily (homologous_superfamily)
+IPR001090,1,Ephrin receptor ligand binding domain (domain)
+IPR036278,1,Sialidase superfamily (homologous_superfamily)
+IPR038257,1,CRISPR-associated Cas3-type HD domain superfamily (homologous_superfamily)
+IPR001347,1,SIS domain (domain)
+IPR038254,1,"DNA/RNA-binding protein KIN17, WH-like domain superfamily (homologous_superfamily)"
+IPR001346,1,"Interferon regulatory factor, DNA-binding domain (domain)"
+IPR038252,1,"Ubiquitin-activating enzyme E1, C-terminal domain superfamily (homologous_superfamily)"
+IPR001345,1,"Phosphoglycerate/bisphosphoglycerate mutase, active site (active_site)"
+IPR038207,1,DIX domain superfamily (homologous_superfamily)
+IPR001029,1,"Flagellin, N-terminal domain (domain)"
+IPR038142,1,Cytochrome P460 superfamily (homologous_superfamily)
+IPR036237,1,Xylose isomerase-like superfamily (homologous_superfamily)
+IPR001330,1,Prenyltransferase alpha-alpha toroid domain (domain)
+IPR038120,1,"RNA polymerase Rpb1, funnel domain superfamily (homologous_superfamily)"
+IPR038114,1,"GPAT, N-terminal domain superfamily (homologous_superfamily)"
+IPR038096,1,TEA/ATTS domain superfamily (homologous_superfamily)
+IPR001040,1,Translation Initiation factor eIF- 4e (family)
+IPR038081,1,CalX-like domain superfamily (homologous_superfamily)
+IPR036264,1,Bacterial exopeptidase dimerisation domain (homologous_superfamily)
+IPR036361,1,SAP domain superfamily (homologous_superfamily)
+IPR037433,1,"ISG20, DEDDh 3'-5' exonuclease domain (domain)"
+IPR037324,1,"Transferrin receptor protein 1/2, PA domain (domain)"
+IPR037321,1,KIN17-like protein (family)
+IPR001082,1,Fimbrial protein pilin (family)
+IPR036416,1,Peptidyl-tRNA hydrolase superfamily (homologous_superfamily)
+IPR037196,1,"HSP90, C-terminal domain (homologous_superfamily)"
+IPR001251,1,CRAL-TRIO lipid binding domain (domain)
+IPR036421,1,"Iron dependent repressor, metal binding and dimerisation domain superfamily (homologous_superfamily)"
+IPR037195,1,"Nucleocapsid protein, N-terminal (homologous_superfamily)"
+IPR036423,1,"Superoxide dismutase-like, copper/zinc binding domain superfamily (homologous_superfamily)"
+IPR037179,1,"Nucleocapsid protein, C-terminal (homologous_superfamily)"
+IPR037176,1,Osmotin/thaumatin-like superfamily (homologous_superfamily)
+IPR036424,1,Decaprenyl diphosphate synthase-like superfamily (homologous_superfamily)
+IPR037163,1,"Spermidine synthase, tetramerisation domain superfamily (homologous_superfamily)"
+IPR036425,1,MoaB/Mog-like domain superfamily (homologous_superfamily)
+IPR036436,1,Disintegrin domain superfamily (homologous_superfamily)
+IPR001241,1,"DNA topoisomerase, type IIA (family)"
+IPR037160,1,"DNA polymerase, thumb domain superfamily (homologous_superfamily)"
+IPR036439,1,Dockerin domain superfamily (homologous_superfamily)
+IPR037143,1,4'-phosphopantetheinyl transferase domain superfamily (homologous_superfamily)
+IPR036415,1,Lamin tail domain superfamily (homologous_superfamily)
+IPR036411,1,TorD-like superfamily (homologous_superfamily)
+IPR036400,1,Cytochrome b5-like heme/steroid binding domain superfamily (homologous_superfamily)
+IPR037259,1,BRK domain superfamily (homologous_superfamily)
+IPR037318,1,"Hex1, S1 domain (domain)"
+IPR036364,1,SEA domain superfamily (homologous_superfamily)
+IPR037275,1,"Zinc finger, CTCHY-type superfamily (homologous_superfamily)"
+IPR036365,1,PGBD-like superfamily (homologous_superfamily)
+IPR036375,1,Hemopexin-like domain superfamily (homologous_superfamily)
+IPR001309,1,"Peptidase C14, p20 domain (domain)"
+IPR037274,1,"Zinc finger, CHY-type superfamily (homologous_superfamily)"
+IPR036383,1,Thrombospondin type-1 (TSP1) repeat superfamily (homologous_superfamily)
+IPR037202,1,ESCRT assembly domain (homologous_superfamily)
+IPR001307,1,"Thiosulphate sulfurtransferase, conserved site (conserved_site)"
+IPR037239,1,Oxysterol-binding protein superfamily (homologous_superfamily)
+IPR037238,1,YbiA-like superfamily (homologous_superfamily)
+IPR001077,1,O-methyltransferase domain (domain)
+IPR001295,1,"Dihydroorotate dehydrogenase, conserved site (conserved_site)"
+IPR037217,1,"Tryptophan/Indoleamine 2,3-dioxygenase-like (homologous_superfamily)"
+IPR001080,1,3Fe-4S ferredoxin (family)
+IPR036912,1,Haem-binding HasA superfamily (homologous_superfamily)
+IPR044062,1,LCN-type cysteine-stabilized alpha/beta (CS-alpha/beta) domain (domain)
+IPR041170,1,RING/Ubox-like zinc-binding domain (domain)
+IPR050532,1,Globin-like Oxygen Transporters (family)
+IPR000123,1,"RNA-directed DNA polymerase (reverse transcriptase), msDNA (family)"
+IPR050509,1,Coenzyme A-transferase family III (family)
+IPR050492,1,Bacterial metal-binding protein 9 (family)
+IPR050482,1,Sensor Histidine Kinase Two-Component System (family)
+IPR050470,1,Type IV Pilus and Type II Secretion System Core (family)
+IPR050467,1,Leucine-rich repeat and fibronectin type-III domain-containing (family)
+IPR050466,1,Diverse Carboxylesterases and Gibberellin Receptors (family)
+IPR050449,1,Ephrin receptor tyrosine kinases (family)
+IPR050424,1,Gfo/Idh/MocA family inositol dehydrogenases (family)
+IPR050404,1,Heme-degrading monooxygenase (family)
+IPR050390,1,DNA Cytosine-5 Methyltransferase (family)
+IPR000159,1,Ras-associating domain (domain)
+IPR000164,1,Histone H3/CENP-A (family)
+IPR050374,1,RRT5/SRSF/Splicing Factor SR (family)
+IPR050369,1,Respiratory burst oxidase/Ferric reductase (family)
+IPR050350,1,Complement & Cell Adhesion Regulators (family)
+IPR050325,1,Protein/nucleic acid deglycase (family)
+IPR050312,1,IolE/XylA/MocC-like (family)
+IPR050296,1,Antennapedia-type homeobox (family)
+IPR050295,1,Plant 2-oxoglutarate-dependent oxidoreductases (family)
+IPR050285,1,STE20 Serine/Threonine-Protein Kinase (family)
+IPR000176,1,mRNA methyltransferase-like (family)
+IPR050273,1,GppA/Ppx guanosine pentaphosphate hydrolase (family)
+IPR050263,1,Bacterial Fimbrial Adherence (family)
+IPR050258,1,Leguminous Lectin (family)
+IPR050526,1,Rubredoxin electron transfer (family)
+IPR000115,1,Phosphoribosylglycinamide synthetase (family)
+IPR050769,1,"N-acetyltransferase, camello-type (family)"
+IPR050536,1,DtxR/MntR Metal-Dependent Regulators (family)
+IPR050754,1,Peptidyl-prolyl cis-trans isomerase FKBP4/5/8-like (family)
+IPR050745,1,Multifunctional regulatory proteins (family)
+IPR050734,1,"PIH1 family, Kintoun subfamily (family)"
+IPR050728,1,Extracellular Zinc Metalloprotease M4 (family)
+IPR050723,1,Cyclopropane Fatty Acid Synthase/Methyltransferase (family)
+IPR050713,1,Receptor-type Tyrosine-protein Phosphatases/Ushers (family)
+IPR050698,1,RNA Processing Metallo-Beta-Lactamase Domain-Containing Protein (family)
+IPR050693,1,Hsp70 Nucleotide Exchange Factors and Inhibitors (family)
+IPR000095,1,CRIB domain (domain)
+IPR050682,1,Bacterial molybdate/tungstate-binding (family)
+IPR050661,1,BglG family transcriptional antiterminators (family)
+IPR050649,1,Paired Homeobox Transcription Factors (family)
+IPR050647,1,Plant LRR receptor-like serine/threonine-protein kinases (family)
+IPR050636,1,C2H2-type zinc finger domain-containing protein (family)
+IPR050619,1,Flavodoxin (family)
+IPR050605,1,Olfactomedin-like domain-containing protein (family)
+IPR050603,1,MYST family histone acetyltransferases (family)
+IPR050595,1,Bacterial response regulator (family)
+IPR050571,1,Class-IV Pyridoxal-Phosphate-Dependent Aminotransferase (family)
+IPR050569,1,Trace Amine-Associated Receptor (family)
+IPR050566,1,Deoxyribonucleoside Kinase (family)
+IPR050555,1,Bacterial Solute-Binding Protein 2 (family)
+IPR050553,1,Thioredoxin family ResA/DsbE subfamily (family)
+IPR050546,1,Glycosyl Hydrolase Family 16 (family)
+IPR050538,1,Mitogen-activated protein kinase kinase kinase (family)
+IPR050252,1,Beta/Gamma-Crystallin (family)
+IPR050248,1,"Polysaccharide deacetylase, ArnD subfamily (family)"
+IPR050245,1,Bacterial extracellular foldase PrsA (family)
+IPR050236,1,"Serine/threonine-protein kinases, AGC (family)"
+IPR049896,1,Streptococcal M proteins C repeat (repeat)
+IPR049895,1,"Streptococcal M protein, D repeats (repeat)"
+IPR000294,1,Gamma-carboxyglutamic acid-rich (GLA) domain (domain)
+IPR049892,1,Auxiliary Activity family 9 (family)
+IPR049824,1,"RtxA toxin-like, peptidase C80 cysteine binding domain (domain)"
+IPR049758,1,Anti-CRISPR type I subtype E3-like (family)
+IPR049730,1,"SNF2/RAD5-like, C-terminal helicase domain (domain)"
+IPR049721,1,"VIM-type, metallo-hydrolase domain (domain)"
+IPR049702,1,Teichoic acid ribitol-phosphate polymerase TarL (family)
+IPR049637,1,Mitogen-activated protein kinase kinase kinase 7 (family)
+IPR049552,1,"Polyketide synthase, dehydratase domain, N-terminal (domain)"
+IPR049419,1,"Reelin, subrepeat B (repeat)"
+IPR049391,1,"Fatty acid synthase, pseudo-KR domain (domain)"
+IPR049353,1,"DNA gyrase subunit B, hook (domain)"
+IPR049328,1,"Epidermal growth factor receptor-like, transmembrane-juxtamembrane segment (domain)"
+IPR049299,1,"Thioredoxin 2, N-terminal domain (domain)"
+IPR048975,1,"Apoptotic protease-activating factor 1, winged-helix domain (domain)"
+IPR048955,1,"Cip1-like, core domain (domain)"
+IPR048950,1,"Ppx/GppA phosphatase, C-terminal (domain)"
+IPR048941,1,"ATG1-like, MIT domain 2 (domain)"
+IPR048921,1,"Bc2l-C, N-terminal domain (domain)"
+IPR048844,1,"LpdD-like, chaperone-like domain (domain)"
+IPR000297,1,"Peptidyl-prolyl cis-trans isomerase, PpiC-type (domain)"
+IPR000305,1,GIY-YIG endonuclease (domain)
+IPR048670,1,"Translation initiation factor 5A-like, N-terminal (domain)"
+IPR049900,1,"Polyketide/metazoan fatty acid synthase, dehydratase domain (domain)"
+IPR049912,1,"CRESS-DNA virus replication initiator protein, endonuclease domain (domain)"
+IPR049924,1,"TonB, proline-rich region (domain)"
+IPR000214,1,"Zinc finger, DNA glycosylase/AP lyase-type (domain)"
+IPR050235,1,Casein Kinase 1 Ser/Thr Protein Kinase (family)
+IPR000184,1,Bacterial surface antigen (D15) (domain)
+IPR000189,1,"Prokaryotic transglycosylase, active site (active_site)"
+IPR050225,1,
+IPR050224,1,Three Amino acid Loop Extension (TALE) homeobox (family)
+IPR050209,1,Rab GTPases family involved in membrane trafficking (family)
+IPR000197,1,"Zinc finger, TAZ-type (domain)"
+IPR050200,1,Nuclear hormone receptor family NR3 subfamily (family)
+IPR050195,1,Primate lentivirus group Gag polyprotein-like (domain)
+IPR050177,1,Bifunctional lipid A modification and metabolic enzymes (family)
+IPR050168,1,AAA ATPase domain-containing protein (family)
+IPR050160,1,Major Histocompatibility Complex/Immunoglobulin (family)
+IPR050066,1,UvrABC system protein C (family)
+IPR050145,1,Centrin/CML-like (family)
+IPR000215,1,Serpin family (family)
+IPR000225,1,Armadillo (repeat)
+IPR000238,1,Ribosome-binding factor A (family)
+IPR050116,1,DNA polymerase type-Y (family)
+IPR050113,1,Ubiquitin-conjugating enzyme (family)
+IPR050111,1,C-type lectin and snaclec domain-containing protein (family)
+IPR050110,1,Glyoxalase II family hydroxyacylglutathione hydrolases (family)
+IPR050099,1,SIS family GmhA and DiaA subfamilies (family)
+IPR050074,1,Dihydroorotate dehydrogenase (family)
+IPR050072,1,"Peptidase M20A family, bacterial cell wall biosynthesis (family)"
+IPR050767,1,Sel1/AlgK (family)
+IPR050816,1,Flavin-dependent Halogenases in Natural Product Biosynthesis (family)
+IPR041201,1,"PTPRJ, transmembrane domain (domain)"
+IPR053956,1,"NPC1, middle luminal domain (domain)"
+IPR053896,1,"Butyrophilin subfamily 3 member A2-like, Ig-C domain (domain)"
+IPR053848,1,"DNA polymerase IV/DNA polymerase iota-like, thumb domain (domain)"
+IPR053823,1,"CLIC, N-terminal domain (domain)"
+IPR053778,1,Polyketide synthase Pks13 (family)
+IPR053768,1,Intense Sweet-Taste Modifier (homologous_superfamily)
+IPR053742,1,Fungal Immunomodulatory Lectin (homologous_superfamily)
+IPR053710,1,Arylamine N-acetyltransferase domain-containing protein (homologous_superfamily)
+IPR053447,1,Alpha-ketoglutarate-dependent hydroxylase (family)
+IPR053179,1,LINE-1 ORF2p reverse transcriptase/endonuclease (family)
+IPR052951,1,Tellurite Resistance Ion Channel (family)
+IPR052790,1,YEATS domain-containing (family)
+IPR052622,1,Glycosyltransferase group 1 domain-containing protein (family)
+IPR052619,1,Bacteriophage lysozyme-like (family)
+IPR052591,1,Probable calcium-binding protein CML21-like (family)
+IPR052582,1,tRNA-dihydrouridine synthase-like (family)
+IPR052509,1,Metal-responsive DNA-binding regulator (family)
+IPR052395,1,Electron Transfer Ferredoxin (family)
+IPR052354,1,Bacterial Cell Wall Dynamics Protein (family)
+IPR052293,1,Serine-Rich Repeat Protein (SRRP) (family)
+IPR052291,1,
+IPR052257,1,
+IPR052193,1,Peptidase C59 family enzymes (family)
+IPR052164,1,Anthracycline and Secondary Metabolite Biosynthesis Protein (family)
+IPR052123,1,Non-receptor Tyrosine Phosphatase (family)
+IPR052079,1,E3 ubiquitin-ligases/Copine domain-containing protein (family)
+IPR053913,1,DarT1-associated NADAR antitoxin (family)
+IPR053958,1,"HMGCR/SNAP/NPC1-like, sterol-sensing domain (domain)"
+IPR050823,1,Plant Serine/Threonine-Protein Kinase (family)
+IPR054057,1,"Campylobacter invasion antigen D, C-terminal (domain)"
+IPR055228,1,"Cas9, RuvC domain (domain)"
+IPR055163,1,"ALK/LTK-like, glycine-rich domain (domain)"
+IPR055140,1,"Thiolase, C-terminal domain 2 (domain)"
+IPR055135,1,Protein arginine N-methyltransferase domain (domain)
+IPR055129,1,YEATS domain (domain)
+IPR055091,1,Carrier-protein-independent halogenase WelO5-like (family)
+IPR055041,1,"Peptidoglycan O-acetylesterase, N-terminal (domain)"
+IPR055034,1,Mu Gam/Sipho_Gp157-like domain of the TOTE conflict systems (domain)
+IPR055009,1,"MrpR, N-terminal core-binding domain (domain)"
+IPR055008,1,"MrpR, C-terminal catalytic domain (domain)"
+IPR055006,1,"S-layer protein, N-terminal domain (domain)"
+IPR055005,1,"S-layer protein, domain II (domain)"
+IPR055004,1,"CFAP410, C-terminal domain (domain)"
+IPR054930,1,GTP-dependent dephospho-CoA kinase family (family)
+IPR054878,1,Endonuclease VIII Nei2 (family)
+IPR000010,1,Cystatin domain (domain)
+IPR054694,1,"E3 ubiquitin-protein ligase parkin-like, IBR domain (domain)"
+IPR054643,1,Thiopeptide maturation pyridine synthase TbtD/PbtD (family)
+IPR054555,1,Type III secretion system effector HopBF1-like (domain)
+IPR000011,1,Ubiquitin/SUMO-activating enzyme E1-like (family)
+IPR000058,1,"Zinc finger, AN1-type (domain)"
+IPR054416,1,"Glutathione S-transferase UstS-like , C-terminal domain (domain)"
+IPR054399,1,"Fervidolysin-like, N-terminal prodomain (domain)"
+IPR054347,1,"TOTE conflict system, primase domain (domain)"
+IPR054124,1,"MIC2-associated protein, beta-domain (domain)"
+IPR052060,1,Bromodomain and WD repeat-containing (family)
+IPR052054,1,Oxidative DNA damage repair enzyme (family)
+IPR051940,1,Chitin-binding developmental regulator (family)
+IPR051873,1,Cell wall assembly regulator KNR4/SMI1 (family)
+IPR051230,1,Amyloid-beta A4 Precursor Protein-Binding (family)
+IPR051202,1,Peptidase C40 (family)
+IPR051194,1,
+IPR051188,1,PHD-type Zinc Finger Domain-Containing Protein (family)
+IPR051178,1,TfdA dioxygenase (family)
+IPR051175,1,Dual specificity CLK kinases (family)
+IPR051170,1,Neural and epithelial cell adhesion domain-containing protein (family)
+IPR051148,1,Zona Pellucida Domain Glycoprotein (family)
+IPR051129,1,
+IPR051122,1,Short-chain dehydrogenase/reductase superfamily enzyme (family)
+IPR051090,1,Inositol Monophosphatase Superfamily (family)
+IPR051083,1,Group II Intron Splicing and Mobility/Defense (family)
+IPR051048,1,Peptidase S8/S53 subtilisin kexin sedolisin (family)
+IPR051045,1,TonB-dependent transporter energy transducer (family)
+IPR051043,1,Sulfatase Modifying Factor and Kinase (family)
+IPR050979,1,"Bacterial L,D-transpeptidase (family)"
+IPR050955,1,Plant Biomass Hydrolyzing Esterase (family)
+IPR050940,1,Actin-regulating Serine/Threonine Kinase (family)
+IPR050937,1,TEC1/TEAD Transcription Factor (family)
+IPR050891,1,TatD-type Metallo-dependent Hydrolase (family)
+IPR000082,1,SEA domain (domain)
+IPR050850,1,"Peptidase S1 family, Elastase subfamily (family)"
+IPR050844,1,Coatomer complex subunit (family)
+IPR050829,1,CorA Metal Ion Transporter (family)
+IPR050824,1,Bacterial Thiol:disulfide Interchange Protein DsbA (family)
+IPR051236,1,Histone acetyltransferase RTT109-like (family)
+IPR051239,1,2'-Deoxynucleoside 5'-phosphate N-hydrolase (family)
+IPR051247,1,RISC Loading Complex Component (family)
+IPR051559,1,Hypoxia-inducible factor prolyl hydroxylases (family)
+IPR051872,1,Cytochrome b5/Flavoprotein Reductase (family)
+IPR051811,1,Cytochrome c550/c551-like (family)
+IPR051794,1,Peptidoglycan Endopeptidase C40 (family)
+IPR051768,1,Bacterial secretion system and toxin (family)
+IPR051744,1,AP2-associated Ser/Thr protein kinase (family)
+IPR051713,1,T-cell Activation and Immune Regulation Protein (family)
+IPR051712,1,Mono-ADP-ribosyltransferase and antiviral protein (family)
+IPR051686,1,Outer membrane lipoprotein DolP (family)
+IPR051652,1,MDM2/MDM4 and MUL1 (family)
+IPR051620,1,Viral Helicase-Primase Complex (family)
+IPR051600,1,Beta-phosphoglucomutase-like (family)
+IPR051550,1,SCF Complex Subunits and Alginate Epimerases (family)
+IPR051265,1,HIBADH-related NP60 subfamily (family)
+IPR051536,1,"Uracil-DNA glycosylase family, Type-4/5 (family)"
+IPR000070,1,"Pectinesterase, catalytic (domain)"
+IPR051482,1,Cholesterol transport domain-containing protein (family)
+IPR051477,1,Plant Cell Wall Expansin (family)
+IPR051465,1,Cell Envelope Structural Component (family)
+IPR051429,1,Encapsulin nanocompartment (family)
+IPR051418,1,Spondin/Thrombospondin type-1 domain-containing (family)
+IPR051336,1,Rho GTPase-activating Guanine Nucleotide Exchange Factors (family)
+IPR051270,1,Tyrosine-tRNA ligase and regulatory protein (family)
+IPR051269,1,Iron-sulfur cluster electron transport (family)
+IPR051266,1,Calcium-activated chloride channel regulator (family)
+IPR048666,1,"NADPH-dependent reductive aminase-like, C-terminal domain (domain)"
+IPR000308,1,14-3-3 protein (family)
+IPR048589,1,"SAM domain-containing protein 1-like, WH domain (domain)"
+IPR000760,1,Inositol monophosphatase-like (family)
+IPR043505,1,"Nucleocapsid protein, betacoronavirus (family)"
+IPR000798,1,Ezrin/radixin/moesin-like (family)
+IPR000801,1,Esterase-like (family)
+IPR000817,1,Prion protein (family)
+IPR000818,1,TEA/ATTS domain (domain)
+IPR000834,1,"Peptidase M14, carboxypeptidase A (domain)"
+IPR000850,1,Adenylate kinase/UMP-CMP kinase (family)
+IPR043385,1,Granule associated Rac and RHOG effector protein 1 (family)
+IPR043210,1,CD44 antigen-like (family)
+IPR000853,1,"Metallothionein, family 6, nematoda (family)"
+IPR000860,1,Porphobilinogen deaminase (family)
+IPR000866,1,Alkyl hydroperoxide reductase subunit C/ Thiol specific antioxidant (domain)
+IPR043151,1,Bromo adjacent homology (BAH) domain superfamily (homologous_superfamily)
+IPR043145,1,"Zinc finger, ZZ-type superfamily (homologous_superfamily)"
+IPR043132,1,"Branched-chain-amino-acid aminotransferase-like, C-terminal (homologous_superfamily)"
+IPR043131,1,"Branched-chain-amino-acid aminotransferase-like, N-terminal (homologous_superfamily)"
+IPR043111,1,"JBP1, DNA-binding domain superfamily (homologous_superfamily)"
+IPR043096,1,"Poxvirus mRNA capping enzyme, small subunit superfamily (homologous_superfamily)"
+IPR043079,1,"EV matrix protein, N-terminal (homologous_superfamily)"
+IPR043078,1,"Sialyltransferase, N-terminal GT-B Rossman nucleotide-binding domain (homologous_superfamily)"
+IPR043015,1,"Arenavirus glycoprotein, zinc binding domain (homologous_superfamily)"
+IPR000884,1,Thrombospondin type-1 (TSP1) repeat (repeat)
+IPR042916,1,C-type lectin domain family 12 member A/B (family)
+IPR042837,1,Pentraxin-related protein PTX3 (family)
+IPR042787,1,"M3K14, catalytic domain (domain)"
+IPR000774,1,"Peptidyl-prolyl cis-trans isomerase, FKBP-type, N-terminal (domain)"
+IPR000731,1,Sterol-sensing domain (domain)
+IPR048568,1,"RTX toxin, C-terminal repeat (repeat)"
+IPR000730,1,"Proliferating cell nuclear antigen, PCNA (family)"
+IPR000608,1,Ubiquitin-conjugating enzyme E2 (domain)
+IPR044345,1,"Nucleocapsid (N) protein, N-terminal domain, coronavirus (domain)"
+IPR044344,1,"Nucleocapsid (N) protein, C-terminal domain, coronavirus (domain)"
+IPR000629,1,"ATP-dependent RNA helicase DEAD-box, conserved site (conserved_site)"
+IPR000648,1,Oxysterol-binding protein (family)
+IPR000651,1,"Ras-like guanine nucleotide exchange factor, N-terminal (domain)"
+IPR000663,1,Natriuretic peptide (family)
+IPR044191,1,Chalcone--flavonone isomerase 3-like (family)
+IPR044164,1,Chalcone--flavonone isomerase (family)
+IPR000683,1,"Gfo/Idh/MocA-like oxidoreductase, N-terminal (domain)"
+IPR044152,1,NADPH dehydrogenase YqjM-like (family)
+IPR044132,1,"Glutamine-binding periplasmic protein GlnH, type 2 periplasmic binding protein fold (domain)"
+IPR044131,1,"Dual specificity tyrosine-phosphorylation-regulated kinase 1A/1B, catalytic domain (domain)"
+IPR044114,1,"Bile acid receptor, ligand binding domain (domain)"
+IPR044109,1,cAMP-dependent protein kinase catalytic subunit (family)
+IPR044101,1,"Retinoid-related orphan receptors, DNA-binding domain (domain)"
+IPR044090,1,"Nei2, N-terminal (domain)"
+IPR044085,1,"D-galactose-binding periplasmic protein MglB-like, PBP domain (domain)"
+IPR044070,1,Rubella virus (RUBV) nonstructural (NS) protease domain (domain)
+IPR000709,1,Leu/Ile/Val-binding protein (family)
+IPR044055,1,Long Rib domain (domain)
+IPR044024,1,Atypical Rib domain (domain)
+IPR044004,1,Spondin-like TSP1 domain (domain)
+IPR000716,1,Thyroglobulin type-1 (domain)
+IPR000720,1,Peptidylglycine alpha-hydroxylating monooxygenase/peptidyl-hydroxyglycine alpha-amidating lyase (family)
+IPR042714,1,"Tau-tubulin kinase 1, catalytic domain (domain)"
+IPR042699,1,"E3 ubiquitin-protein ligase TRIM58, RING finger, HC subclass (domain)"
+IPR042579,1,"XIAP/BIRC8, UBA domain (domain)"
+IPR000895,1,Transthyretin/hydroxyisourate hydrolase (family)
+IPR041915,1,"Tudor domain-containing protein 3, UBA domain (domain)"
+IPR041905,1,"Ribosomal protein S6 kinase alpha-3, C-terminal catalytic domain (domain)"
+IPR041891,1,"Carbonic anhydrase, prokaryotic-like (family)"
+IPR041890,1,Carbonic anhydrase VII (family)
+IPR041789,1,"ERM family, FERM domain C-lobe (domain)"
+IPR041698,1,Methyltransferase domain 25 (domain)
+IPR041667,1,Cupin-like domain 8 (domain)
+IPR041663,1,"DisA/LigA, helix-hairpin-helix motif (domain)"
+IPR041565,1,"Parkin, RING/Ubox like zinc-binding domain (domain)"
+IPR041476,1,"TRAF3-interacting protein 1, C-terminal domain (domain)"
+IPR041470,1,"Gamma tubulin complex component protein, N-terminal (domain)"
+IPR041464,1,"TubC, N-terminal docking domain (domain)"
+IPR041452,1,APAF-1 helical domain (domain)
+IPR041442,1,"PIH1D1/2/3, CS-like domain (domain)"
+IPR041429,1,"Inositol-tetrakisphosphate 1-kinase, N-terminal (domain)"
+IPR041423,1,DNA gyrase subunit B insert domain (domain)
+IPR000959,1,POLO box domain (domain)
+IPR000974,1,"Glycoside hydrolase, family 22, lysozyme (family)"
+IPR041354,1,"4'-phosphopantetheinyl transferase, N-terminal domain (domain)"
+IPR041330,1,"KN17, SH3-like domain (domain)"
+IPR041283,1,Leucine-rich repeat unit (repeat)
+IPR041280,1,"Bacterial Ig domain, transpeptidase-associated (domain)"
+IPR041263,1,"Gasdermin, PUB domain (domain)"
+IPR041257,1,Adenomatous polyposis coli (APC) repeat (repeat)
+IPR041241,1,"Thymine dioxygenase JBP1, DNA-binding domain (domain)"
+IPR041933,1,"BIRC2/BIRC3, UBA domain (domain)"
+IPR041995,1,"Kin17, KOW domain (domain)"
+IPR042012,1,"PHF7/G2E3, PHD domain (domain)"
+IPR042241,1,"Gamma-tubulin complex component, C-terminal domain superfamily (homologous_superfamily)"
+IPR042576,1,"TRAF3-interacting protein 1, N-terminal domain superfamily (homologous_superfamily)"
+IPR000903,1,Glycylpeptide N-tetradecanoyltransferase (family)
+IPR042556,1,"Ubiquitin-protein ligase E3A, N-terminal zinc-binding domain superfamily (homologous_superfamily)"
+IPR042521,1,Dual specificity tyrosine-phosphorylation-regulated kinase (homologous_superfamily)
+IPR042470,1,"RecQ mediated genome instability protein, N-terminal OB-fold domain superfamily (homologous_superfamily)"
+IPR042449,1,"Ubiquitin-activating enzyme E1, inactive adenylation domain, subdomain 1 (homologous_superfamily)"
+IPR042371,1,Z-binding domain (domain)
+IPR042343,1,Protein BANP (family)
+IPR042307,1,Reeler domain superfamily (homologous_superfamily)
+IPR042302,1,"Ubiquitin-activating enzyme E1, FCCH domain superfamily (homologous_superfamily)"
+IPR042245,1,Tgt2/MlaC superfamily (homologous_superfamily)
+IPR042197,1,"Apoptotic protease-activating factors, helical domain (homologous_superfamily)"
+IPR042013,1,"PHF7/G2E3, ePHD domain (domain)"
+IPR042187,1,"Flagellin, C-terminal domain, subdomain 2 (homologous_superfamily)"
+IPR042185,1,"Serpin superfamily, domain 2 (homologous_superfamily)"
+IPR042178,1,"Serpin superfamily, domain 1 (homologous_superfamily)"
+IPR042153,1,"VDR, DNA-binding domain (domain)"
+IPR042104,1,"Polyketide synthase, dehydratase domain superfamily (homologous_superfamily)"
+IPR042102,1,"RNA polymerase Rpb1, domain 3 superfamily (homologous_superfamily)"
+IPR042100,1,"Bordetella uptake gene, domain 1 (homologous_superfamily)"
+IPR042095,1,Sulfatase-modifying factor enzyme superfamily (homologous_superfamily)
+IPR000938,1,CAP Gly-rich domain (domain)
+IPR042069,1,"CLIC5, C-terminal GST domain (domain)"
+IPR042063,1,"Ubiquitin-activating enzyme E1, SCCH domain (homologous_superfamily)"
+IPR000594,1,THIF-type NAD/FAD binding fold (domain)
+IPR000591,1,DEP domain (domain)
+IPR000585,1,Hemopexin-like domain (domain)
+IPR046358,1,"Flagellin, C-terminal domain (domain)"
+IPR047312,1,"Coatomer subunit alpha, WD Associated Region (domain)"
+IPR047306,1,"RNA-dependent RNA polymerase, matonavirus (domain)"
+IPR047296,1,"UvrC/Cho-like, GIY-YIG domain (domain)"
+IPR047229,1,Nuclear factor interleukin-3-regulated protein-like (family)
+IPR047198,1,"Diphosphoinositol polyphosphate phosphohydrolase-like, NUDIX domain (domain)"
+IPR047141,1,Stealth family (family)
+IPR047109,1,Cinnamyl alcohol dehydrogenase-like (family)
+IPR047106,1,"Nuclear factor interleukin-3-regulated protein-like , bZIP domain (domain)"
+IPR047054,1,"Kalirin/Triple functional domain protein, pleckstrin homology (PH) domain 1 (domain)"
+IPR047053,1,"Kalirin/Triple functional domain protein, SH3 domain 2 (domain)"
+IPR047021,1,RNA exonuclease REXO1/REXO3/REXO4-like (family)
+IPR047010,1,"PHD finger protein 1, PHD finger 2 (domain)"
+IPR046962,1,
+IPR046938,1,DNA clamp superfamily (homologous_superfamily)
+IPR000333,1,"Ser/Thr protein kinase, TGFB receptor (family)"
+IPR046838,1,"BREX system Lon protease-like BrxL, N-terminal (domain)"
+IPR046810,1,"Ezrin/radixin/moesin, alpha-helical domain (domain)"
+IPR046785,1,"SrpA-like, SigLec-like domain (domain)"
+IPR046776,1,Putative pectate lyase-like adhesive domain (repeat)
+IPR046564,1,Protein of unknown function DUF6718 (family)
+IPR046450,1,PA domain superfamily (homologous_superfamily)
+IPR000372,1,Leucine-rich repeat N-terminal domain (domain)
+IPR000375,1,Dynamin stalk domain (domain)
+IPR000392,1,NifH/frxC family (family)
+IPR000408,1,"Regulator of chromosome condensation, RCC1 (repeat)"
+IPR047379,1,"Tudor domain-containing protein 3, Tudor domain (domain)"
+IPR047399,1,"PHD finger protein 1, Tudor domain (domain)"
+IPR047406,1,"E3 ubiquitin-protein ligase UHRF1, ubiquitin-like domain (domain)"
+IPR048278,1,Profilin (family)
+IPR048511,1,"Transmembrane protein 106, N-terminal (domain)"
+IPR048509,1,"Transmembrane protein 106, C-terminal domain (domain)"
+IPR048461,1,"Dermonecrotic toxin-like, C2 domain (domain)"
+IPR048388,1,"Tail fibre protein gp37, trimerization region (domain)"
+IPR048386,1,"ARC105/Med15 mediator subunit, C-terminal domain (domain)"
+IPR048385,1,"ARC105/Med15 mediator subunit, central domain (domain)"
+IPR048328,1,"Dyp-type peroxidase, C-terminal domain (domain)"
+IPR048327,1,"Dyp-type peroxidase, N-terminal domain (domain)"
+IPR048290,1,"Zona pellucida domain, chordate-type (domain)"
+IPR048288,1,"Programmed cell death protein 10, dimerisation domain (domain)"
+IPR000323,1,"Copper type II, ascorbate-dependent monooxygenase, N-terminal (domain)"
+IPR048057,1,"Probable G protein-coupled receptor 34, 7TM (domain)"
+IPR047504,1,"F-box only protein 11, UBR-box (domain)"
+IPR047711,1,Conjugated bile acid hydrolase (family)
+IPR047672,1,"Cyclopropane mycolic acid synthase, actinobacteria (family)"
+IPR000324,1,Vitamin D receptor (family)
+IPR000326,1,Phosphatidic acid phosphatase type 2/haloperoxidase (domain)
+IPR000330,1,"SNF2, N-terminal (domain)"
+IPR047538,1,"Activating signal cointegrator 1 complex subunit 1, type I KH domain (domain)"
+IPR047536,1,"E3 ubiquitin-protein ligase parkin, Rcat domain (domain)"
+IPR047535,1,"E3 ubiquitin-protein ligase parkin, RING finger, HC subclass (domain)"
+IPR047534,1,"E3 ubiquitin-protein ligase parkin, BRcat domain (domain)"
+IPR047533,1,"Peroxisomal biogenesis factor 6, second ATPase domain (domain)"
+IPR047509,1,"E3 ubiquitin-protein ligase UBR4-like, UBR-box (domain)"
+IPR046409,1,"Programmed cell death protein 10, dimerisation domain superfamily (homologous_superfamily)"
+IPR000425,1,Major intrinsic protein (family)
+IPR000571,1,"Zinc finger, CCCH-type (domain)"
+IPR000433,1,"Zinc finger, ZZ-type (domain)"
+IPR044995,1,
+IPR044929,1,DNA/RNA non-specific endonuclease superfamily (homologous_superfamily)
+IPR044927,1,Type VII secretion system protein EssD-like (domain)
+IPR044926,1,"RGS, subdomain 2 (homologous_superfamily)"
+IPR044894,1,"TubC, N-terminal docking domain superfamily (homologous_superfamily)"
+IPR000515,1,"ABC transporter type 1, transmembrane domain MetI-like (domain)"
+IPR000535,1,Major sperm protein (MSP) domain (domain)
+IPR000538,1,Link domain (domain)
+IPR044862,1,"Prolyl 4-hydroxylase alpha subunit, Fe(2+) 2OG dioxygenase domain (domain)"
+IPR000550,1,"7,8-Dihydro-6-hydroxymethylpterin-pyrophosphokinase, HPPK (domain)"
+IPR044855,1,CoA-transferase family III domain 3 superfamily (homologous_superfamily)
+IPR044852,1,WW domain-binding protein 2-like (family)
+IPR044831,1,Heme-binding peroxidase Ccp1-like (family)
+IPR044816,1,BURP domain-containing protein (family)
+IPR044731,1,Butanol dehydrogenase-like (family)
+IPR044665,1,"Cyclophilin-type peptidyl-prolyl cis-trans isomerase, E. coli cyclophilin A-like (family)"
+IPR044627,1,Dehydroascorbate reductases DHAR1/2/3/4 (family)
+IPR044494,1,Aldo-keto reductase family 3C2/3 (family)
+IPR044492,1,"P-type ATPase, haloacid dehalogenase domain (domain)"
+IPR044479,1,L-galactose dehydrogenase-like (family)
+IPR044463,1,"DUS2, double-stranded RNA binding domain (domain)"
+IPR044457,1,"ADAR1, third double-stranded RNA binding domain (domain)"
+IPR044456,1,"ADAR1, first double-stranded RNA binding domain (domain)"
+IPR000562,1,Fibronectin type II domain (domain)
+IPR000565,1,"DNA topoisomerase, type IIA, subunit B (family)"
+IPR045063,1,"Dynamin, N-terminal (domain)"
+IPR045078,1,Sulfurtransferase TST/MPST-like (family)
+IPR045134,1,UHRF1/2-like (family)
+IPR045857,1,"Oligo-1,6-glucosidase, domain 2 (homologous_superfamily)"
+IPR046348,1,SIS domain superfamily (homologous_superfamily)
+IPR046347,1,Basic-leucine zipper domain superfamily (homologous_superfamily)
+IPR046346,1,"Aminoacid dehydrogenase-like, N-terminal domain superfamily (homologous_superfamily)"
+IPR000436,1,Sushi/SCR/CCP domain (domain)
+IPR045889,1,Methylesterase/Alpha-hydroxynitrile lyase (family)
+IPR045886,1,ThiF/MoeB/HesA family (family)
+IPR045869,1,"Bifunctional polymyxin resistance protein ArnA-like, extended (e) SDRs (domain)"
+IPR045867,1,"DNA-directed RNA polymerase, subunit beta-prime (family)"
+IPR045863,1,"CorA, transmembrane region (homologous_superfamily)"
+IPR045861,1,"CorA, cytoplasmic domain (homologous_superfamily)"
+IPR045860,1,Snake toxin-like superfamily (homologous_superfamily)
+IPR045841,1,"E3 ubiquitin-protein ligase UBR4, N-terminal (domain)"
+IPR045189,1,E3 ubiquitin ligase UBR4-like (family)
+IPR045800,1,Heavy metal binding domain (domain)
+IPR045584,1,Pilin-like (homologous_superfamily)
+IPR045455,1,"NrS-1 polymerase-like, helicase domain (domain)"
+IPR045354,1,BURAN domain (domain)
+IPR045353,1,LAIKA domain (domain)
+IPR000471,1,Interferon alpha/beta/delta (family)
+IPR045322,1,E3 ubiquitin-protein ligase HECTD1/TRIP12-like (family)
+IPR045317,1,"E3 ubiquitin-protein ligase RGLG1/2, RING finger (domain)"
+IPR045269,1,Serine/threonine-protein kinase Atg1-like (family)
+IPR045216,1,"Casein Kinase 2, subunit alpha (family)"
+IPR045199,1,ATPase family AAA domain-containing protein ATAD2-like (family)
+IPR034707,1,Envelope glycoprotein N (family)
+IPR004408,1,Biotin--acetyl-CoA-carboxylase ligase (family)
+IPR034690,1,Endolysin T4 type (family)
+IPR012152,1,"Protein-tyrosine phosphatase, non-receptor type-6, -11 (family)"
+IPR003105,1,SRA-YDG (domain)
+IPR003110,1,Phosphorylated immunoreceptor signalling ITAM (repeat)
+IPR012533,1,YcnI-like (domain)
+IPR003112,1,Olfactomedin-like domain (domain)
+IPR003114,1,Phox-associated domain (domain)
+IPR003121,1,SWIB/MDM2 domain (domain)
+IPR012319,1,"Formamidopyrimidine-DNA glycosylase, catalytic domain (domain)"
+IPR003130,1,Dynamin GTPase effector (domain)
+IPR012291,1,"CBM2, carbohydrate-binding domain superfamily (homologous_superfamily)"
+IPR003137,1,PA domain (domain)
+IPR012234,1,"Tyrosine-protein kinase, non-receptor SYK/ZAP-70 (family)"
+IPR012183,1,FAD synthetase with the MoaB/Mog domain (family)
+IPR012130,1,Photoactive yellow-protein (family)
+IPR012756,1,"DNA-directed RNA polymerase, subunit beta'' (family)"
+IPR003142,1,"Biotin protein ligase, C-terminal (domain)"
+IPR003159,1,"Polysaccharide lyase family 8, central domain (domain)"
+IPR011945,1,"Predicted HAD-superfamily phosphatase, subfamily IA/Epoxide hydrolase, N-terminal (domain)"
+IPR011877,1,Ribokinase (family)
+IPR011712,1,"Signal transduction histidine kinase, subgroup 3, dimerisation and phosphoacceptor domain (domain)"
+IPR003184,1,Viral chemokine binding protein (family)
+IPR011650,1,"Peptidase M20, dimerisation domain (domain)"
+IPR011649,1,KaiB domain (domain)
+IPR011611,1,Carbohydrate kinase PfkB (domain)
+IPR011608,1,PRD domain (domain)
+IPR011607,1,Methylglyoxal synthase-like domain (domain)
+IPR011600,1,"Peptidase C14, caspase domain (domain)"
+IPR012706,1,Rib/alpha/Esp surface antigen repeat (repeat)
+IPR012816,1,NADAR (domain)
+IPR011557,1,"DNA gyrase, subunit B (family)"
+IPR003084,1,Histone deacetylase (family)
+IPR002959,1,Tumour necrosis factor alpha (family)
+IPR002971,1,Major urinary protein (family)
+IPR013199,1,M protein trans-acting positive regulator (MGA) HTH domain (domain)
+IPR013198,1,"Global transcriptional regulator CodY, C-terminal (domain)"
+IPR013196,1,"Helix-turn-helix, type 11 (domain)"
+IPR013130,1,Ferric reductase transmembrane component-like domain (domain)
+IPR013121,1,"Ferric reductase, NAD binding domain (domain)"
+IPR003034,1,SAP domain (domain)
+IPR003075,1,"Peroxisome proliferator-activated receptor, beta (family)"
+IPR013099,1,Potassium channel domain (domain)
+IPR003079,1,Nuclear receptor ROR (family)
+IPR013094,1,Alpha/beta hydrolase fold-3 (domain)
+IPR003092,1,"Two pore domain potassium channel, TASK family (family)"
+IPR012838,1,Pyruvate formate-lyase 1 activating enzyme (family)
+IPR003093,1,"Apoptosis regulator, Bcl-2 protein, BH4 (domain)"
+IPR013078,1,"Histidine phosphatase superfamily, clade-1 (family)"
+IPR013022,1,"Xylose isomerase-like, TIM barrel domain (domain)"
+IPR003101,1,"Coactivator CBP, KIX domain (domain)"
+IPR012981,1,"PIH1, N-terminal (domain)"
+IPR012970,1,"Polysaccharide lyase 8, N-terminal alpha-helical (domain)"
+IPR012938,1,Glucose/Sorbosone dehydrogenase (domain)
+IPR012904,1,"8-oxoguanine DNA glycosylase, N-terminal (domain)"
+IPR012902,1,Prokaryotic N-terminal methylation site (ptm)
+IPR012896,1,"Integrin beta subunit, tail (domain)"
+IPR012864,1,Cysteine oxygenase/2-aminoethanethiol dioxygenase (family)
+IPR012839,1,Organic radical enzyme activase (family)
+IPR003265,1,HhH-GPD domain (domain)
+IPR011552,1,Tellurite resistance protein TehA/malic acid transport protein (family)
+IPR010304,1,"Survival motor neuron, Tudor domain (domain)"
+IPR010771,1,Intracellular growth attenuator IgaA (family)
+IPR011010,1,"DNA breaking-rejoining enzyme, catalytic core (homologous_superfamily)"
+IPR003538,1,Gram-negative bacterial TonB protein (family)
+IPR003542,1,"Enterobactin synthetase-like, component D (family)"
+IPR003563,1,Oxidized purine nucleoside triphosphate (family)
+IPR010996,1,"DNA polymerase beta-like, N-terminal domain (domain)"
+IPR010979,1,"Small ribosomal subunit protein uS13-like, H2TH (homologous_superfamily)"
+IPR010976,1,Beta-phosphoglucomutase hydrolase (domain)
+IPR010918,1,"PurM-like, C-terminal domain (domain)"
+IPR010907,1,Calcium-mediated lectin (domain)
+IPR010827,1,"POTRA domain, BamA/TamA-like (domain)"
+IPR010825,1,Stress-inducible humoral factor Turandot (family)
+IPR010810,1,"Flagellin hook, IN motif (conserved_site)"
+IPR010734,1,"Copine, C-terminal (domain)"
+IPR011013,1,Galactose mutarotase-like domain superfamily (homologous_superfamily)
+IPR010722,1,Biotin and thiamin synthesis-associated domain (domain)
+IPR010719,1,Methyltransferase MnmM-like (family)
+IPR010714,1,"Coatomer, alpha subunit, C-terminal (domain)"
+IPR010663,1,"Zinc finger, FPG/IleRS-type (domain)"
+IPR010533,1,Vertebrate interleukin-3 regulated transcription factor (domain)
+IPR010520,1,Esterase FrsA-like (family)
+IPR010518,1,Flagellar regulatory FleQ (domain)
+IPR010511,1,"Lytic murein transglycosylase D , lipid attachment domain (domain)"
+IPR010506,1,DMAP1-binding domain (domain)
+IPR010495,1,Haem-binding HasA (family)
+IPR010423,1,"Ookinete surface antigen, EGF domain (domain)"
+IPR010349,1,L-asparaginase II (family)
+IPR003502,1,Interleukin-1 propeptide (domain)
+IPR003410,1,HYR domain (domain)
+IPR011539,1,"Rel homology domain, DNA-binding domain (domain)"
+IPR011071,1,"Polysaccharide lyase family 8-like, C-terminal (homologous_superfamily)"
+IPR011509,1,RtxA toxin (repeat)
+IPR011343,1,Deoxyribose-phosphate aldolase (family)
+IPR011334,1,"UDP-3-O-acyl N-acetylglucosamine deacetylase, C-terminal (homologous_superfamily)"
+IPR011259,1,"Ezrin/radixin/moesin, C-terminal (domain)"
+IPR011257,1,DNA glycosylase (homologous_superfamily)
+IPR011252,1,Fibrogen-binding domain 1 (homologous_superfamily)
+IPR003280,1,Two pore domain potassium channel (family)
+IPR003298,1,Apical membrane antigen 1 (family)
+IPR011174,1,Ezrin/radixin/moesin (family)
+IPR003305,1,"Carbohydrate-binding, CenC-like (domain)"
+IPR011108,1,"Zn-dependent metallo-hydrolase, RNA specificity domain (domain)"
+IPR011096,1,FTP domain (domain)
+IPR003333,1,Cyclopropane mycolic acid synthase (family)
+IPR003394,1,"Porin, opacity type (domain)"
+IPR011059,1,"Metal-dependent hydrolase, composite domain superfamily (homologous_superfamily)"
+IPR011054,1,Rudiment single hybrid motif (homologous_superfamily)
+IPR011049,1,"Serralysin-like metalloprotease, C-terminal (homologous_superfamily)"
+IPR011048,1,"Cytochrome cd1-nitrite reductase-like, haem d1 domain superfamily (homologous_superfamily)"
+IPR011044,1,"Quinoprotein amine dehydrogenase, beta chain-like (homologous_superfamily)"
+IPR003349,1,JmjN domain (domain)
+IPR011041,1,"Soluble quinoprotein glucose/sorbosone dehydrogenase, beta-propeller domain superfamily (homologous_superfamily)"
+IPR011034,1,"Formyl transferase-like, C-terminal domain superfamily (homologous_superfamily)"
+IPR003351,1,Dishevelled protein domain (domain)
+IPR003362,1,Bacterial sugar transferase (domain)
+IPR003392,1,"Patched domain-containing protein, SSD domain (domain)"
+IPR011024,1,Gamma-crystallin-like (homologous_superfamily)
+IPR013279,1,"Apoptosis regulator, Bcl-X (family)"
+IPR013281,1,"Apoptosis regulator, Mcl-1 (family)"
+IPR013319,1,Glycoside hydrolase family 11/12 (homologous_superfamily)
+IPR015506,1,Dishevelled-related protein (family)
+IPR015915,1,Kelch-type beta propeller (homologous_superfamily)
+IPR015887,1,"DNA glycosylase/AP lyase, zinc finger domain, DNA-binding site (binding_site)"
+IPR015886,1,"DNA glycosylase/AP lyase, H2TH DNA-binding (domain)"
+IPR015883,1,"Glycoside hydrolase family 20, catalytic domain (domain)"
+IPR015870,1,"UDP-3-O-acyl N-acetylglucosamine deacetylase, N-terminal (homologous_superfamily)"
+IPR002547,1,tRNA-binding domain (domain)
+IPR002575,1,Aminoglycoside phosphotransferase (domain)
+IPR015815,1,3-hydroxyisobutyrate dehydrogenase-related (family)
+IPR015812,1,Integrin beta subunit (family)
+IPR002605,1,Adenovirus penton base protein (family)
+IPR015707,1,Beta-2-Microglobulin (family)
+IPR015655,1,Protein phosphatase 2C (family)
+IPR015458,1,MDM4 (family)
+IPR015940,1,Ubiquitin-associated domain (domain)
+IPR015339,1,"Immunomodulatory protein FIP-Fve, fungal (family)"
+IPR015283,1,Monellin (family)
+IPR015243,1,"FimH, mannose-binding domain (domain)"
+IPR015143,1,L27-1 (domain)
+IPR015141,1,"Phospholipase A2, prokaryotic/fungal (family)"
+IPR002637,1,RdgB/HAM1 (family)
+IPR015091,1,"Surfactant protein C, N-terminal propeptide (domain)"
+IPR015032,1,"Thoeris protein ThsB, TIR-like domain (domain)"
+IPR015015,1,F-actin binding (domain)
+IPR015013,1,Transforming growth factor beta receptor 2 ectodomain (domain)
+IPR015012,1,Phenylalanine zipper (domain)
+IPR014994,1,Domain of unknown function DUF1843 (domain)
+IPR015917,1,"Peptidase C14A, caspase catalytic domain (domain)"
+IPR015946,1,"K homology domain-like, alpha/beta (homologous_superfamily)"
+IPR002946,1,Intracellular chloride channel (family)
+IPR002500,1,Phosphoadenosine phosphosulphate reductase (domain)
+IPR016245,1,"Tyrosine protein kinase, EGF/ERB/XmrK receptor (family)"
+IPR016237,1,"Serine/threonine-protein kinase, Ulk1/Ulk2 (family)"
+IPR016235,1,"Tyrosine/threonine-protein kinase, Cdc2 inhibitor (family)"
+IPR016222,1,"Glycerol-3-phosphate O-acyltransferase, chloroplast (family)"
+IPR016211,1,"Glutamate/phenylalanine/leucine/valine/L-tryptophan dehydrogenase, bacterial/archaeal (family)"
+IPR002450,1,von Ebner's gland protein/ Bos/Can allergen (family)
+IPR016193,1,Cytidine deaminase-like (homologous_superfamily)
+IPR016192,1,"APOBEC/CMP deaminase, zinc-binding (binding_site)"
+IPR016188,1,"PurM-like, N-terminal domain (domain)"
+IPR002466,1,Adenosine deaminase/editase (domain)
+IPR002467,1,"Peptidase M24A, methionine aminopeptidase, subfamily 1 (family)"
+IPR002474,1,"Carbamoyl-phosphate synthase small subunit, N-terminal domain (domain)"
+IPR016139,1,"Ribosome-inactivating protein, subdomain 2 (homologous_superfamily)"
+IPR002523,1,"Mg2+ transporter protein, CorA-like/Zinc transport protein ZntB (family)"
+IPR016138,1,"Ribosome-inactivating protein, subdomain 1 (homologous_superfamily)"
+IPR016137,1,RGS domain (domain)
+IPR016134,1,Dockerin domain (domain)
+IPR016132,1,Phytochrome chromophore attachment domain (domain)
+IPR002501,1,"Pseudouridine synthase II, N-terminal (domain)"
+IPR016129,1,"Peptidase family C14A, His active site (active_site)"
+IPR016117,1,ArgJ-like domain superfamily (homologous_superfamily)
+IPR016091,1,"Superantigen toxin, C-terminal (homologous_superfamily)"
+IPR002502,1,N-acetylmuramoyl-L-alanine amidase domain (domain)
+IPR016084,1,"Haem oxygenase-like, multi-helical (homologous_superfamily)"
+IPR016045,1,"Tyrosine-protein kinase, non-receptor, TYK2, N-terminal (domain)"
+IPR016040,1,NAD(P)-binding domain (domain)
+IPR014992,1,Domain of unknown function DUF1842 (domain)
+IPR014978,1,"Glutamine-Leucine-Glutamine, QLQ (domain)"
+IPR014942,1,"Nucleotidyl transferase AbiEii toxin, Type IV TA system (family)"
+IPR013767,1,PAS fold (domain)
+IPR014002,1,"Agenet domain, plant type (domain)"
+IPR013968,1,"Polyketide synthase, ketoreductase domain (domain)"
+IPR013937,1,"Sorting nexin, C-terminal (domain)"
+IPR013918,1,Nucleotide exchange factor Fes1 (domain)
+IPR013894,1,"RecQ mediated genome instability protein 1, OB-fold domain (domain)"
+IPR013876,1,"TFIIH p62 subunit, N-terminal (domain)"
+IPR013856,1,Peptidase M4 domain (domain)
+IPR013840,1,"NAD-dependent DNA ligase, N-terminal (domain)"
+IPR013839,1,"NAD-dependent DNA ligase, adenylation (domain)"
+IPR002893,1,"Zinc finger, MYND-type (domain)"
+IPR002903,1,Ribosomal RNA small subunit methyltransferase H (family)
+IPR013780,1,"Glycosyl hydrolase, all-beta (homologous_superfamily)"
+IPR002915,1,DeoC/FbaB/LacD aldolase (family)
+IPR014837,1,"EF-hand, Ca insensitive (domain)"
+IPR013760,1,"DNA topoisomerase, type IIA-like domain superfamily (homologous_superfamily)"
+IPR013759,1,"DNA topoisomerase, type IIA, subunit B, C-terminal (homologous_superfamily)"
+IPR013658,1,SMP-30/Gluconolactonase/LRE-like region (domain)
+IPR013655,1,PAS fold-3 (domain)
+IPR013651,1,"ATP-grasp fold, RimK-type (domain)"
+IPR013614,1,"Viral polyprotein, Caliciviridae N-terminal (domain)"
+IPR002933,1,Peptidase M20 (family)
+IPR002938,1,FAD-binding domain (domain)
+IPR013506,1,"DNA topoisomerase, type IIA, subunit B, domain 2 (domain)"
+IPR013473,1,Lon-like protease BrxL (family)
+IPR013453,1,"Xylose isomerase, actinobacteria (family)"
+IPR013328,1,"6-phosphogluconate dehydrogenase, domain 2 (homologous_superfamily)"
+IPR014004,1,"Transport-associated and nodulation domain, bacteria (domain)"
+IPR014012,1,Helicase/SANT-associated domain (domain)
+IPR014014,1,"RNA helicase, DEAD-box type, Q motif (domain)"
+IPR014015,1,"Helicase, superfamily 3, DNA virus (domain)"
+IPR014836,1,"Integrin beta subunit, cytoplasmic domain (domain)"
+IPR002657,1,Bile acid:sodium symporter/arsenical resistance protein Acr3 (family)
+IPR002684,1,Biotin synthase/Biotin biosynthesis bifunctional protein BioAB (family)
+IPR002713,1,FF domain (domain)
+IPR014819,1,"Primase, C-terminal 2 (domain)"
+IPR014818,1,"Bacteriophage/plasmid primase, P4, C-terminal (domain)"
+IPR014784,1,"Copper type II, ascorbate-dependent monooxygenase-like, C-terminal (homologous_superfamily)"
+IPR014783,1,"Copper type II, ascorbate-dependent monooxygenase, histidine-cluster-2 conserved site (conserved_site)"
+IPR014780,1,"tRNA pseudouridine synthase II, TruB (family)"
+IPR002717,1,"Histone acetyltransferase domain, MYST-type (domain)"
+IPR002804,1,Archease (family)
+IPR002818,1,DJ-1/PfpI (domain)
+IPR002826,1,6-hydroxymethylpterin diphosphokinase MptE-like (domain)
+IPR014744,1,"Nuclear receptor coactivator, CREB-bp-like, interlocking (domain)"
+IPR014729,1,Rossmann-like alpha/beta/alpha sandwich fold (homologous_superfamily)
+IPR002836,1,PDCD5-like (family)
+IPR002857,1,"Zinc finger, CXXC-type (domain)"
+IPR014718,1,Glycoside hydrolase-type carbohydrate-binding (homologous_superfamily)
+IPR002861,1,Reeler domain (domain)
+IPR014503,1,Clavaminate synthase-like (family)
+IPR014375,1,"Protein kinase C, alpha/beta/gamma types (family)"
+IPR002867,1,IBR domain (domain)
+IPR014186,1,S-formylglutathione hydrolase (family)
+IPR014154,1,Global transcriptional regulator CodY (family)
+IPR014061,1,Lon-like protease BrxL-like (family)
+IPR010312,1,"Global transcriptional regulator CodY, N-terminal (domain)"
+IPR010303,1,"CREB-binding protein/p300, atypical RING domain (domain)"
+IPR034686,1,Terpene cyclase-like 2 (family)
+IPR006097,1,"Glutamate/phenylalanine/leucine/valine/L-tryptophan dehydrogenase, dimerisation domain (domain)"
+IPR006171,1,TOPRIM domain (domain)
+IPR006158,1,Cobalamin (vitamin B12)-binding domain (domain)
+IPR006141,1,Intein N-terminal splicing region (ptm)
+IPR004103,1,"Polysaccharide lyase family 8, C-terminal (domain)"
+IPR006132,1,"Aspartate/ornithine carbamoyltransferase, carbamoyl-P binding (domain)"
+IPR006131,1,"Aspartate/ornithine carbamoyltransferase, Asp/Orn-binding domain (domain)"
+IPR006130,1,Aspartate/ornithine carbamoyltransferase (family)
+IPR006129,1,Adhesin B (family)
+IPR006128,1,Adhesion lipoprotein PsaA-like (family)
+IPR006127,1,"Periplasmic solute binding protein, ZnuA-like (family)"
+IPR006116,1,"2-5OAS/ClassI-CCAase, nucleotidyltransferase domain (domain)"
+IPR006115,1,"6-phosphogluconate dehydrogenase, NADP-binding (domain)"
+IPR006096,1,"Glutamate/phenylalanine/leucine/valine/L-tryptophan dehydrogenase, C-terminal (domain)"
+IPR006239,1,"3(2),5 -bisphosphate nucleotidase (family)"
+IPR006095,1,Glutamate/phenylalanine/leucine/valine/L-tryptophan dehydrogenase (family)
+IPR006073,1,GTP binding domain (domain)
+IPR004104,1,"Gfo/Idh/MocA-like oxidoreductase, C-terminal (domain)"
+IPR004149,1,"Zinc-finger, NAD-dependent DNA ligase C4-type (domain)"
+IPR006053,1,Tumour necrosis factor (family)
+IPR006052,1,Tumour necrosis factor domain (domain)
+IPR006047,1,"Glycosyl hydrolase, family 13, catalytic domain (domain)"
+IPR004150,1,"NAD-dependent DNA ligase, OB-fold (domain)"
+IPR006026,1,"Peptidase, metallopeptidase (domain)"
+IPR005992,1,IMP dehydrogenase-related 2 (family)
+IPR005990,1,Inosine-5'-monophosphate dehydrogenase (family)
+IPR005977,1,Nitrogenase iron protein NifH (family)
+IPR004065,1,Lysophosphatidic acid receptor (family)
+IPR006259,1,Adenylate kinase subfamily (family)
+IPR005950,1,"Molybdate ABC transporter, substrate-binding protein (family)"
+IPR006576,1,BRK domain (domain)
+IPR006794,1,"Transcriptional activator, Zfx / Zfy domain (domain)"
+IPR006716,1,ERG2/sigma1 receptor-like (family)
+IPR006692,1,COPA/B second beta-propeller domain (domain)
+IPR006687,1,"Small GTPase superfamily, SAR1-type (family)"
+IPR006674,1,HD domain (domain)
+IPR006638,1,"Elp3/MiaA/NifB-like, radical SAM core domain (domain)"
+IPR006633,1,Carbohydrate-binding/sugar hydrolysis domain (domain)
+IPR006628,1,Purine-rich element binding protein family (family)
+IPR006626,1,Parallel beta-helix repeat (repeat)
+IPR006620,1,"Prolyl 4-hydroxylase, alpha subunit (domain)"
+IPR006597,1,Sel1-like repeat (repeat)
+IPR006594,1,LIS1 homology motif (conserved_site)
+IPR006571,1,TLDc domain (domain)
+IPR006260,1,"TonB/TolA, C-terminal (domain)"
+IPR006558,1,LamG-like jellyroll fold (domain)
+IPR006536,1,HnRNP-L/PTB (family)
+IPR006529,1,"U2 snRNP auxilliary factor, large subunit, splicing factor (family)"
+IPR006483,1,"CRISPR-associated Cas3-type, HD domain (domain)"
+IPR003977,1,E3 ubiquitin-protein ligase parkin (family)
+IPR004004,1,"Helicase/polymerase/peptidase polyprotein, Calicivirus-type (family)"
+IPR006315,1,Outer membrane autotransporter barrel domain (domain)
+IPR006314,1,Dyp-type peroxidase (family)
+IPR006289,1,"Transcription elongation factor, TFIIS (family)"
+IPR006287,1,Protein/nucleic acid deglycase DJ-1 (family)
+IPR006275,1,"Carbamoyl-phosphate synthase, large subunit (family)"
+IPR006274,1,"Carbamoyl-phosphate synthase, small subunit (family)"
+IPR005952,1,Phosphoglycerate mutase 1 (family)
+IPR005941,1,"Succinyl-diaminopimelate desuccinylase, proteobacteria (family)"
+IPR010259,1,Peptidase S8 propeptide/proteinase inhibitor I9 (domain)
+IPR004753,1,Cell shape determining protein MreB (family)
+IPR005103,1,"Auxiliary Activity family 9, catalytic domain (domain)"
+IPR005064,1,Bordetella uptake gene (family)
+IPR005049,1,STELLO-like (family)
+IPR005009,1,"Poxvirus mRNA capping enzyme, small subunit (family)"
+IPR004981,1,"Tryptophan 2,3-dioxygenase (family)"
+IPR004963,1,Pectinacetylesterase/NOTUM (family)
+IPR004903,1,Lactobacillus surface layer protein (family)
+IPR004873,1,BURP domain (domain)
+IPR004827,1,Basic-leucine zipper domain (domain)
+IPR004331,1,SPX domain (domain)
+IPR004791,1,"UvrABC system, subunit C (family)"
+IPR004765,1,NPC1-like (family)
+IPR004733,1,Phosphoribosylformylglycinamidine cyclo-ligase (family)
+IPR005149,1,"Transcription regulator PadR, N-terminal (domain)"
+IPR004725,1,"Apoptosis regulator, Bcl-2/ BclX (family)"
+IPR004710,1,Bile acid:sodium symporter (family)
+IPR004695,1,Transporter protein SLAC1/Mae1/ Ssu1/TehA (family)
+IPR004607,1,Phosphoribosylglycinamide formyltransferase (family)
+IPR004577,1,8-oxoguanine DNA-glycosylase (family)
+IPR004342,1,"EXS, C-terminal (domain)"
+IPR004574,1,Alkylated DNA repair protein AlkB (family)
+IPR004565,1,Outer membrane lipoprotein LolB (family)
+IPR004360,1,Glyoxalase/fosfomycin resistance/dioxygenase domain (domain)
+IPR004562,1,Lipoyltransferase/lipoate-protein ligase (family)
+IPR004515,1,Phosphoheptose isomerase (family)
+IPR004488,1,Magnesium/cobalt transport protein CorA (family)
+IPR004251,1,Pox virus entry-fusion-complex G9/A16 (family)
+IPR004232,1,Nitrile hydratase alpha/Thiocyanate hydrolase gamma (domain)
+IPR005913,1,dTDP-4-dehydrorhamnose reductase family (family)
+IPR005604,1,"Bacteriophage T7 tail fibre protein-like, N-terminal domain (domain)"
+IPR005888,1,"dTDP-glucose 4,6-dehydratase (family)"
+IPR005859,1,Cysteine synthase CysK (family)
+IPR005856,1,Cysteine synthase (family)
+IPR005835,1,Nucleotidyl transferase domain (domain)
+IPR005818,1,"Linker histone H1/H5, domain H15 (domain)"
+IPR005793,1,"Formyl transferase, C-terminal (domain)"
+IPR005792,1,Protein disulphide isomerase (family)
+IPR005771,1,"UTP--glucose-1-phosphate uridylyltransferase, bacterial/archaeal-type (family)"
+IPR005720,1,"Dihydroorotate dehydrogenase, catalytic (domain)"
+IPR005719,1,"Dihydroorotate dehydrogenase, class 2 (family)"
+IPR005618,1,"Outer membrane protein, OmpW (family)"
+IPR005607,1,BSD domain (domain)
+IPR005532,1,Sulfatase-modifying factor enzyme (domain)
+IPR005264,1,N-acetylneuraminate lyase (family)
+IPR005511,1,Senescence marker protein-30 (SMP-30) (family)
+IPR005483,1,"Carbamoyl-phosphate synthase large subunit, CPSase domain (domain)"
+IPR005480,1,"Carbamoyl-phosphate synthetase, large subunit oligomerisation domain (domain)"
+IPR005479,1,"Carbamoyl-phosphate synthetase large subunit-like, ATP-binding domain (domain)"
+IPR005455,1,"Profilin, eukaryotic type (family)"
+IPR005407,1,Potassium channel subfamily K member 9 (family)
+IPR005399,1,"Potassium channel, voltage-dependent, beta subunit, KCNAB-related (family)"
+IPR005338,1,Anhydro-N-acetylmuramic acid kinase (family)
+IPR005321,1,"Peptidase S58, DmpA (family)"
+IPR005311,1,"Penicillin-binding protein, dimerisation domain (domain)"
+IPR005298,1,MAP domain (domain)
+IPR005273,1,Uracil-DNA glycosylase family 4 (domain)
+IPR006914,1,VENN motif-containing domain (domain)
+IPR007008,1,Poxvirus A6 (family)
+IPR007045,1,5-keto 4-deoxyuronate isomerase (family)
+IPR008965,1,"CBM2/CBM3, carbohydrate-binding domain superfamily (homologous_superfamily)"
+IPR009034,1,Fungal dockerin domain superfamily (homologous_superfamily)
+IPR009031,1,Carbohydrate binding module family 10 (domain)
+IPR003618,1,"Transcription elongation factor S-II, central domain (domain)"
+IPR003625,1,Parathyroid hormone (family)
+IPR008996,1,Cytokine IL1/FGF (homologous_superfamily)
+IPR003644,1,Na-Ca exchanger/integrin-beta4 (domain)
+IPR008991,1,Translation protein SH3-like domain superfamily (homologous_superfamily)
+IPR008988,1,"Transcriptional repressor, C-terminal (homologous_superfamily)"
+IPR008986,1,EV matrix protein (family)
+IPR008983,1,Tumour necrosis factor-like domain superfamily (homologous_superfamily)
+IPR003646,1,"SH3-like domain, bacterial-type (domain)"
+IPR008977,1,PHM/PNGase F domain superfamily (homologous_superfamily)
+IPR008962,1,PapD-like superfamily (homologous_superfamily)
+IPR003615,1,HNH nuclease (domain)
+IPR008954,1,Moesin tail domain superfamily (homologous_superfamily)
+IPR008937,1,Ras-like guanine nucleotide exchange factor (family)
+IPR008930,1,Terpenoid cyclases/protein prenyltransferase alpha-alpha toroid (homologous_superfamily)
+IPR008929,1,Chondroitin AC/alginate lyase (homologous_superfamily)
+IPR003673,1,CoA-transferase family III (family)
+IPR003695,1,"Ppx/GppA phosphatase, N-terminal (domain)"
+IPR008913,1,"Zinc finger, CHY-type (domain)"
+IPR008872,1,Insecticidal crystal toxin (domain)
+IPR008869,1,Toluene tolerance Ttg2/phospholipid-binding protein MlaC (family)
+IPR008836,1,Semenogelin (family)
+IPR003759,1,"Cobalamin (vitamin B12)-binding module, cap domain (domain)"
+IPR008775,1,Phytanoyl-CoA dioxygenase-like (family)
+IPR003617,1,"Transcription elongation factor, TFIIS/CRSP70, N-terminal, sub-type (domain)"
+IPR009060,1,UBA-like superfamily (homologous_superfamily)
+IPR007055,1,BON domain (domain)
+IPR009402,1,Orthopoxvirus A47 (family)
+IPR010255,1,Haem peroxidase superfamily (homologous_superfamily)
+IPR010126,1,"Esterase, PHB depolymerase (family)"
+IPR010086,1,"Flavodoxin, long chain (family)"
+IPR010069,1,"Toxin CdiA-like, Filamentous hemagglutinin motif repeats (repeat)"
+IPR010068,1,"Taurine ABC transporter, substrate-binding protein TauA (family)"
+IPR010065,1,"Amino acid ABC transporter, permease protein, 3-TM domain (domain)"
+IPR009851,1,"Modifier of rudimentary, Modr (domain)"
+IPR009810,1,Late nodulin domain (domain)
+IPR009790,1,Transmembrane protein 106 (family)
+IPR003583,1,"Helix-hairpin-helix DNA-binding motif, class 1 (domain)"
+IPR003607,1,HD/PDEase domain (domain)
+IPR003609,1,PAN/Apple domain (domain)
+IPR009349,1,"TRIP4/RQT4, C2HC5-type zinc finger (domain)"
+IPR009072,1,Histone-fold (homologous_superfamily)
+IPR009249,1,Ferredoxin-dependent bilin reductase (family)
+IPR009240,1,"Adenomatous polyposis coli protein, 15 residue repeat (repeat)"
+IPR009234,1,Adenomatous polyposis coli protein basic domain (domain)
+IPR009232,1,EB-1 binding (domain)
+IPR009224,1,SAMP (repeat)
+IPR009223,1,Adenomatous polyposis coli protein repeat (repeat)
+IPR009210,1,Activating signal cointegrator 1 complex subunit 1 (family)
+IPR009203,1,Knr4/Smi1 family (family)
+IPR009133,1,Trace amine associated receptor 1 (family)
+IPR009132,1,Trace amine associated receptor family (family)
+IPR009110,1,"Nuclear receptor coactivator, interlocking (homologous_superfamily)"
+IPR009091,1,Regulator of chromosome condensation 1/beta-lactamase-inhibitor protein II (homologous_superfamily)
+IPR008754,1,"Peptidase M43, pregnancy-associated plasma-A (domain)"
+IPR003765,1,"Nitrate reductase chaperone, NarJ (family)"
+IPR008738,1,"Peptidase C27, rubella virus endopeptidase (domain)"
+IPR007365,1,"Transferrin receptor-like, dimerisation domain (domain)"
+IPR007862,1,"Adenylate kinase, active site lid domain (domain)"
+IPR007833,1,Capsule polysaccharide biosynthesis (family)
+IPR007809,1,FlgN-like protein (family)
+IPR007737,1,Mga helix-turn-helix domain (domain)
+IPR007710,1,Nucleoside 2-deoxyribosyltransferase (family)
+IPR007664,1,Poxvirus A28 (family)
+IPR007551,1,Protein of unknown function DUF520 (family)
+IPR007544,1,Type 1 encapsulin shell protein (family)
+IPR007487,1,"ABC transporter, tyrosine-binding protein-like (family)"
+IPR007484,1,Peptidase M28 (domain)
+IPR007463,1,Protein of unknown function DUF507 (family)
+IPR007374,1,ASCH domain (domain)
+IPR007342,1,Pseudouridine-5'-phosphate glycosidase (family)
+IPR008693,1,Transport accessory protein MmpS (family)
+IPR007259,1,Gamma-tubulin complex component protein (family)
+IPR007167,1,Ferrous iron transporter FeoA-like domain (domain)
+IPR007164,1,GTP-dependent dephospho-CoA kinase (family)
+IPR007138,1,Antibiotic biosynthesis monooxygenase domain (domain)
+IPR007135,1,Ubiquitin-like-conjugating enzyme Atg3/Atg10 (family)
+IPR007125,1,Histone H2A/H2B/H3 (domain)
+IPR007112,1,"Expansin/pollen allergen, DPBB domain (domain)"
+IPR003897,1,Clostridium enterotoxin (family)
+IPR007084,1,BRICHOS domain (domain)
+IPR007083,1,"RNA polymerase Rpb1, domain 4 (domain)"
+IPR007081,1,"RNA polymerase Rpb1, domain 5 (domain)"
+IPR007066,1,"RNA polymerase Rpb1, domain 3 (domain)"
+IPR007884,1,Protein-L-histidine N-pros-methyltransferase (family)
+IPR007922,1,Protein of unknown function DUF721/UPF0232 (family)
+IPR007930,1,Protein of unknown function DUF724 (family)
+IPR008104,1,Macrophage infectivity potentiator (family)
+IPR008656,1,Inositol-tetrakisphosphate 1-kinase (family)
+IPR008638,1,"Filamentous haemagglutinin FhaB/tRNA nuclease CdiA-like, TPS domain (domain)"
+IPR008622,1,Flagellar protein FliT (family)
+IPR008619,1,Filamentous haemagglutinin repeat (repeat)
+IPR008597,1,Invertebrate-type lysozyme (family)
+IPR008551,1,Transport and Golgi organisation protein 2 (family)
+IPR008477,1,Tumor necrosis factor alpha-induced protein 8-like (family)
+IPR008422,1,KN homeodomain (domain)
+IPR008395,1,Agenet-like domain (domain)
+IPR008366,1,Nuclear factor of activated T cells (NFAT) (family)
+IPR008356,1,"Protein-tyrosine phosphatase, KIM-containing (family)"
+IPR008351,1,"Mitogen-activated protein (MAP) kinase, JNK (family)"
+IPR008349,1,"Mitogen-activated protein (MAP) kinase, ERK1/2 (family)"
+IPR008341,1,Dishevelled-2 (family)
+IPR008339,1,Dishevelled family (family)
+IPR008278,1,4'-phosphopantetheinyl transferase domain (domain)
+IPR008269,1,"Peptidase S16, Lon proteolytic domain (domain)"
+IPR003850,1,Phosphoribosylformylglycinamidine synthase subunit PurS (family)
+IPR008258,1,Transglycosylase SLT domain 1 (domain)
+IPR008254,1,Flavodoxin/nitric oxide synthase (domain)
+IPR008250,1,"P-type ATPase, A domain superfamily (homologous_superfamily)"
+IPR008207,1,"Signal transduction histidine kinase, phosphotransfer (Hpt) domain (domain)"
+IPR008162,1,Inorganic pyrophosphatase (family)
+IPR008145,1,Guanylate kinase/L-type calcium channel beta subunit (domain)
+IPR008144,1,Guanylate kinase-like domain (domain)
+IPR016246,1,"Tyrosine-protein kinase, insulin-like receptor (family)"
+IPR016247,1,"Tyrosine-protein kinase, receptor ROR (family)"
+IPR002408,1,"Natriuretic peptide, brain type (family)"
+IPR001722,1,"Glycoside hydrolase, family 7 (family)"
+IPR001683,1,Phox homology (domain)
+IPR027268,1,"Peptidase M4/M1, CTD superfamily (homologous_superfamily)"
+IPR027263,1,Mast/stem cell growth factor receptor (family)
+IPR027257,1,Mitogen-activated protein kinase kinase kinase 12 (family)
+IPR027256,1,"P-type ATPase, subfamily IB (family)"
+IPR027079,1,TFIIH subunit Tfb1/GTF2H1 (family)
+IPR027065,1,Lon protease (family)
+IPR001713,1,"Proteinase inhibitor I25A, stefin (family)"
+IPR026831,1,Adenomatous polyposis coli protein (homologous_superfamily)
+IPR026818,1,Adenomatous polyposis coli (APC) family (family)
+IPR001714,1,"Peptidase M24, methionine aminopeptidase (family)"
+IPR026465,1,"Serine-rich repeat adhesion glycoprotein, N-terminal domain (domain)"
+IPR001728,1,Thyroid hormone receptor (family)
+IPR027310,1,Profilin conserved site (conserved_site)
+IPR026113,1,tRNA N(3)-methylcytidine methyltransferase METTL2/6/8-like (family)
+IPR025983,1,Cysteine-rich CPCC domain (domain)
+IPR025954,1,DBC1/CARP1 catalytically inactive NUDIX hydrolase domain (domain)
+IPR025944,1,"Sigma-54 interaction domain, conserved site (conserved_site)"
+IPR025943,1,"Sigma-54 interaction domain, ATP-binding site 2 (binding_site)"
+IPR025921,1,HmuY protein (family)
+IPR025894,1,"Polycomb-like MTF2 factor 2, C-terminal domain (domain)"
+IPR025860,1,Major prion protein N-terminal (domain)
+IPR025804,1,Poxvirus/kinetoplastid-type cap-specific nucleoside 2-O-methyltransferase (family)
+IPR025799,1,Protein arginine N-methyltransferase (family)
+IPR025789,1,Histone-lysine N-methyltransferase DOT1 domain (domain)
+IPR025729,1,MsyB protein (family)
+IPR027304,1,Trigger factor/SurA domain superfamily (homologous_superfamily)
+IPR001679,1,NAD-dependent DNA ligase (family)
+IPR025704,1,"E3 ubiquitin ligase UBR4, C-terminal (domain)"
+IPR028081,1,Leucine-binding protein domain (domain)
+IPR029012,1,Helix hairpin bin domain superfamily (homologous_superfamily)
+IPR029001,1,Inosine triphosphate pyrophosphatase-like (homologous_superfamily)
+IPR029000,1,Cyclophilin-like domain superfamily (homologous_superfamily)
+IPR028941,1,WHIM2 domain (domain)
+IPR028846,1,Recoverin family (family)
+IPR028629,1,CRISPR-associated endonuclease Cas9 (family)
+IPR028616,1,Regulator of RpoS (family)
+IPR028614,1,GDP-L-fucose synthase/GDP-L-colitose synthase (family)
+IPR028607,1,"2-deoxynucleoside 5-phosphate N-hydrolase 1, DNPH1 (family)"
+IPR028570,1,"Kalirin/Triple functional domain protein, SH3 domain 1 (domain)"
+IPR028207,1,"DNA polymerase beta, palm domain (domain)"
+IPR028098,1,"Glycosyltransferase subfamily 4-like, N-terminal domain (domain)"
+IPR027936,1,"Ephrin receptor, transmembrane domain (domain)"
+IPR001670,1,"Alcohol dehydrogenase, iron-type/glycerol dehydrogenase GldA (domain)"
+IPR027887,1,Protein of unknown function DUF4464 (family)
+IPR027797,1,Pre-toxin TG domain (domain)
+IPR027640,1,Kinesin-like protein (family)
+IPR027627,1,Putative glycosyltransferase (family)
+IPR027510,1,"6-hydroxymethyl-7,8-dihydropterin pyrophosphokinase, MptE (family)"
+IPR027502,1,Inosine triphosphate pyrophosphatase (family)
+IPR027452,1,"Hypoxia-inducible factor 1-alpha inhibitor, domain II (homologous_superfamily)"
+IPR027450,1,Alpha-ketoglutarate-dependent dioxygenase AlkB-like (domain)
+IPR027449,1,"5-keto-4-deoxyuronate isomerase, N-terminal (homologous_superfamily)"
+IPR001621,1,Fungal ligninase (family)
+IPR027421,1,DNA polymerase lambda lyase domain superfamily (homologous_superfamily)
+IPR001665,1,Norovirus peptidase C37 (domain)
+IPR025711,1,PepSY domain (domain)
+IPR001729,1,Pulmonary surfactant-associated protein C (family)
+IPR016257,1,Ephrin receptor type-A /type-B (family)
+IPR023577,1,CYTH domain (domain)
+IPR001818,1,"Peptidase M10, metallopeptidase (domain)"
+IPR023809,1,Thiopeptide-type bacteriocin biosynthesis domain (domain)
+IPR023799,1,Ribosome-binding factor A domain superfamily (homologous_superfamily)
+IPR023796,1,Serpin domain (domain)
+IPR023795,1,"Serpin, conserved site (conserved_site)"
+IPR023753,1,FAD/NAD(P)-binding domain (domain)
+IPR023743,1,Aquaporin Z (family)
+IPR023649,1,Deoxyribose-phosphate aldolase type II (family)
+IPR023635,1,Peptide deformylase (family)
+IPR023612,1,Peptidase M4 (family)
+IPR023606,1,CoA-transferase family III domain 1 superfamily (homologous_superfamily)
+IPR023578,1,Ras guanine nucleotide exchange factor domain superfamily (homologous_superfamily)
+IPR023572,1,Archease domain (domain)
+IPR023848,1,TasA anchoring/assembly protein (family)
+IPR001853,1,DSBA-like thioredoxin domain (domain)
+IPR023557,1,"4-deoxy-4-formamido-L-arabinose-phosphoundecaprenol deformylase ArnD, probable (family)"
+IPR023420,1,"Tyrosine-protein kinase SYK/ZAP-70, inter-SH2 domain superfamily (homologous_superfamily)"
+IPR023419,1,"Transthyretin, conserved site (conserved_site)"
+IPR023418,1,"Transthyretin, thyroxine binding site (binding_site)"
+IPR023416,1,Transthyretin/hydroxyisourate hydrolase domain (domain)
+IPR023415,1,"Low-density lipoprotein (LDL) receptor class A, conserved site (conserved_site)"
+IPR023410,1,14-3-3 domain (domain)
+IPR023409,1,"14-3-3 protein, conserved site (conserved_site)"
+IPR023398,1,Translation Initiation factor eIF- 4e-like (homologous_superfamily)
+IPR023397,1,"S-adenosyl-L-methionine-dependent methyltransferase, MraW, recognition domain superfamily (homologous_superfamily)"
+IPR023347,1,Lysozyme domain superfamily (homologous_superfamily)
+IPR023833,1,SipW-dependent-type signal peptide (domain)
+IPR023953,1,Heme oxygenase IsdG (family)
+IPR001752,1,Kinesin motor domain (domain)
+IPR024589,1,"Fungal ligninase, C-terminal (domain)"
+IPR025224,1,Cell cycle and apoptosis regulator protein (family)
+IPR025223,1,S1-like RNA binding domain (domain)
+IPR024973,1,ESPR domain (domain)
+IPR024968,1,"S-layer protein, C-terminal domain, lactobacillus (domain)"
+IPR024936,1,Cyclophilin-type peptidyl-prolyl cis-trans isomerase (family)
+IPR024935,1,Rubredoxin domain (domain)
+IPR024934,1,Rubredoxin-like domain (domain)
+IPR024922,1,Rubredoxin (family)
+IPR001757,1,P-type ATPase (family)
+IPR024788,1,Malectin-like domain (domain)
+IPR024779,1,"2OGFeDO JBP1/TET, oxygenase domain (domain)"
+IPR024604,1,"Serine/threonine-protein kinase haspin, C-terminal (domain)"
+IPR024580,1,Dishevelled C-terminal (domain)
+IPR023966,1,"Arginine beta-hydroxylase, Fe2/alpha-ketoglutarate-dependent (family)"
+IPR024548,1,"Copper type II ascorbate-dependent monooxygenase, C-terminal (domain)"
+IPR024535,1,"Rhamnogalacturonase A/B/Epimerase-like, pectate lyase domain (domain)"
+IPR024478,1,"Chemotaxis methyl-accepting receptor HlyB-like, 4HB MCP domain (domain)"
+IPR024449,1,"Anti-sigma factor RsgI, N-terminal (domain)"
+IPR001759,1,Pentraxin-related (family)
+IPR001762,1,Disintegrin domain (domain)
+IPR024177,1,Biotin synthase (family)
+IPR024156,1,"Small GTPase superfamily, ARF type (family)"
+IPR024134,1,Superoxide dismutase (Cu/Zn) / superoxide dismutase copper chaperone (family)
+IPR024128,1,T-cell surface glycoprotein CD3 zeta subunit (family)
+IPR001781,1,"Zinc finger, LIM-type (domain)"
+IPR024056,1,Apical membrane antigen 1 domain superfamily (homologous_superfamily)
+IPR004463,1,UDP-3-O-acyl N-acetylglucosamine deacetylase (family)
+IPR029030,1,Caspase-like domain superfamily (homologous_superfamily)
+IPR001574,1,Ribosome-inactivating protein (family)
+IPR032857,1,Alpha-ketoglutarate-dependent dioxygenase alkB homologue 4 (family)
+IPR033379,1,Histidine acid phosphatase active site (active_site)
+IPR033337,1,MT-associated protein TORTIFOLIA1/SINE1-2 (family)
+IPR033270,1,VPRBP/DCAF1 family (family)
+IPR033139,1,"Peptidase family C14A, cysteine active site (active_site)"
+IPR033136,1,"NAD-dependent DNA ligase, conserved site (conserved_site)"
+IPR033131,1,"Pectinesterase, Asp active site (active_site)"
+IPR033127,1,"Ubiquitin-activating enzyme E1, Cys active site (active_site)"
+IPR033123,1,Glycosyl hydrolases family 11 (GH11) domain (domain)
+IPR033121,1,Peptidase family A1 domain (domain)
+IPR033119,1,"Glycoside hydrolase family 11, active site 2 (active_site)"
+IPR001447,1,Arylamine N-acetyltransferase (family)
+IPR033114,1,Cas9-type HNH domain (domain)
+IPR032838,1,"VWA-Hint protein, Vwaint domain (domain)"
+IPR033479,1,Double Cache domain 1 (domain)
+IPR032778,1,Growth factor receptor domain 4 (domain)
+IPR001453,1,MoaB/Mog domain (domain)
+IPR032696,1,"Squalene cyclase, C-terminal (domain)"
+IPR001461,1,Aspartic peptidase A1 (family)
+IPR001464,1,Annexin (family)
+IPR032532,1,Domain of unknown function DUF4955 (domain)
+IPR001469,1,"ATP synthase, F1 complex, delta/epsilon subunit (family)"
+IPR001486,1,Truncated hemoglobin (family)
+IPR001492,1,Flagellin (family)
+IPR032465,1,2-amino-3-carboxymuconate-6-semialdehyde decarboxylase (family)
+IPR032453,1,"Homeobox protein PKNOX/Meis, N-terminal (domain)"
+IPR032420,1,"Ubiquitin-activating enzyme E1, four-helix bundle (domain)"
+IPR033469,1,CYTH-like domain superfamily (homologous_superfamily)
+IPR033644,1,"Ferrochelatase, C-terminal (domain)"
+IPR029039,1,Flavoprotein-like superfamily (homologous_superfamily)
+IPR034163,1,Aspergillopepsin-like catalytic domain (domain)
+IPR034670,1,"Checkpoint kinase 1, catalytic domain (domain)"
+IPR034663,1,"Classical Protein Kinase C alpha, catalytic domain (domain)"
+IPR034468,1,"Set1B, RNA recognition motif (domain)"
+IPR034467,1,"Set1A, RNA recognition motif (domain)"
+IPR034465,1,Pyruvate formate-lyase activase (family)
+IPR034457,1,Organic radical-activating enzymes (family)
+IPR034294,1,Aquaporin transporter (family)
+IPR034263,1,"Ephrin type-A receptor 2, ligand binding domain (domain)"
+IPR034204,1,Subtilisin SUB1-like catalytic domain (domain)
+IPR034202,1,Subtilisin Carlsberg-like catalytic domain (domain)
+IPR034193,1,Proteinase K-like catalytic domain (domain)
+IPR034166,1,"Npl3, RNA recognition motif 1 (domain)"
+IPR034160,1,"DNA gyrase subunit B, TOPRIM domain (domain)"
+IPR033659,1,"Ferrochelatase, N-terminal (domain)"
+IPR033992,1,"Natural killer cell receptor-like, C-type lectin-like domain (domain)"
+IPR033989,1,"CD209-like, C-type lectin-like domain (domain)"
+IPR033923,1,p21 activated kinase binding domain (domain)
+IPR033810,1,Carboxypeptidase T (domain)
+IPR033790,1,"Lectin Bc2l-C, N-terminal domain, betaproteobacteria (domain)"
+IPR033760,1,Integrin beta N-terminal (domain)
+IPR033739,1,"Peptidase M10A, catalytic domain (domain)"
+IPR001441,1,Decaprenyl diphosphate synthase-like (family)
+IPR033702,1,"Polo-like kinase 1, catalytic domain (domain)"
+IPR033701,1,First polo-box domain (domain)
+IPR033695,1,Second polo-box domain (domain)
+IPR033690,1,"Adenylate kinase, conserved site (conserved_site)"
+IPR032418,1,"Ubiquitin-activating enzyme E1, FCCH domain (domain)"
+IPR032397,1,Rel homology dimerisation domain (domain)
+IPR032353,1,"Ubiquitin-protein ligase E3A, N-terminal zinc-binding domain (domain)"
+IPR029426,1,"FAM86, N-terminal (domain)"
+IPR030480,1,"Natriuretic peptide, conserved site (conserved_site)"
+IPR030476,1,"Pentaxin, conserved site (conserved_site)"
+IPR030445,1,Histone H3-K79 methyltransferase (family)
+IPR030395,1,Glycerophosphodiester phosphodiesterase domain (domain)
+IPR030393,1,EngB-type guanine nucleotide-binding (G) domain (domain)
+IPR030381,1,Dynamin-type guanine nucleotide-binding (G) domain (domain)
+IPR030375,1,Poxvirus cap-specific nucleoside 2-O-methyltransferase (family)
+IPR030374,1,Polyamine biosynthesis domain (domain)
+IPR030373,1,"Polyamine biosynthesis domain, conserved site (conserved_site)"
+IPR029903,1,RmlD-like substrate binding domain (domain)
+IPR029752,1,"D-isomer specific 2-hydroxyacid dehydrogenase, NAD-binding domain conserved site 1 (conserved_site)"
+IPR029494,1,"ssDNA thymidine ADP-ribosyltransferase, DarT (domain)"
+IPR029398,1,"DNA polymerase beta, thumb domain (domain)"
+IPR032282,1,"Hydroxyacylglutathione hydrolase, C-terminal domain (domain)"
+IPR029295,1,"Snf2, ATP coupling domain (domain)"
+IPR029132,1,Choloylglycine hydrolase/NAAA C-terminal (domain)
+IPR001535,1,Arenavirus glycoprotein (family)
+IPR001544,1,Aminotransferase class IV (family)
+IPR029068,1,Glyoxalase/Bleomycin resistance protein/Dihydroxybiphenyl dioxygenase (homologous_superfamily)
+IPR001555,1,"Phosphoribosylglycinamide formyltransferase, active site (active_site)"
+IPR029059,1,Alpha/beta hydrolase fold-5 (domain)
+IPR029056,1,Ribokinase-like (homologous_superfamily)
+IPR029055,1,"Nucleophile aminohydrolases, N-terminal (homologous_superfamily)"
+IPR001565,1,Synaptotagmin (domain)
+IPR001570,1,"Peptidase M4, C-terminal (domain)"
+IPR029044,1,Nucleotide-diphospho-sugar transferases (homologous_superfamily)
+IPR030523,1,SH2B adapter protein (family)
+IPR030655,1,NifH/chlL conserved site (conserved_site)
+IPR030658,1,Macrophage colony-stimulating factor 1 receptor (family)
+IPR030668,1,"Spermidine/spermine synthase, eukaryotes (family)"
+IPR032240,1,"CRISPR-associated endonuclease Cas9, REC lobe (domain)"
+IPR032239,1,"CRISPR-associated endonuclease Cas9, bridge helix (domain)"
+IPR032237,1,"CRISPR-associated endonuclease Cas9, PAM-interacting domain (domain)"
+IPR032190,1,"Niemann-Pick C1, N-terminal (domain)"
+IPR032038,1,"Adenomatous polyposis coli, N-terminal dimerisation domain (domain)"
+IPR032033,1,Cytochrome P460 (domain)
+IPR031968,1,VASt domain (domain)
+IPR031823,1,TRAP transporter T-component (family)
+IPR031813,1,Domain of unknown function DUF4745 (domain)
+IPR031725,1,
+IPR031358,1,"Stealth protein CR1, conserved region 1 (domain)"
+IPR031357,1,"Stealth protein CR3, conserved region 3 (domain)"
+IPR031356,1,"Stealth protein CR4, conserved region 4 (domain)"
+IPR031354,1,"Bromodomain protein 4, C-terminal (domain)"
+IPR031314,1,Deoxynucleoside kinase domain (domain)
+IPR031303,1,"DNA methylase, C-5 cytosine-specific, conserved site (conserved_site)"
+IPR031264,1,Retinol-binding protein 1 (family)
+IPR031202,1,"PHD finger protein 1, PHD finger 1 (domain)"
+IPR031162,1,CBP/p300-type histone acetyltransferase domain (domain)
+IPR031148,1,Plexin family (family)
+IPR031127,1,E3 ubiquitin ligase RBR family (family)
+IPR031037,1,"Peptide O-prenyltransferase, LynF/TruF/PatF family (family)"
+IPR001525,1,C-5 cytosine methyltransferase (family)
+IPR030855,1,Bifunctional ligase/repressor BirA (family)
+IPR030673,1,"Pyrophosphatase, GppA/Ppx-type (family)"
+IPR023317,1,"Peptidase S1A, plasmin (family)"
+IPR023313,1,"Ubiquitin-conjugating enzyme, active site (active_site)"
+IPR023299,1,"P-type ATPase, cytoplasmic domain N (homologous_superfamily)"
+IPR018379,1,BEN domain (domain)
+IPR002173,1,"Carbohydrate/purine kinase, PfkB, conserved site (conserved_site)"
+IPR018527,1,"Rubredoxin, iron-binding site (binding_site)"
+IPR018522,1,"DNA topoisomerase, type IIA, conserved site (conserved_site)"
+IPR018520,1,"Di-trans-poly-cis-decaprenylcistransferase-like, conserved site (conserved_site)"
+IPR018517,1,"tRNA-dihydrouridine synthase, conserved site (conserved_site)"
+IPR018506,1,"Cytochrome b5, heme-binding site (binding_site)"
+IPR018502,1,Annexin repeat (repeat)
+IPR018501,1,DDT domain (domain)
+IPR018494,1,"Oxysterol-binding protein, conserved site (conserved_site)"
+IPR018487,1,Hemopexin-like repeats (repeat)
+IPR018486,1,"Hemopexin, conserved site (conserved_site)"
+IPR018470,1,Periplasmic metal-binding protein Tp34-type (family)
+IPR018368,1,"ClpA/B, conserved site 1 (conserved_site)"
+IPR018724,1,2OG-Fe dioxygenase (family)
+IPR018358,1,"Disintegrin, conserved site (conserved_site)"
+IPR002182,1,NB-ARC (domain)
+IPR018333,1,Squalene cyclase (family)
+IPR018323,1,"Outer membrane lipoprotein carrier protein LolA, Proteobacteria (family)"
+IPR002195,1,"Dihydroorotase, conserved site (conserved_site)"
+IPR018303,1,"P-type ATPase, phosphorylation site (ptm)"
+IPR018252,1,"Annexin repeat, conserved site (conserved_site)"
+IPR002196,1,"Glycoside hydrolase, family 24 (family)"
+IPR018239,1,"NAD-dependent DNA ligase, active site (active_site)"
+IPR018228,1,"Deoxyribonuclease, TatD-related, conserved site (conserved_site)"
+IPR018218,1,Scorpion long chain toxin (family)
+IPR018211,1,"Alcohol dehydrogenase, iron-type, conserved site (conserved_site)"
+IPR018618,1,Vacuolar import/degradation protein Vid24 (family)
+IPR018799,1,TRAF3-interacting protein 1 (family)
+IPR019795,1,"Globin, bacterial-like, conserved site (conserved_site)"
+IPR019572,1,"Ubiquitin-activating enzyme, SCCH domain (domain)"
+IPR019793,1,Peroxidases heam-ligand binding site (binding_site)
+IPR002105,1,Dockerin type I repeat (repeat)
+IPR002123,1,Phospholipid/glycerol acyltransferase (domain)
+IPR019772,1,"Ferrochelatase, active site (active_site)"
+IPR019770,1,"Eukaryotic translation initiation factor 4E (eIF-4E), conserved site (conserved_site)"
+IPR019762,1,"Dynamin, GTPase region, conserved site (conserved_site)"
+IPR002125,1,Cytidine and deoxycytidylate deaminase domain (domain)
+IPR002130,1,Cyclophilin-type peptidyl-prolyl cis-trans isomerase domain (domain)
+IPR002137,1,"Beta-lactamase, class-D active site (active_site)"
+IPR002138,1,"Peptidase C14, caspase non-catalytic subunit p10 (domain)"
+IPR002139,1,Ribokinase/fructokinase (family)
+IPR019734,1,Tetratricopeptide repeat (repeat)
+IPR002145,1,"Ribbon-helix-helix protein, CopG (domain)"
+IPR018865,1,Inactive serine/threonine-protein kinase 19-like (family)
+IPR019510,1,"A-kinase anchor protein 7-like, phosphoesterase domain (domain)"
+IPR019491,1,"Lipoate protein ligase, C-terminal (domain)"
+IPR002155,1,Thiolase (family)
+IPR019447,1,"DNA/RNA-binding protein Kin17, WH-like domain (domain)"
+IPR019410,1,Lysine methyltransferase (family)
+IPR019312,1,CCR4-NOT transcription complex subunit 11 (family)
+IPR019178,1,"Phosphatidylinositol 4,5-bisphosphate 4-phosphatase (family)"
+IPR019087,1,"Mediator of RNA polymerase II transcription subunit 15, N-terminal (domain)"
+IPR002168,1,"Lipase, GDXG, putative histidine active site (active_site)"
+IPR018965,1,"Ubiquitin-activating enzyme E1, C-terminal (domain)"
+IPR018958,1,Knr4/Smi1-like domain (domain)
+IPR018944,1,"DNA polymerase lambda, fingers domain (domain)"
+IPR018208,1,"Glycoside hydrolase family 11, active site 1 (active_site)"
+IPR018195,1,"Transferrin family, iron binding site (binding_site)"
+IPR002197,1,"DNA binding HTH domain, Fis-type (domain)"
+IPR017134,1,Ubiquitin-protein ligase E3A (family)
+IPR002384,1,Osteocalcin/matrix Gla protein (family)
+IPR017431,1,Interferon regulatory factor-1/2 (family)
+IPR017425,1,Mitogen-activated protein (MAP) kinase kinase kinase 14 (family)
+IPR017421,1,
+IPR017419,1,Mitogen-activated protein kinase kinase kinase 12/13 (family)
+IPR017402,1,Proteorhodopsin (family)
+IPR017376,1,Herpesvirus UL49A (family)
+IPR017341,1,Membrane cofactor protein CD46 (family)
+IPR017251,1,Apoptotic protease-activating factor 1 (family)
+IPR017198,1,DNA (cytosine-5)-methyltransferase 1-like (family)
+IPR017194,1,"Transforming growth factor-beta receptor, type II (family)"
+IPR017164,1,Wee1-like protein kinase (family)
+IPR017051,1,"Peptidase S1A, matripase (family)"
+IPR018171,1,"Peptidyl-tRNA hydrolase, conserved site (conserved_site)"
+IPR016849,1,Histone acetyltransferase Rtt109 (family)
+IPR016763,1,Vesicle-associated membrane-protein-associated protein (family)
+IPR016743,1,Nuclear factor interleukin-3-regulated protein (family)
+IPR016495,1,p53 negative regulator Mdm2/Mdm4 (family)
+IPR002392,1,Annexin A5 (family)
+IPR016391,1,Coatomer subunit alpha (family)
+IPR016363,1,Legume lectin (family)
+IPR016361,1,"Transcriptional enhancer factor, metazoa (family)"
+IPR016357,1,Transferrin (family)
+IPR016334,1,"Protein-tyrosine phosphatase, receptor type R/non-receptor type 5 (family)"
+IPR016289,1,Endo-beta-N-acetylglucosaminidase (family)
+IPR016287,1,Beta-agarase (family)
+IPR017448,1,
+IPR017782,1,Hydroxyacylglutathione hydrolase (family)
+IPR002369,1,"Integrin beta subunit, VWA domain (domain)"
+IPR002354,1,Interleukin-4 (family)
+IPR018152,1,"Superoxide dismutase, copper/zinc, binding site (binding_site)"
+IPR018123,1,"WWE domain, subgroup (domain)"
+IPR018117,1,"DNA methylase, C-5 cytosine-specific, active site (active_site)"
+IPR018096,1,"Interleukin-4/interleukin-13, conserved site (conserved_site)"
+IPR018075,1,Ubiquitin-activating enzyme E1 (family)
+IPR002220,1,DapA-like (family)
+IPR018051,1,"Surfactant-associated polypeptide, palmitoylation site (ptm)"
+IPR018039,1,"Intermediate filament protein, conserved site (conserved_site)"
+IPR017989,1,Ribosome-inactivating protein type 1/2 (family)
+IPR017988,1,Ribosome-inactivating protein conserved site (conserved_site)
+IPR002225,1,3-beta hydroxysteroid dehydrogenase/isomerase (domain)
+IPR002277,1,Lysophosphatidic acid receptor EDG-2 (family)
+IPR017961,1,"DNA polymerase, Y-family, little finger domain (domain)"
+IPR017949,1,"Thaumatin, conserved site (conserved_site)"
+IPR002288,1,"DNA gyrase B subunit, C-terminal (domain)"
+IPR017946,1,"PLC-like phosphodiesterase, TIM beta/alpha-barrel domain superfamily (homologous_superfamily)"
+IPR017941,1,Rieske [2Fe-2S] iron-sulphur domain (domain)
+IPR002327,1,"Cytochrome c, class IA/ IB (family)"
+IPR002328,1,"Alcohol dehydrogenase, zinc-type, conserved site (conserved_site)"
+IPR002335,1,Myoglobin (family)
+IPR017926,1,Glutamine amidotransferase (domain)
+IPR002336,1,Erythrocruorin (family)
+IPR017923,1,"Transcription factor IIS, N-terminal (domain)"
+IPR017921,1,"Zinc finger, CTCHY-type (domain)"
+IPR017896,1,"4Fe-4S ferredoxin-type, iron-sulphur binding domain (domain)"
+IPR019794,1,"Peroxidase, active site (active_site)"
+IPR019799,1,Glycoside hydrolase family 22 domain (domain)
+IPR023298,1,"P-type ATPase, transmembrane domain superfamily (homologous_superfamily)"
+IPR022312,1,DNA polymerase family X (family)
+IPR022572,1,"DNA replication/recombination mediator RecO, N-terminal (domain)"
+IPR022513,1,NHLP leader peptide domain (domain)
+IPR022441,1,Parallel beta-helix repeat-2 (repeat)
+IPR022419,1,"Porphobilinogen deaminase, dipyrromethane cofactor binding site (binding_site)"
+IPR022418,1,"Porphobilinogen deaminase, C-terminal (domain)"
+IPR022417,1,"Porphobilinogen deaminase, N-terminal (domain)"
+IPR022416,1,"Prion/Doppel protein, beta-ribbon domain (domain)"
+IPR022362,1,Neurogenic locus notch homolog protein 1 (family)
+IPR022357,1,"Major intrinsic protein, conserved site (conserved_site)"
+IPR001932,1,PPM-type phosphatase-like domain (domain)
+IPR001938,1,Thaumatin family (family)
+IPR022331,1,Neurogenic locus Notch 3 (family)
+IPR022272,1,Lipocalin family conserved site (conserved_site)
+IPR022648,1,"Proliferating cell nuclear antigen, PCNA, N-terminal (domain)"
+IPR022263,1,KxYKxGKxW signal peptide (conserved_site)
+IPR022246,1,"Bacteriophage T7, Gp17, C-terminal (domain)"
+IPR022245,1,"Rubivirus non-structural protein, C-terminal (domain)"
+IPR022132,1,Homeobox protein (family)
+IPR021991,1,"UHRF1, tandem tudor domain (domain)"
+IPR021965,1,"Plasminogen ligand, VEK-30 (domain)"
+IPR021867,1,S-adenosylmethionine-dependent methyltransferase Bmt2-like (family)
+IPR021790,1,"PTBP1-like, RNA recognition motif 2 (domain)"
+IPR021718,1,Pre-mRNA 3'-end-processing endonuclease polyadenylation factor C-term (domain)
+IPR021663,1,T-cell surface glycoprotein CD3 zeta subunit/High affinity IgE receptor gamma subunit (family)
+IPR021574,1,Sialyltransferase PMO188 (family)
+IPR021522,1,Copper transporter MctB (family)
+IPR001919,1,Carbohydrate-binding type-2 domain (domain)
+IPR022649,1,"Proliferating cell nuclear antigen, PCNA, C-terminal (domain)"
+IPR019804,1,"Ras guanine-nucleotide exchange factor, conserved site (conserved_site)"
+IPR022870,1,Phycocyanobilin:ferredoxin oxidoreductase (family)
+IPR023271,1,Aquaporin-like (homologous_superfamily)
+IPR023250,1,Cyclin-dependent kinase 2-interacting protein (family)
+IPR001884,1,Translation elongation factor IF5A-like (family)
+IPR023205,1,Thiol:disulphide interchange protein DsbA/DsbL (family)
+IPR023174,1,"3'5'-cyclic nucleotide phosphodiesterase, conserved site (conserved_site)"
+IPR023170,1,"Helix-hairpin-helix, base-excision DNA repair, C-terminal (homologous_superfamily)"
+IPR023128,1,"Protein N-terminal glutamine amidohydrolase, alpha beta roll (domain)"
+IPR023112,1,Antifungal protein domain superfamily (homologous_superfamily)
+IPR023088,1,3'5'-cyclic nucleotide phosphodiesterase (family)
+IPR023083,1,"Glycerol-3-phosphate O-acyltransferase, alpha helical bundle, N-terminal (domain)"
+IPR001895,1,Ras guanine-nucleotide exchange factors catalytic domain (domain)
+IPR022880,1,DNA polymerase IV (family)
+IPR022830,1,Indigoidine synthase A-like (homologous_superfamily)
+IPR022659,1,"Proliferating cell nuclear antigen, PCNA, conserved site (conserved_site)"
+IPR022812,1,Dynamin (family)
+IPR001909,1,Krueppel-associated box (domain)
+IPR001916,1,"Glycoside hydrolase, family 22 (family)"
+IPR022712,1,Beta-Casp domain (domain)
+IPR022708,1,"Serine/threonine-protein kinase Atg1-like, tMIT domain (domain)"
+IPR022706,1,Antifungal protein (family)
+IPR022702,1,"DNA (cytosine-5)-methyltransferase 1, replication foci domain (domain)"
+IPR022689,1,Iron dependent repressor (family)
+IPR022687,1,DTXR-type HTH domain (domain)
+IPR022678,1,"Glycylpeptide N-tetradecanoyltransferase, conserved site (conserved_site)"
+IPR022677,1,"Glycylpeptide N-tetradecanoyltransferase, C-terminal (domain)"
+IPR022676,1,"Glycylpeptide N-tetradecanoyltransferase, N-terminal (domain)"
+IPR021520,1,"Stealth protein CR2, conserved region 2 (domain)"
+IPR021495,1,Protein CHLORORESPIRATORY REDUCTION 42-like (family)
+IPR021253,1,Protein of unknown function DUF2796 (family)
+IPR020097,1,"Pseudouridine synthase I, TruA, alpha/beta domain (domain)"
+IPR020561,1,"Phosphoribosylglycinamide synthetase, ATP-grasp (A) domain (domain)"
+IPR020560,1,"Phosphoribosylglycinamide synthetase, C-domain (domain)"
+IPR020559,1,"Phosphoribosylglycinamide synthetase, conserved site (conserved_site)"
+IPR020546,1,"ATP synthase, F1 complex, delta/epsilon subunit, N-terminal (domain)"
+IPR020479,1,"Homeodomain, metazoa (domain)"
+IPR020476,1,NUDIX hydrolase (domain)
+IPR002054,1,DNA-directed DNA polymerase X (domain)
+IPR002057,1,"Isopenicillin N synthase, conserved site (conserved_site)"
+IPR002061,1,Scorpion long chain toxin/defensin (family)
+IPR002073,1,"3'5'-cyclic nucleotide phosphodiesterase, catalytic domain (domain)"
+IPR002075,1,Nuclear transport factor 2 domain (domain)
+IPR020189,1,"Translation elongation factor, IF5A C-terminal (domain)"
+IPR020095,1,"Pseudouridine synthase I, TruA, C-terminal (homologous_superfamily)"
+IPR021190,1,Peptidase M10A (family)
+IPR020094,1,"Pseudouridine synthase TruA/RsuA/RluB/E/F, N-terminal (homologous_superfamily)"
+IPR002078,1,RNA polymerase sigma factor 54 interaction domain (domain)
+IPR020067,1,Frizzled domain (domain)
+IPR020053,1,"Ribosome-binding factor A, conserved site (conserved_site)"
+IPR019987,1,"GTP-binding protein, ribosome biogenesis, YsxC (family)"
+IPR002082,1,Aspartate carbamoyltransferase (family)
+IPR002095,1,"Monellin, B chain (family)"
+IPR019843,1,"DNA polymerase family X, binding site (binding_site)"
+IPR019825,1,"Legume lectin, beta chain, Mn/Ca-binding site (binding_site)"
+IPR019821,1,"Kinesin motor domain, conserved site (conserved_site)"
+IPR019817,1,"Interferon regulatory factor, conserved site (conserved_site)"
+IPR019805,1,"Heat shock protein Hsp90, conserved site (conserved_site)"
+IPR020562,1,"Phosphoribosylglycinamide synthetase, N-terminal (domain)"
+IPR020575,1,"Heat shock protein Hsp90, N-terminal (domain)"
+IPR020583,1,"Inositol monophosphatase, metal-binding site (binding_site)"
+IPR020590,1,"Guanylate kinase, conserved site (conserved_site)"
+IPR021184,1,"Tumour necrosis factor, conserved site (conserved_site)"
+IPR021168,1,"Bifunctional polymyxin resistance protein, ArnA (family)"
+IPR021160,1,Mitogen-activated protein (MAP) kinase kinase kinase kinase (family)
+IPR021158,1,"Peptidase M10A, cysteine switch, zinc binding site (binding_site)"
+IPR021120,1,KduI/IolB isomerase (family)
+IPR020989,1,"Histone-arginine methyltransferase CARM1, N-terminal (domain)"
+IPR020974,1,"CGT/MARTX, cysteine protease (CPD) domain (domain)"
+IPR020972,1,"Dermonecrotic/RTX toxin, membrane localization domain (domain)"
+IPR020945,1,DMSO/Nitrate reductase chaperone (family)
+IPR001989,1,"Radical-activating enzyme, conserved site (conserved_site)"
+IPR020892,1,"Cyclophilin-type peptidyl-prolyl cis-trans isomerase, conserved site (conserved_site)"
+IPR020877,1,Interleukin-1 conserved site (conserved_site)
+IPR020859,1,Roc domain (domain)
+IPR020850,1,GTPase effector domain (domain)
+IPR001998,1,Xylose isomerase (family)
+IPR020807,1,"Polyketide synthase, dehydratase domain (domain)"
+IPR002008,1,"DNA polymerase family X, beta-like (family)"
+IPR020731,1,"Apoptosis regulator, Bcl-2, BH4 motif, conserved site (conserved_site)"
+IPR002016,1,Haem peroxidase (domain)
+IPR020676,1,"Death-associated protein kinase 1, catalytic domain (domain)"
+IPR002043,1,Uracil-DNA glycosylase family 1 (family)
+IPR020625,1,"Schiff base-forming aldolase, active site (active_site)"
+IPR020624,1,"Schiff base-forming aldolase, conserved site (conserved_site)"
+IPR020616,1,"Thiolase, N-terminal (domain)"
+IPR020611,1,"Copper type II, ascorbate-dependent monooxygenase, histidine-cluster-1 conserved site (conserved_site)"
+IPR020457,1,"Zinc finger, B-box, chordata (domain)"

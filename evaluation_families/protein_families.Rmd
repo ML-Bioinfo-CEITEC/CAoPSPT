@@ -1,0 +1,383 @@
+---
+title: "protein_families"
+output: html_document
+date: "2024-11-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Why are certain structures predicted wrong?
+## Loading data
+```{r}
+chains <- read.csv("chains_evaluation.csv") |>
+  dplyr::select(chain_id, pdb_id, label,
+                AF_average_pLDDT, OF_average_pLDDT, EF_average_pLDDT,
+                AF_TM_score, OF_TM_score, EF_TM_score,
+                AF_RMSD, OF_RMSD, EF_RMSD) |>
+  drop_na() |>
+  setNames(c("chain_id", "pdb_id", "label",
+             "AlphaFold2_pLDDT", "OmegaFold_pLDDT", "ESMFold_pLDDT",
+             "AlphaFold2_TMscore", "OmegaFold_TMscore", "ESMFold_TMscore",
+             "AlphaFold2_RMSD", "OmegaFold_RMSD", "ESMFold_RMSD")) 
+
+str(chains)
+```
+
+```{r}
+annotations <- read.csv("chains_annotations.csv")
+annotations[annotations == ""] <- "None"
+str(annotations)
+```
+
+```{r}
+annotations_pfam <- read.csv("chains_annotation_pfam.csv") |>
+  setNames(c("pdb_id", "label", "chain_id", "sequence", "sequence_length", "method_of_acquisition", "UniProt_ID", "organism_name", "xref"))
+annotations_pfam[annotations_pfam == ""] <- "None"
+str(annotations_pfam)
+```
+
+```{r}
+annotations_interpro <- read.csv("chains_annotation_interpro.csv") |>
+   setNames(c("pdb_id", "label", "chain_id", "sequence", "sequence_length", "method_of_acquisition", "UniProt_ID", "organism_name", "xref"))
+annotations_interpro[annotations_interpro == ""] <- "None"
+str(annotations_interpro)
+```
+
+```{r}
+pfam_families <- read.csv("pfam_families.csv") |>
+  setNames(c("xref", "n", "annotation"))
+pfam_families[pfam_families == ""] <- "None"
+str(pfam_families)
+```
+
+```{r}
+interpro_families <- read.csv("interpro_families.csv") |>
+  setNames(c("xref", "n", "annotation"))
+interpro_families[interpro_families == ""] <- "None"
+str(interpro_families)
+```
+
+
+## Basic explorative analysis
+```{r}
+annotations |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), fill = label)) + 
+    geom_bar(colour = "black", linewidth = 0.3) + 
+    labs(x = "label", y = "number of chains") +
+    theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+```{r}
+annotations |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), y = sequence_length, fill = label)) + 
+    geom_boxplot() + 
+    labs(x = "label", y = "length of chain sequence") +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+```{r}
+annotations[annotations$method_of_acquisition != "", ] |>
+    ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), fill = method_of_acquisition)) + 
+    geom_bar(colour = "black", linewidth = 0.3, position = "stack") + 
+    labs(x = "label", y = "number of chains") +
+    theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+## Badly predicted chains
+```{r}
+badly_predicted_AlphaFold2 <- chains |>
+  filter(AlphaFold2_RMSD > 9 | AlphaFold2_TMscore < 0.5) |>
+  nrow()
+
+badly_predicted_AlphaFold2
+```
+```{r}
+well_predicted_AlphaFold2 <- chains |>
+  filter(AlphaFold2_RMSD <= 9 & AlphaFold2_TMscore >= 0.5) |>
+  nrow()
+
+well_predicted_AlphaFold2
+```
+
+```{r}
+badly_predicted_ESMFold <- chains |>
+  filter(ESMFold_RMSD > 9 | ESMFold_TMscore < 0.5) |>
+  nrow()
+
+badly_predicted_ESMFold
+```
+```{r}
+well_predicted_ESMFold <- chains |>
+  filter(ESMFold_RMSD <= 9  & ESMFold_TMscore >= 0.5) |>
+  nrow()
+
+well_predicted_ESMFold
+```
+
+```{r}
+badly_predicted_OmegaFold <- chains |>
+  filter(OmegaFold_RMSD > 9 | OmegaFold_TMscore < 0.5) |>
+  nrow()
+
+badly_predicted_OmegaFold
+```
+```{r}
+well_predicted_OmegaFold <- chains |>
+  filter(OmegaFold_RMSD <= 9 & OmegaFold_TMscore >= 0.5) |>
+  nrow()
+
+well_predicted_OmegaFold
+```
+
+## Pfam
+```{r}
+chains_full_pfam <- inner_join(chains, annotations_pfam, by = join_by(pdb_id == pdb_id, chain_id == chain_id, label == label))
+chains_full_pfam
+```
+
+```{r}
+columns <- c(
+  "protein family", "annotation", "well-predicted, within family", "well-predicted, outside family",
+  "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "odds ratio","note"
+)
+
+comment_on_results <- function(p_value, odds_ratio){
+  if (p_value < 0.05 & odds_ratio >= 1) {
+    note <- "well-predicted family"
+  } else if ((p_value < 0.05 & odds_ratio < 1)) {
+    note <- "poorly predicted family"
+  } else {
+    note <- "not significant"
+  }
+}
+
+test_family <- function(chains_full_df, result_df, family, family_annotation, good_prediction_total, bad_prediction_total){
+  good_prediction_in_family <- chains_full_df |> filter((RMSD <= 9 & TMscore >= 0.5) & xref == family) |> nrow()
+  bad_prediction_in_family <- chains_full_df |> filter((RMSD > 9 | TMscore < 0.5) & xref == family) |> nrow()
+  good_prediction_not_in_family <- good_prediction_total - good_prediction_in_family
+  bad_prediction_not_in_family <- bad_prediction_total - bad_prediction_in_family
+  odds_ratio <- (good_prediction_in_family / bad_prediction_in_family) / (good_prediction_not_in_family / bad_prediction_not_in_family)
+  M <- matrix(
+    c(good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family),
+    nrow = 2,
+    ncol = 2,
+    byrow = TRUE
+  )
+  fisher_test <- fisher.test(M)
+  note <- comment_on_results(fisher_test$p.value, odds_ratio)
+  result_df[nrow(result_df) + 1,] = c(
+    family, family_annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, odds_ratio, note
+  )
+  return(result_df)
+}
+
+fill_table <- function(chains_full_df, families_df, result_df, good_prediction_total, bad_prediction_total){
+  for(i in 1:nrow(families_df)) {
+    family <- families_df[i, "xref"]
+    number_of_members <- families_df[i, "n"]
+    annotation <- families_df[i, "annotation"]
+    if (number_of_members >= 10) {
+      result_df <- test_family(chains_full_df, result_df, family, annotation, good_prediction_total, bad_prediction_total)
+    }
+  }
+  return(result_df)
+}
+```
+
+### AlphaFold2
+```{r}
+result_df.AlphaFold2.pfam = data.frame(matrix(nrow = 0, ncol = length(columns))) 
+colnames(result_df.AlphaFold2.pfam) = columns
+
+chains_full_pfam.AlphaFold2 <- chains_full_pfam |>
+  dplyr::select(chain_id, AlphaFold2_TMscore, AlphaFold2_RMSD, xref) |>
+  setNames(c("chain_id", "TMscore", "RMSD", "xref"))
+
+result_df.AlphaFold2.pfam <- fill_table(chains_full_pfam.AlphaFold2, pfam_families, result_df.AlphaFold2.pfam, well_predicted_AlphaFold2, badly_predicted_AlphaFold2)
+result_df.AlphaFold2.pfam
+```
+
+### ESMFold
+```{r}
+result_df.ESMFold.pfam = data.frame(matrix(nrow = 0, ncol = length(columns))) 
+colnames(result_df.ESMFold.pfam) = columns
+
+chains_full_pfam.ESMFold <- chains_full_pfam |>
+  dplyr::select(chain_id, ESMFold_TMscore, ESMFold_RMSD, xref) |>
+  setNames(c("chain_id", "TMscore", "RMSD", "xref"))
+
+result_df.ESMFold.pfam <- fill_table(chains_full_pfam.ESMFold, pfam_families, result_df.ESMFold.pfam, well_predicted_ESMFold, badly_predicted_ESMFold)
+result_df.ESMFold.pfam
+```
+
+### OmegaFold
+```{r}
+result_df.OmegaFold.pfam = data.frame(matrix(nrow = 0, ncol = length(columns))) 
+colnames(result_df.OmegaFold.pfam) = columns
+
+chains_full_pfam.OmegaFold <- chains_full_pfam |>
+  dplyr::select(chain_id, OmegaFold_TMscore, OmegaFold_RMSD, xref) |>
+  setNames(c("chain_id", "TMscore", "RMSD", "xref"))
+
+result_df.OmegaFold.pfam <- fill_table(chains_full_pfam.OmegaFold, pfam_families, result_df.OmegaFold.pfam, well_predicted_OmegaFold, badly_predicted_OmegaFold)
+result_df.OmegaFold.pfam
+```
+
+## InterPro
+```{r}
+chains_full_interpro <- inner_join(chains, annotations_interpro, by = join_by(pdb_id == pdb_id, chain_id == chain_id, label == label))
+chains_full_interpro
+```
+
+
+### AlphaFold2
+```{r}
+columns <- c("protein family", "annotation", "well-predicted, within family", "well-predicted, outside family", "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "note") 
+result_df.AlphaFold2.interpro = data.frame(matrix(nrow = 0, ncol = length(columns))) 
+colnames(result_df.AlphaFold2.interpro) = columns
+
+create_table_AlphaFold2 <- function(df, result_df, family, annotation){
+  good_prediction_in_family <- df |> filter((AlphaFold2_RMSD <= 9 & AlphaFold2_TMscore >= 0.5) & xref_interpro == family) |> nrow()
+  bad_prediction_in_family <- df |> filter((AlphaFold2_RMSD > 9 | AlphaFold2_TMscore < 0.5) & xref_interpro == family) |> nrow()
+  good_prediction_not_in_family <- well_predicted_AlphaFold2 - good_prediction_in_family
+  bad_prediction_not_in_family <- badly_predicted_AlphaFold2 - bad_prediction_in_family
+  M <- matrix(
+    c(good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family),
+    nrow = 2,
+    ncol = 2,
+    byrow = TRUE,
+    dimnames = list(c("predicted well", "predicted wrong"), c("in family", "not in family"))
+  )
+  fisher_test <- fisher.test(M)
+  if (fisher_test$p.value < 0.05 & good_prediction_in_family > bad_prediction_in_family) {
+    note <- "well-predicted family"
+  } else if ((fisher_test$p.value < 0.05 & good_prediction_in_family <= bad_prediction_in_family)) {
+    note <- "poorly predicted family"
+  } else {
+    note <- "not significant"
+  }
+  result_df[nrow(result_df) + 1,] = c(family, annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, note)
+  return(result_df)
+}
+
+
+for(i in 1:nrow(interpro_families)) {
+    family <- interpro_families[i, "xref_interpro"]
+    number_of_members <- interpro_families[i, "n"]
+    annotation <- interpro_families[i, "annotation"]
+    if (number_of_members >= 10) {
+      result_df.AlphaFold2.interpro <- create_table_AlphaFold2(chains_full_interpro, result_df.AlphaFold2.interpro, family, annotation)
+    }
+}
+
+result_df.AlphaFold2.interpro
+```
+
+
+### ESMFold
+```{r}
+columns <- c("protein family", "annotation", "well-predicted, within family", "well-predicted, outside family", "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "note") 
+result_df.ESMFold.interpro = data.frame(matrix(nrow = 0, ncol = length(columns))) 
+colnames(result_df.ESMFold.interpro) = columns
+
+create_table_ESMFold <- function(df, result_df, family, annotation){
+  good_prediction_in_family <- df |> filter((ESMFold_RMSD <= 9 & ESMFold_TMscore >= 0.5) & xref_interpro == family) |> nrow()
+  bad_prediction_in_family <- df |> filter((ESMFold_RMSD > 9 | ESMFold_TMscore < 0.5) & xref_interpro == family) |> nrow()
+  good_prediction_not_in_family <- well_predicted_ESMFold - good_prediction_in_family
+  bad_prediction_not_in_family <- badly_predicted_ESMFold - bad_prediction_in_family
+  M <- matrix(
+    c(good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family),
+    nrow = 2,
+    ncol = 2,
+    byrow = TRUE,
+    dimnames = list(c("predicted well", "predicted wrong"), c("in family", "not in family"))
+  )
+  fisher_test <- fisher.test(M)
+  if (fisher_test$p.value < 0.05 & good_prediction_in_family > bad_prediction_in_family) {
+    note <- "well-predicted family"
+  } else if ((fisher_test$p.value < 0.05 & good_prediction_in_family <= bad_prediction_in_family)) {
+    note <- "poorly predicted family"
+  } else {
+    note <- "not significant"
+  }
+  result_df[nrow(result_df) + 1,] = c(family, annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, note)
+  return(result_df)
+}
+
+
+for(i in 1:nrow(interpro_families)) {
+    family <- interpro_families[i, "xref_interpro"]
+    number_of_members <- interpro_families[i, "n"]
+    annotation <- interpro_families[i, "annotation"]
+    if (number_of_members >= 10) {
+      result_df.ESMFold.interpro <- create_table_ESMFold(chains_full_interpro, result_df.ESMFold.interpro, family, annotation)
+    }
+}
+
+result_df.ESMFold.interpro
+```
+
+
+### OmegaFold
+```{r}
+columns <- c("protein family", "annotation", "well-predicted, within family", "well-predicted, outside family", "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "note") 
+result_df.OmegaFold.interpro = data.frame(matrix(nrow = 0, ncol = length(columns))) 
+colnames(result_df.OmegaFold.interpro) = columns
+
+create_table_OmegaFold <- function(df, result_df, family, annotation){
+  good_prediction_in_family <- df |> filter((OmegaFold_RMSD <= 9 & OmegaFold_TMscore >= 0.5) & xref_interpro == family) |> nrow()
+  bad_prediction_in_family <- df |> filter((OmegaFold_RMSD > 9 | OmegaFold_TMscore < 0.5) & xref_interpro == family) |> nrow()
+  good_prediction_not_in_family <- well_predicted_OmegaFold - good_prediction_in_family
+  bad_prediction_not_in_family <- badly_predicted_OmegaFold - bad_prediction_in_family
+  M <- matrix(
+    c(good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family),
+    nrow = 2,
+    ncol = 2,
+    byrow = TRUE,
+    dimnames = list(c("predicted well", "predicted wrong"), c("in family", "not in family"))
+  )
+  fisher_test <- fisher.test(M)
+  if (fisher_test$p.value < 0.05 & good_prediction_in_family > bad_prediction_in_family) {
+    note <- "well-predicted family"
+  } else if ((fisher_test$p.value < 0.05 & good_prediction_in_family <= bad_prediction_in_family)) {
+    note <- "poorly predicted family"
+  } else {
+    note <- "not significant"
+  }
+  result_df[nrow(result_df) + 1,] = c(family, annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, note)
+  return(result_df)
+}
+
+
+for(i in 1:nrow(interpro_families)) {
+    family <- interpro_families[i, "xref_interpro"]
+    number_of_members <- interpro_families[i, "n"]
+    annotation <- interpro_families[i, "annotation"]
+    if (number_of_members >= 10) {
+      result_df.OmegaFold.interpro <- create_table_OmegaFold(chains_full_interpro, result_df.OmegaFold.interpro, family, annotation)
+    }
+}
+
+result_df.OmegaFold.interpro
+```
+```{r}
+write.csv(result_df.AlphaFold2, "AlphaFold2_pfam_results.csv")
+write.csv(result_df.AlphaFold2.interpro, "AlphaFold2_interpro_results.csv")
+write.csv(result_df.ESMFold, "ESMFold_pfam_results.csv")
+write.csv(result_df.ESMFold.interpro, "ESMFold_interpro_results.csv")
+write.csv(result_df.OmegaFold, "OmegaFold_pfam_results.csv")
+write.csv(result_df.OmegaFold.interpro, "OmegaFold_interpro_results.csv")
+```
+
