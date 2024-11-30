@@ -1,5 +1,5 @@
 # Comparative Analysis of Protein Structure Prediction Tools
-This repository contains code and data related to the bachelor thesis "Comparative Analysis of Protein Structure Prediction Tools".
+This repository contains code and data related to the bachelor thesis "Comparative Analysis of Protein Structure Prediction Tools", which compares the performance of AlphaFold2, ESMFold, and OmegaFold on proteins with recently published experimental structures. 
 
 The folder `dataset_creation` contains two Jupyter notebooks for creating the dataset:
 - `creating_dataset.ipynb` describes the process of selecting suitable protein structures from PDB
