@@ -27,32 +27,30 @@ library(ggpubr)
 
 ## Table reading and preprocessing
 ```{r}
-chains <- read.csv("chains_evaluation.csv", stringsAsFactors = TRUE) |>
-  dplyr::select(chain_id, pdb_id, label, sequence_length, method_of_acquisition,
+chains <- read.csv("chains_evaluation_filtered.csv", stringsAsFactors = TRUE) |>
+  dplyr::select(chain_id, pdb_id, label,
                 AF_average_pLDDT, OF_average_pLDDT, EF_average_pLDDT,
                 AF_TM_score, OF_TM_score, EF_TM_score,
-                AF_RMSD, OF_RMSD, EF_RMSD,
-                AF_vs_OF_RMSD, OF_vs_EF_RMSD, EF_vs_AF_RMSD, AF_vs_OF_TM_score, OF_vs_EF_TM_score, EF_vs_AF_TM_score) |>
+                AF_RMSD, OF_RMSD, EF_RMSD) |>
   drop_na() |>
-  setNames(c("chain_id", "pdb_id", "label", "sequence_length", "method_of_acquisition",
+  setNames(c("chain_id", "pdb_id", "label",
              "AlphaFold2_pLDDT", "OmegaFold_pLDDT", "ESMFold_pLDDT",
              "AlphaFold2_TMscore", "OmegaFold_TMscore", "ESMFold_TMscore",
-             "AlphaFold2_RMSD", "OmegaFold_RMSD", "ESMFold_RMSD",
-             "AlphaFold2.vs.OmegaFold_RMSD", "OmegaFold.vs.ESMFold_RMSD", "ESMFold.vs.AlphaFold2_RMSD", "AlphaFold2.vs.OmegaFold_TMscore", "OmegaFold.vs.ESMFold_TMscore", "ESMFold.vs.AlphaFold2_TMscore")) 
+             "AlphaFold2_RMSD", "OmegaFold_RMSD", "ESMFold_RMSD")) 
 
 str(chains)
 ```
 
 ```{r}
 chains_longer <- chains |>
-  dplyr::select(chain_id, pdb_id, label, sequence_length, method_of_acquisition,
+  dplyr::select(chain_id, pdb_id, label,
                 AlphaFold2_pLDDT, OmegaFold_pLDDT, ESMFold_pLDDT,
                 AlphaFold2_TMscore, OmegaFold_TMscore, ESMFold_TMscore,
                 AlphaFold2_RMSD, OmegaFold_RMSD, ESMFold_RMSD) |>
   pivot_longer(cols = c(AlphaFold2_pLDDT, OmegaFold_pLDDT, ESMFold_pLDDT, AlphaFold2_TMscore, OmegaFold_TMscore, ESMFold_TMscore, AlphaFold2_RMSD, OmegaFold_RMSD, ESMFold_RMSD),
                                         names_to = c("prediction_tool", "metrics"),
                                         names_sep = "_",
-                                        values_to = "value")
+                                        values_to = "value") 
 str(chains_longer)
 ```
 
@@ -72,37 +70,6 @@ summary(chains)
 by(chains, chains$label, summary)
 ```
 
-```{r}
-chains |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), fill = label)) + 
-    geom_bar(colour = "black", linewidth = 0.3) + 
-    labs(x = "label", y = "number of chains") +
-    theme(panel.background = element_rect(fill = "white", colour = "black"),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank())
-```
-```{r}
-chains |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), y = sequence_length, fill = label)) + 
-    geom_boxplot() + 
-    labs(x = "label", y = "length of chain sequence") +
-  theme(panel.background = element_rect(fill = "white", colour = "black"),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank())
-```
-
-```{r}
-chains |> ggplot(aes(x = factor(label, level = c("monomer", "complex", "synthetic")), fill = method_of_acquisition)) + 
-    geom_bar(colour = "black", linewidth = 0.3, position = "stack") + 
-    labs(x = "label", y = "number of chains") +
-    theme(panel.background = element_rect(fill = "white", colour = "black"),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank())
-```
 
 ## Average pLDDT
 ```{r}
@@ -218,8 +185,8 @@ dunn
 chains_without_outliers <- chains[!(chains$chain_id %in% c("8TVL:A", "8P4Y:A", "8B2M:A")),]
 
 chains_without_outliers |>
-  dplyr::select(AlphaFold2_pLDDT, AlphaFold2_RMSD, AlphaFold2_TMscore, sequence_length) |>
-  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score", "sequence length")) +
+  dplyr::select(AlphaFold2_pLDDT, AlphaFold2_RMSD, AlphaFold2_TMscore) |>
+  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
@@ -228,7 +195,7 @@ chains_without_outliers |>
 ```
 #### Pearson's correlation
 ```{r}
-Z <- as.matrix(chains |> dplyr::select(sequence_length, AlphaFold2_TMscore, AlphaFold2_RMSD, AlphaFold2_pLDDT) |> setNames(c("sequence\nlength", "TM score", "RMSD", "pLDDT")))
+Z <- as.matrix(chains |> dplyr::select(AlphaFold2_TMscore, AlphaFold2_RMSD, AlphaFold2_pLDDT) |> setNames(c("TM score", "RMSD", "average\npLDDT")))
 R <- rcorr(Z)
 diag(R$P) <- 0
 alphafold_pearson <- ggcorrplot(R$r, p.mat = R$P, title = "AlphaFold", 
@@ -245,13 +212,16 @@ alphafold_spearman <- ggcorrplot(R.Sp$r, p.mat = R.Sp$P, title = "AlphaFold",
   theme(plot.title = element_text(size = 16, hjust = 0.5))
 alphafold_spearman
 ```
+```{r}
+R$P
+```
 
 
 ### ESMFold
 ```{r}
 chains_without_outliers |>
-  dplyr::select(ESMFold_pLDDT, ESMFold_RMSD, ESMFold_TMscore, sequence_length) |>
-  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score", "sequence length")) +
+  dplyr::select(ESMFold_pLDDT, ESMFold_RMSD, ESMFold_TMscore) |>
+  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
@@ -261,7 +231,7 @@ chains_without_outliers |>
 
 #### Pearson's correlations
 ```{r}
-Z <- as.matrix(chains |> dplyr::select(sequence_length, ESMFold_TMscore, ESMFold_RMSD, ESMFold_pLDDT) |> setNames(c("sequence\nlength", "TM score", "RMSD", "pLDDT")))
+Z <- as.matrix(chains |> dplyr::select(ESMFold_TMscore, ESMFold_RMSD, ESMFold_pLDDT) |> setNames(c("TM score", "RMSD", "average\npLDDT")))
 R <- rcorr(Z)
 diag(R$P) <- 0
 esmfold_pearson <- ggcorrplot(R$r, p.mat = R$P, title = "ESMFold", 
@@ -278,13 +248,16 @@ esmfold_spearman <- ggcorrplot(R.Sp$r, p.mat = R.Sp$P, title = "ESMFold",
   theme(plot.title = element_text(size = 16, hjust = 0.5))
 esmfold_spearman
 ```
+```{r}
+R$P
+```
 
 
 ### OmegaFold
 ```{r}
 chains_without_outliers |>
-  dplyr::select(OmegaFold_pLDDT, OmegaFold_RMSD, OmegaFold_TMscore, sequence_length) |>
-  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score", "sequence length")) +
+  dplyr::select(OmegaFold_pLDDT, OmegaFold_RMSD, OmegaFold_TMscore) |>
+  ggpairs(upper = list(continuous = "points"), lower = list(continuous = "points"), diag = list(continuous = "densityDiag"), columnLabels = c("pLDDT", "RMSD", "TM-score")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
@@ -294,7 +267,7 @@ chains_without_outliers |>
 
 #### Pearson's correlations
 ```{r}
-Z <- as.matrix(chains |> dplyr::select(sequence_length, OmegaFold_TMscore, OmegaFold_RMSD, OmegaFold_pLDDT) |> setNames(c("sequence\nlength", "TM score", "RMSD", "pLDDT")))
+Z <- as.matrix(chains |> dplyr::select(OmegaFold_TMscore, OmegaFold_RMSD, OmegaFold_pLDDT) |> setNames(c("TM score", "RMSD", "average\npLDDT")))
 R <- rcorr(Z)
 diag(R$P) <- 0
 omegafold_pearson <- ggcorrplot(R$r, p.mat = R$P, title = "OmegaFold", legend.title = "Pearson's \ncorrelation \ncoefficient",
@@ -313,18 +286,138 @@ omegafold_spearman <- ggcorrplot(R.Sp$r, p.mat = R.Sp$P, title = "OmegaFold", le
         plot.title = element_text(size = 16, hjust = 0.5))
 omegafold_spearman
 ```
+```{r}
+R$P
+```
 
 
 
 ```{r}
 alphafold_pearson + esmfold_pearson + omegafold_pearson
-ggsave("korelace_pearson.png", height = 5.5, width = 16)
+ggsave("korelace_pearson.png", height = 3.3, width = 10)
 ```
 
 ```{r}
 alphafold_spearman + esmfold_spearman + omegafold_spearman
-ggsave("korelace_spearman.png", height = 5.5, width = 16)
+ggsave("korelace_spearman.png", height = 3.3, width = 10)
 ```
+## Relationship between pLDDT, RMSD and TM-score
+```{r}
+AF_RMSD <- chains_without_outliers |> 
+  ggplot() +
+  geom_point(aes(x = AlphaFold2_pLDDT, y = AlphaFold2_RMSD), size = 0.6, alpha = 0.2) +
+  geom_smooth(aes(x = AlphaFold2_pLDDT, y = AlphaFold2_RMSD), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "RMSD", x = "average pLDDT", title = "AlphaFold2") +
+  ylim(0, 40) + 
+  xlim(20, 100) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+AF_RMSD
+```
+```{r}
+AF_TMscore <- chains_without_outliers |> 
+  ggplot() +
+  geom_point(aes(x = AlphaFold2_pLDDT, y = AlphaFold2_TMscore), size = 0.6, alpha = 0.2) +
+  geom_smooth(aes(x = AlphaFold2_pLDDT, y = AlphaFold2_TMscore), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "TM-score", x = "average pLDDT") +
+  ylim(0, 1) +
+  xlim(20, 100) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+AF_TMscore
+```
+
+```{r}
+EF_RMSD <- chains_without_outliers |> 
+  ggplot() +
+  geom_point(aes(x = ESMFold_pLDDT, y = ESMFold_RMSD), size = 0.6, alpha = 0.2) +
+  geom_smooth(aes(x = ESMFold_pLDDT, y = ESMFold_RMSD), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "RMSD", x = "average pLDDT", title = "ESMFold") +
+  xlim(20, 100) +
+  ylim(0, 40) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+EF_RMSD
+```
+
+```{r}
+EF_TMscore <- chains_without_outliers |> 
+  ggplot() +
+  geom_point(aes(x = ESMFold_pLDDT, y = ESMFold_TMscore), size = 0.6, alpha = 0.2) +
+  geom_smooth(aes(x = ESMFold_pLDDT, y = ESMFold_TMscore), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "TM-score", x = "average pLDDT") +
+  ylim(0, 1) +
+  xlim(20, 100) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+EF_TMscore
+```
+
+```{r}
+OF_RMSD <- chains_without_outliers |> 
+  ggplot() +
+  geom_point(aes(x = OmegaFold_pLDDT, y = OmegaFold_RMSD), size = 0.6, alpha = 0.2) +
+  geom_smooth(aes(x = OmegaFold_pLDDT, y = OmegaFold_RMSD), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "RMSD", x = "average pLDDT", title = "OmegaFold") +
+  xlim(20, 100) +
+  ylim(0, 40) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+OF_RMSD
+```
+
+```{r}
+OF_TMscore <- chains_without_outliers |> 
+  ggplot() +
+  geom_point(aes(x = OmegaFold_pLDDT, y = OmegaFold_TMscore), size = 0.6, alpha = 0.2) +
+  geom_smooth(aes(x = OmegaFold_pLDDT, y = OmegaFold_TMscore), method = "loess", se = FALSE, color = "brown1") + 
+  labs(y = "TM-score", x = "average pLDDT") +
+  ylim(0, 1) +
+  xlim(20, 100) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+OF_TMscore
+```
+```{r}
+(AF_RMSD | EF_RMSD | OF_RMSD) / (AF_TMscore | EF_TMscore | OF_TMscore)
+ggsave("scatterplots.png", height = 4.5, width = 10)
+```
+
+
 
 
 ## Prediction & labels
@@ -341,7 +434,7 @@ dunn
 ```{r}
 label_AF_pLDDT <- chains_wider_AF |>
   ggplot(aes(x = prediction_tool, y = pLDDT, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 101) +
   labs(y = "average pLDDT", fill = "label") +
   annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "a", "a")) +
@@ -367,10 +460,10 @@ dunn
 ```{r}
 label_EF_pLDDT <- chains_wider_EF |>
   ggplot(aes(x = prediction_tool, y = pLDDT, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 101) +
   labs(y = "average pLDDT", fill = "label") +
-  annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "b", "a")) +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "a", "a")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
@@ -395,10 +488,10 @@ dunn
 ```{r}
 label_OF_pLDDT <- chains_wider_OF |>
   ggplot(aes(x = prediction_tool, y = pLDDT, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 101) +
   labs(y = "average pLDDT", fill = "label") +
-  annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "b", "c")) +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(101, 3), label = c("a", "a", "b")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
@@ -423,7 +516,7 @@ dunn
 ```{r}
 label_AF_TMscore <- chains_wider_AF |>
   ggplot(aes(x = prediction_tool, y = TMscore, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 1.03) +
   labs(y = "TM score", fill = "label") +
   annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "a", "b")) +
@@ -448,10 +541,10 @@ dunn
 ```{r}
 label_EF_TMscore <- chains_wider_EF |>
   ggplot(aes(x = prediction_tool, y = TMscore, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 1.03) +
   labs(y = "TM score", fill = "label") +
-  annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "b", "a")) +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "b", "ab")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
@@ -475,11 +568,11 @@ dunn
 ```{r}
 label_OF_TMscore <- chains_wider_OF |>
   ggplot(aes(x = prediction_tool, y = TMscore, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot() + 
+  geom_boxplot(outlier.size = 0.8) + 
   ylim(0, 1.03) +
   labs(y = "TMscore") +
   scale_fill_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
-  annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "b", "a")) +
+  annotate("text", x = c(0.75, 1, 1.25), y = rep(1.03, 3), label = c("a", "a", "a")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
@@ -503,7 +596,7 @@ dunn
 ```{r}
 label_AF_RMSD <- chains_wider_AF |>
   ggplot(aes(x = prediction_tool, y = RMSD, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 30) +
   labs(y = "RMSD", fill = "label") +
   annotate("text", x = c(0.8, 1.05, 1.3), y = rep(4.5, 3), label = c("a", "a", "a")) +
@@ -528,10 +621,10 @@ dunn
 ```{r}
 label_EF_RMSD <- chains_wider_EF |>
   ggplot(aes(x = prediction_tool, y = RMSD, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 30) +
   labs(x = "prediction tool", y = "RMSD", fill = "label") +
-  annotate("text", x = c(0.8, 1.05, 1.3), y = c(5.5, 7.5, 3.9), label = c("a", "b", "c")) +
+  annotate("text", x = c(0.8, 1.05, 1.3), y = c(5.5, 5.5, 3.9), label = c("a", "a", "b")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         axis.title.y = element_blank(),
         panel.grid.major.x = element_blank(),
@@ -554,10 +647,10 @@ dunn
 ```{r}
 label_OF_RMSD <- chains_wider_OF |>
   ggplot(aes(x = prediction_tool, y = RMSD, fill = factor(label, level = c("monomer", "complex", "synthetic")))) + 
-  geom_boxplot(show.legend = FALSE) + 
+  geom_boxplot(show.legend = FALSE, outlier.size = 0.8) + 
   ylim(0, 30) +
   labs(y = "TMscore", fill = "label") +
-  annotate("text", x = c(0.8, 1.05, 1.3), y = c(6.3, 7.5, 3.9), label = c("a", "b", "c")) +
+  annotate("text", x = c(0.8, 1.05, 1.3), y = c(6.3, 6.3, 3.9), label = c("a", "a", "b")) +
   theme(panel.background = element_rect(fill = "white", colour = "black"),
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
@@ -574,73 +667,7 @@ ggsave("labels_grid.png", height = 8.5, width = 8.5)
 ```
 
 
-## Method of acquisition
-```{r}
-chains |> ggplot(aes(x = label, y = AlphaFold2_pLDDT, fill = method_of_acquisition)) + 
-  geom_boxplot() + 
-  labs(x = "Prediction tool", y = "RMSD", fill = "label") +
-  theme(panel.background = element_rect(fill = "white", colour = "black"),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank())
-```
-
-## Tools between each other
-```{r}
-chains_longer.between_tools <- chains |>
-  dplyr::select(chain_id, pdb_id, label, sequence_length, method_of_acquisition,
-                AlphaFold2.vs.OmegaFold_RMSD, OmegaFold.vs.ESMFold_RMSD, ESMFold.vs.AlphaFold2_RMSD,
-                AlphaFold2.vs.OmegaFold_TMscore, OmegaFold.vs.ESMFold_TMscore, ESMFold.vs.AlphaFold2_TMscore) |>
-  pivot_longer(cols = c(AlphaFold2.vs.OmegaFold_RMSD, OmegaFold.vs.ESMFold_RMSD, ESMFold.vs.AlphaFold2_RMSD,
-                        AlphaFold2.vs.OmegaFold_TMscore, OmegaFold.vs.ESMFold_TMscore, ESMFold.vs.AlphaFold2_TMscore),
-                                        names_to = c("prediction_tools", "metrics"),
-                                        names_sep = "_",
-                                        values_to = "value")
-str(chains_longer.between_tools)
-```
-
-```{r}
-chains_wider.between_tools <- chains_longer.between_tools |> 
-  pivot_wider(names_from = "metrics", values_from = "value")
-
-str(chains_wider.between_tools)
-```
-
-```{r}
-RMSD.between_tools <- chains_wider.between_tools |> 
-  ggplot(aes(x = prediction_tools, y = RMSD, fill = prediction_tools)) + 
-  geom_boxplot() + 
-  ylim(0, 30) +
-  labs(x = NULL, y = "RMSD", title = "RMSD") +
-  theme(panel.background = element_rect(fill = "white", colour = "black"),
-        plot.title = element_text(hjust=0.5),
-        legend.position = "none",
-        text = element_text(size = 18),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank())
-RMSD.between_tools
-```
- 
-```{r}
-TMscore.between_tools <- chains_wider.between_tools |> 
-  ggplot(aes(x = prediction_tools, y = TMscore, fill = prediction_tools)) + 
-  geom_boxplot() + 
-  labs(x = NULL, y = "TM score", title = "TMscore") +
-  theme(panel.background = element_rect(fill = "white", colour = "black"),
-        plot.title = element_text(hjust=0.5),
-        legend.position = "none",
-        text = element_text(size = 18),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank())
-TMscore.between_tools
-```
-
-
+## Number of better predictions
 ```{r}
 comparison <- rep(c("AlphaFold2 vs. ESMFold", "AlphaFold2 vs. OmegaFold", "ESMFold vs. OmegaFold"), each = 1462)
 better_predicted_by <- c(rep(c("AlphaFold2"), 1022), rep(c("ESMFold"), 440), rep(c("AlphaFold2"), 1091), rep(c("OmegaFold"), 371), rep(c("ESMFold"), 869), rep(c("OmegaFold"), 593))

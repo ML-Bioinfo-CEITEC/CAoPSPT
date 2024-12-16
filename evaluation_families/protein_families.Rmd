@@ -8,10 +8,18 @@ date: "2024-11-28"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+library(ggpubr)
+```
+
 # Why are certain structures predicted wrong?
 ## Loading data
 ```{r}
-chains <- read.csv("chains_evaluation.csv") |>
+chains <- read.csv("chains_evaluation_filtered.csv") |>
   dplyr::select(chain_id, pdb_id, label,
                 AF_average_pLDDT, OF_average_pLDDT, EF_average_pLDDT,
                 AF_TM_score, OF_TM_score, EF_TM_score,
@@ -26,20 +34,20 @@ str(chains)
 ```
 
 ```{r}
-annotations <- read.csv("chains_annotations.csv")
+annotations <- read.csv("chains_annotations_filtered.csv")
 annotations[annotations == ""] <- "None"
 str(annotations)
 ```
 
 ```{r}
-annotations_pfam <- read.csv("chains_annotation_pfam.csv") |>
+annotations_pfam <- read.csv("chains_annotation_pfam_filtered.csv") |>
   setNames(c("pdb_id", "label", "chain_id", "sequence", "sequence_length", "method_of_acquisition", "UniProt_ID", "organism_name", "xref"))
 annotations_pfam[annotations_pfam == ""] <- "None"
 str(annotations_pfam)
 ```
 
 ```{r}
-annotations_interpro <- read.csv("chains_annotation_interpro.csv") |>
+annotations_interpro <- read.csv("chains_annotation_interpro_filtered.csv") |>
    setNames(c("pdb_id", "label", "chain_id", "sequence", "sequence_length", "method_of_acquisition", "UniProt_ID", "organism_name", "xref"))
 annotations_interpro[annotations_interpro == ""] <- "None"
 str(annotations_interpro)
@@ -94,6 +102,7 @@ annotations[annotations$method_of_acquisition != "", ] |>
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank())
 ```
+
 
 ## Badly predicted chains
 ```{r}
@@ -150,17 +159,18 @@ chains_full_pfam
 ```{r}
 columns <- c(
   "protein family", "annotation", "well-predicted, within family", "well-predicted, outside family",
-  "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "odds ratio","note"
+  "poorly-predicted, within family", "poorly-predicted, outside family", "p_value", "odds_ratio"
 )
 
 comment_on_results <- function(p_value, odds_ratio){
-  if (p_value < 0.05 & odds_ratio >= 1) {
+  if (p_value < 0.05 && odds_ratio >= 1) {
     note <- "well-predicted family"
-  } else if ((p_value < 0.05 & odds_ratio < 1)) {
+  } else if (p_value < 0.05 && odds_ratio < 1) {
     note <- "poorly predicted family"
   } else {
     note <- "not significant"
   }
+  return(note)
 }
 
 test_family <- function(chains_full_df, result_df, family, family_annotation, good_prediction_total, bad_prediction_total){
@@ -176,9 +186,8 @@ test_family <- function(chains_full_df, result_df, family, family_annotation, go
     byrow = TRUE
   )
   fisher_test <- fisher.test(M)
-  note <- comment_on_results(fisher_test$p.value, odds_ratio)
   result_df[nrow(result_df) + 1,] = c(
-    family, family_annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, odds_ratio, note
+    family, family_annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, odds_ratio
   )
   return(result_df)
 }
@@ -192,6 +201,8 @@ fill_table <- function(chains_full_df, families_df, result_df, good_prediction_t
       result_df <- test_family(chains_full_df, result_df, family, annotation, good_prediction_total, bad_prediction_total)
     }
   }
+  result_df$p_value.adj <- p.adjust(result_df$p_value, method = "BH")
+  result_df$note <- apply(result_df, 1, function(row) comment_on_results(as.numeric(row["p_value.adj"]), row["odds_ratio"]))
   return(result_df)
 }
 ```
@@ -244,140 +255,518 @@ chains_full_interpro
 
 ### AlphaFold2
 ```{r}
-columns <- c("protein family", "annotation", "well-predicted, within family", "well-predicted, outside family", "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "note") 
 result_df.AlphaFold2.interpro = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(result_df.AlphaFold2.interpro) = columns
 
-create_table_AlphaFold2 <- function(df, result_df, family, annotation){
-  good_prediction_in_family <- df |> filter((AlphaFold2_RMSD <= 9 & AlphaFold2_TMscore >= 0.5) & xref_interpro == family) |> nrow()
-  bad_prediction_in_family <- df |> filter((AlphaFold2_RMSD > 9 | AlphaFold2_TMscore < 0.5) & xref_interpro == family) |> nrow()
-  good_prediction_not_in_family <- well_predicted_AlphaFold2 - good_prediction_in_family
-  bad_prediction_not_in_family <- badly_predicted_AlphaFold2 - bad_prediction_in_family
-  M <- matrix(
-    c(good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family),
-    nrow = 2,
-    ncol = 2,
-    byrow = TRUE,
-    dimnames = list(c("predicted well", "predicted wrong"), c("in family", "not in family"))
-  )
-  fisher_test <- fisher.test(M)
-  if (fisher_test$p.value < 0.05 & good_prediction_in_family > bad_prediction_in_family) {
-    note <- "well-predicted family"
-  } else if ((fisher_test$p.value < 0.05 & good_prediction_in_family <= bad_prediction_in_family)) {
-    note <- "poorly predicted family"
-  } else {
-    note <- "not significant"
-  }
-  result_df[nrow(result_df) + 1,] = c(family, annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, note)
-  return(result_df)
-}
+chains_full_interpro.AlphaFold2 <- chains_full_interpro |>
+  dplyr::select(chain_id, AlphaFold2_TMscore, AlphaFold2_RMSD, xref) |>
+  setNames(c("chain_id", "TMscore", "RMSD", "xref"))
 
-
-for(i in 1:nrow(interpro_families)) {
-    family <- interpro_families[i, "xref_interpro"]
-    number_of_members <- interpro_families[i, "n"]
-    annotation <- interpro_families[i, "annotation"]
-    if (number_of_members >= 10) {
-      result_df.AlphaFold2.interpro <- create_table_AlphaFold2(chains_full_interpro, result_df.AlphaFold2.interpro, family, annotation)
-    }
-}
-
+result_df.AlphaFold2.interpro <- fill_table(chains_full_interpro.AlphaFold2, interpro_families, result_df.AlphaFold2.interpro, well_predicted_AlphaFold2, badly_predicted_AlphaFold2)
 result_df.AlphaFold2.interpro
 ```
 
 
 ### ESMFold
 ```{r}
-columns <- c("protein family", "annotation", "well-predicted, within family", "well-predicted, outside family", "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "note") 
 result_df.ESMFold.interpro = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(result_df.ESMFold.interpro) = columns
 
-create_table_ESMFold <- function(df, result_df, family, annotation){
-  good_prediction_in_family <- df |> filter((ESMFold_RMSD <= 9 & ESMFold_TMscore >= 0.5) & xref_interpro == family) |> nrow()
-  bad_prediction_in_family <- df |> filter((ESMFold_RMSD > 9 | ESMFold_TMscore < 0.5) & xref_interpro == family) |> nrow()
-  good_prediction_not_in_family <- well_predicted_ESMFold - good_prediction_in_family
-  bad_prediction_not_in_family <- badly_predicted_ESMFold - bad_prediction_in_family
-  M <- matrix(
-    c(good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family),
-    nrow = 2,
-    ncol = 2,
-    byrow = TRUE,
-    dimnames = list(c("predicted well", "predicted wrong"), c("in family", "not in family"))
-  )
-  fisher_test <- fisher.test(M)
-  if (fisher_test$p.value < 0.05 & good_prediction_in_family > bad_prediction_in_family) {
-    note <- "well-predicted family"
-  } else if ((fisher_test$p.value < 0.05 & good_prediction_in_family <= bad_prediction_in_family)) {
-    note <- "poorly predicted family"
-  } else {
-    note <- "not significant"
-  }
-  result_df[nrow(result_df) + 1,] = c(family, annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, note)
-  return(result_df)
-}
+chains_full_interpro.ESMFold <- chains_full_interpro |>
+  dplyr::select(chain_id, ESMFold_TMscore, ESMFold_RMSD, xref) |>
+  setNames(c("chain_id", "TMscore", "RMSD", "xref"))
 
-
-for(i in 1:nrow(interpro_families)) {
-    family <- interpro_families[i, "xref_interpro"]
-    number_of_members <- interpro_families[i, "n"]
-    annotation <- interpro_families[i, "annotation"]
-    if (number_of_members >= 10) {
-      result_df.ESMFold.interpro <- create_table_ESMFold(chains_full_interpro, result_df.ESMFold.interpro, family, annotation)
-    }
-}
-
+result_df.ESMFold.interpro <- fill_table(chains_full_interpro.ESMFold, interpro_families, result_df.ESMFold.interpro, well_predicted_ESMFold, badly_predicted_ESMFold)
 result_df.ESMFold.interpro
 ```
 
 
 ### OmegaFold
 ```{r}
-columns <- c("protein family", "annotation", "well-predicted, within family", "well-predicted, outside family", "poorly-predicted, within family", "poorly-predicted, outside family", "p-value", "note") 
 result_df.OmegaFold.interpro = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(result_df.OmegaFold.interpro) = columns
 
-create_table_OmegaFold <- function(df, result_df, family, annotation){
-  good_prediction_in_family <- df |> filter((OmegaFold_RMSD <= 9 & OmegaFold_TMscore >= 0.5) & xref_interpro == family) |> nrow()
-  bad_prediction_in_family <- df |> filter((OmegaFold_RMSD > 9 | OmegaFold_TMscore < 0.5) & xref_interpro == family) |> nrow()
-  good_prediction_not_in_family <- well_predicted_OmegaFold - good_prediction_in_family
-  bad_prediction_not_in_family <- badly_predicted_OmegaFold - bad_prediction_in_family
-  M <- matrix(
-    c(good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family),
-    nrow = 2,
-    ncol = 2,
-    byrow = TRUE,
-    dimnames = list(c("predicted well", "predicted wrong"), c("in family", "not in family"))
-  )
-  fisher_test <- fisher.test(M)
-  if (fisher_test$p.value < 0.05 & good_prediction_in_family > bad_prediction_in_family) {
-    note <- "well-predicted family"
-  } else if ((fisher_test$p.value < 0.05 & good_prediction_in_family <= bad_prediction_in_family)) {
-    note <- "poorly predicted family"
-  } else {
-    note <- "not significant"
-  }
-  result_df[nrow(result_df) + 1,] = c(family, annotation, good_prediction_in_family, good_prediction_not_in_family, bad_prediction_in_family, bad_prediction_not_in_family, fisher_test$p.value, note)
-  return(result_df)
-}
+chains_full_interpro.OmegaFold <- chains_full_interpro |>
+  dplyr::select(chain_id, OmegaFold_TMscore, OmegaFold_RMSD, xref) |>
+  setNames(c("chain_id", "TMscore", "RMSD", "xref"))
 
-
-for(i in 1:nrow(interpro_families)) {
-    family <- interpro_families[i, "xref_interpro"]
-    number_of_members <- interpro_families[i, "n"]
-    annotation <- interpro_families[i, "annotation"]
-    if (number_of_members >= 10) {
-      result_df.OmegaFold.interpro <- create_table_OmegaFold(chains_full_interpro, result_df.OmegaFold.interpro, family, annotation)
-    }
-}
-
+result_df.OmegaFold.interpro <- fill_table(chains_full_interpro.OmegaFold, interpro_families, result_df.OmegaFold.interpro, well_predicted_OmegaFold, badly_predicted_OmegaFold)
 result_df.OmegaFold.interpro
 ```
+
+
+## Summarizing tables
 ```{r}
-write.csv(result_df.AlphaFold2, "AlphaFold2_pfam_results.csv")
-write.csv(result_df.AlphaFold2.interpro, "AlphaFold2_interpro_results.csv")
-write.csv(result_df.ESMFold, "ESMFold_pfam_results.csv")
-write.csv(result_df.ESMFold.interpro, "ESMFold_interpro_results.csv")
-write.csv(result_df.OmegaFold, "OmegaFold_pfam_results.csv")
-write.csv(result_df.OmegaFold.interpro, "OmegaFold_interpro_results.csv")
+result_df.AlphaFold2.pfam.summary <- result_df.AlphaFold2.pfam |> 
+  mutate(
+    "p_value.adj" = round(as.numeric(p_value.adj), 3),
+    "odds_ratio" = round(as.numeric(odds_ratio), 3),
+    "AlphaFold2" = paste(note, " (adjusted p-value: ", p_value.adj, ", odds ratio: ", odds_ratio, ")", sep = "")) |>
+  dplyr::select("protein family", "annotation", "AlphaFold2")
+
+result_df.ESMFold.pfam.summary <- result_df.ESMFold.pfam |> 
+  mutate(
+    "p_value.adj" = round(as.numeric(p_value.adj), 3),
+    "odds_ratio" = round(as.numeric(odds_ratio), 3),
+    "ESMFold" = paste(note, " (adjusted p-value: ", p_value.adj, ", odds ratio: ", odds_ratio, ")", sep = "")) |>
+  dplyr::select("protein family", "annotation", "ESMFold")
+
+result_df.OmegaFold.pfam.summary <- result_df.OmegaFold.pfam |> 
+  mutate(
+    "p_value.adj" = round(as.numeric(p_value.adj), 3),
+    "odds_ratio" = round(as.numeric(odds_ratio), 3),
+    "OmegaFold" = paste(note, " (adjusted p-value: ", p_value.adj, ", odds ratio: ", odds_ratio, ")", sep = "")) |>
+  dplyr::select("protein family", "annotation", "OmegaFold")
+
+result_df.pfam.summary <- Reduce(
+  function(x, y) merge(x, y, by = c("protein family", "annotation")),
+  list(result_df.AlphaFold2.pfam.summary, result_df.ESMFold.pfam.summary, result_df.OmegaFold.pfam.summary)
+)
+result_df.pfam.summary
 ```
+
+```{r}
+result_df.AlphaFold2.interpro.summary <- result_df.AlphaFold2.interpro |> 
+  mutate(
+    "p_value.adj" = round(as.numeric(p_value.adj), 3),
+    "odds_ratio" = round(as.numeric(odds_ratio), 3),
+    "AlphaFold2" = paste(note, " (adjusted p-value: ", p_value.adj, ", odds ratio: ", odds_ratio, ")", sep = "")) |>
+  dplyr::select("protein family", "annotation", "AlphaFold2")
+
+result_df.ESMFold.interpro.summary <- result_df.ESMFold.interpro |> 
+  mutate(
+    "p_value.adj" = round(as.numeric(p_value.adj), 3),
+    "odds_ratio" = round(as.numeric(odds_ratio), 3),
+    "ESMFold" = paste(note, " (adjusted p-value: ", p_value.adj, ", odds ratio: ", odds_ratio, ")", sep = "")) |>
+  dplyr::select("protein family", "annotation", "ESMFold")
+
+result_df.OmegaFold.interpro.summary <- result_df.OmegaFold.interpro |> 
+  mutate(
+    "p_value.adj" = round(as.numeric(p_value.adj), 3),
+    "odds_ratio" = round(as.numeric(odds_ratio), 3),
+    "OmegaFold" = paste(note, " (adjusted p-value: ", p_value.adj, ", odds ratio: ", odds_ratio, ")", sep = "")) |>
+  dplyr::select("protein family", "annotation", "OmegaFold")
+
+result_df.interpro.summary <- Reduce(
+  function(x, y) merge(x, y, by = c("protein family", "annotation")),
+  list(result_df.AlphaFold2.interpro.summary, result_df.ESMFold.interpro.summary, result_df.OmegaFold.interpro.summary)
+)
+result_df.interpro.summary
+```
+
+## Save results
+```{r}
+write.csv(result_df.AlphaFold2.pfam, "AlphaFold2_pfam_results.csv")
+write.csv(result_df.AlphaFold2.interpro, "AlphaFold2_interpro_results.csv")
+write.csv(result_df.ESMFold.pfam, "ESMFold_pfam_results.csv")
+write.csv(result_df.ESMFold.interpro, "ESMFold_interpro_results.csv")
+write.csv(result_df.OmegaFold.pfam, "OmegaFold_pfam_results.csv")
+write.csv(result_df.OmegaFold.interpro, "OmegaFold_interpro_results.csv")
+write.csv(result_df.pfam.summary, "pfam_results_summary.csv")
+write.csv(result_df.interpro.summary, "interpro_results_summary.csv")
+```
+
+## Relationship between sequence length and RMSD and TM-score
+```{r}
+annotations_sequence_method <- annotations |> dplyr::select(pdb_id, chain_id, label, sequence_length, method_of_acquisition)
+chains_full_sequence_method <- inner_join(chains, annotations_sequence_method, by = join_by(pdb_id == pdb_id, chain_id == chain_id, label == label))
+str(chains_full_sequence_method)
+```
+
+
+```{r}
+AF_RMSD <- chains_full_sequence_method |> 
+  ggplot() +
+  geom_point(aes(x = sequence_length, y = AlphaFold2_RMSD), show.legend = FALSE, size = 0.8, alpha = 0.3) +
+  geom_smooth(aes(x = sequence_length, y = AlphaFold2_RMSD), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "RMSD", x = "sequence length", title = "AlphaFold2") +
+  ylim(0, 40) + 
+  xlim(0, 400) +
+  #scale_color_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
+  stat_cor(aes(x = sequence_length, y = AlphaFold2_RMSD), method = "spearman", cor.coef.name = "rho") +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+AF_RMSD
+```
+```{r}
+AF_TMscore <- chains_full_sequence_method |> 
+  ggplot() +
+  geom_point(aes(x = sequence_length, y = AlphaFold2_TMscore), show.legend = FALSE, size = 0.8, alpha = 0.3) +
+  geom_smooth(aes(x = sequence_length, y = AlphaFold2_TMscore), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "TM-score", x = "sequence length") +
+  ylim(0, 1) +
+  xlim(0, 400) +
+  stat_cor(aes(x = sequence_length, y = AlphaFold2_TMscore), method = "spearman", cor.coef.name = "rho", label.y = 0.01) +
+  #scale_color_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+AF_TMscore
+```
+
+```{r}
+EF_RMSD <- chains_full_sequence_method |> 
+  ggplot() +
+  geom_point(aes(x = sequence_length, y = ESMFold_RMSD), show.legend = FALSE, size = 0.8, alpha = 0.3) +
+  geom_smooth(aes(x = sequence_length, y = ESMFold_RMSD), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "RMSD", x = "sequence_length", title = "ESMFold") +
+  xlim(0, 400) +
+  ylim(0, 40) +
+  stat_cor(aes(x = sequence_length, y = ESMFold_RMSD), method = "spearman", cor.coef.name = "rho") +
+  #scale_color_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+EF_RMSD
+```
+
+```{r}
+EF_TMscore <- chains_full_sequence_method |> 
+  ggplot() +
+  geom_point(aes(x = sequence_length, y = ESMFold_TMscore), show.legend = FALSE, size = 0.8, alpha = 0.3) +
+  geom_smooth(aes(x = sequence_length, y = ESMFold_TMscore), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "TM-score", x = "sequence length") +
+  ylim(0, 1) +
+  xlim(0, 400) +
+  stat_cor(aes(x = sequence_length, y = ESMFold_TMscore), method = "spearman", cor.coef.name = "rho", label.y = 0.01) +
+  #scale_color_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+EF_TMscore
+```
+
+```{r}
+OF_RMSD <- chains_full_sequence_method |> 
+  ggplot() +
+  geom_point(aes(x = sequence_length, y = OmegaFold_RMSD), show.legend = FALSE, size = 0.8, alpha = 0.3) +
+  geom_smooth(aes(x = sequence_length, y = OmegaFold_RMSD), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "RMSD", x = "sequence length", title = "OmegaFold") +
+  xlim(0, 400) +
+  ylim(0, 40) +
+  stat_cor(aes(x = sequence_length, y = OmegaFold_RMSD), method = "spearman", cor.coef.name = "rho") +
+  #scale_color_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+OF_RMSD
+```
+
+```{r}
+OF_TMscore <- chains_full_sequence_method |> 
+  ggplot() +
+  geom_point(aes(x = sequence_length, y = OmegaFold_TMscore), size = 0.8, alpha = 0.3) +
+  geom_smooth(aes(x = sequence_length, y = OmegaFold_TMscore), method = "loess", se = FALSE, color = "brown1") +
+  labs(y = "TM-score", x = "sequence length") +
+  ylim(0, 1) +
+  xlim(0, 400) +
+  stat_cor(aes(x = sequence_length, y = OmegaFold_TMscore), method = "spearman", cor.coef.name = "rho", label.y = 0.01) +
+  #scale_color_discrete(name = "Label", labels = c("monomer", "complex", "de novo")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+OF_TMscore
+```
+```{r}
+(AF_RMSD | EF_RMSD | OF_RMSD) / (AF_TMscore | EF_TMscore | OF_TMscore)
+ggsave("scatterplots_sequence_length.png", height = 4.5, width = 10)
+```
+
+## Relationship between method of acquisition and RMSD and TM-score
+```{r}
+valid_methods <- c("SOLUTION NMR", "ELECTRON MICROSCOPY")
+x_ray <- c("X-RAY DIFFRACTION")
+
+chains_full_sequence_method <- chains_full_sequence_method |>
+  mutate(
+      method_of_acquisition = case_when(
+      method_of_acquisition %in% x_ray ~ "X RAY DIFFRACTION",
+      method_of_acquisition %in% valid_methods ~ method_of_acquisition,
+      TRUE ~ "OTHER"
+    )
+  )
+unique(chains_full_sequence_method$method_of_acquisition)
+```
+
+```{r}
+chains_full_sequence_method |> ggplot(aes(x = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")),
+                          y = sequence_length,
+                          fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+    geom_boxplot() + 
+    labs(x = "method of acquisition", y = "length of chain sequence") +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+```
+
+
+```{r}
+barplot_method <- chains_full_sequence_method |>
+    ggplot(aes(x = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")),
+               fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+    geom_bar(colour = "black", linewidth = 0.3) + 
+    labs(x = "method of acquisition", y = "number of chains") +
+    geom_text(stat = "count", aes(label = after_stat(count)), 
+              vjust = -0.5, size = 3) +
+    scale_x_discrete(labels = c("X-ray diffraction", "solution NMR", "electron microscopy", "other")) +
+    theme(panel.background = element_rect(fill = "white", colour = "black"),
+          legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+barplot_method
+```
+
+
+
+```{r}
+KWtest <- kruskal.test(chains_full_sequence_method$AlphaFold2_RMSD, chains_full_sequence_method$method_of_acquisition)
+KWtest
+```
+
+```{r}
+letter_sig <- FSA::dunnTest(chains_full_sequence_method$AlphaFold2_RMSD ~ chains_full_sequence_method$method_of_acquisition, method="bonferroni")$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+letter_sig
+```
+
+```{r}
+AF_method_RMSD <- chains_full_sequence_method |> 
+  ggplot(aes(x = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")),
+             y = AlphaFold2_RMSD,
+             fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.07, outlier.shape = NA, fill = "white") + 
+  labs(x = "method of acquisition", y = "RMSD", title = "AlphaFold2") +
+  ylim(0, 40) +
+  annotate("text", x = c(1.15, 2.15, 3.15, 4.25), y = 10, label = c("a", "b", "c", "abc")) +
+  scale_x_discrete(labels = c("X-ray\ndiffraction", "solution\nNMR", "electron\nmicroscopy", "other")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+AF_method_RMSD
+```
+
+```{r}
+KWtest <- kruskal.test(chains_full_sequence_method$AlphaFold2_TMscore, chains_full_sequence_method$method_of_acquisition)
+KWtest
+```
+
+```{r}
+letter_sig <- FSA::dunnTest(chains_full_sequence_method$AlphaFold2_TMscore ~ chains_full_sequence_method$method_of_acquisition, method="bonferroni")$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+letter_sig
+```
+
+```{r}
+AF_method_TMscore <- chains_full_sequence_method |> 
+  ggplot(aes(x = factor(method_of_acquisition,level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")),
+             y = AlphaFold2_TMscore,
+             fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.07, outlier.shape = NA, fill = "white") + 
+  labs(x = "method of acquisition", y = "TM score") +
+  ylim(0, 1) +
+  annotate("text", x = c(1.15, 2.15, 3.15, 4.35), y = 0.85, label = c("a", "b", "c", "abc")) +
+  scale_x_discrete(labels = c("X-ray\ndiffraction", "solution\nNMR", "electron\nmicroscopy", "other")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        legend.position = "none",
+        axis.title.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+AF_method_TMscore
+```
+```{r}
+KWtest <- kruskal.test(chains_full_sequence_method$ESMFold_RMSD, chains_full_sequence_method$method_of_acquisition)
+KWtest
+```
+
+```{r}
+letter_sig <- FSA::dunnTest(chains_full_sequence_method$ESMFold_RMSD ~ chains_full_sequence_method$method_of_acquisition, method="bonferroni")$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+letter_sig
+```
+
+
+```{r}
+EF_method_RMSD <- chains_full_sequence_method |> 
+  ggplot(aes(x = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")),
+             y = ESMFold_RMSD,
+             fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.07, outlier.shape = NA, fill = "white") + 
+  labs(x = "method of acquisition", y = "RMSD", title = "ESMFold") +
+  ylim(0, 40) +
+  annotate("text", x = c(1.15, 2.15, 3.15, 4.2), y = 10, label = c("a", "b", "b", "ab")) +
+  scale_x_discrete(labels = c("X-ray\ndiffraction", "solution\nNMR", "electron\nmicroscopy", "other")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+EF_method_RMSD
+```
+```{r}
+KWtest <- kruskal.test(chains_full_sequence_method$ESMFold_TMscore, chains_full_sequence_method$method_of_acquisition)
+KWtest
+```
+
+```{r}
+letter_sig <- FSA::dunnTest(chains_full_sequence_method$ESMFold_TMscore ~ chains_full_sequence_method$method_of_acquisition, method="bonferroni")$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+letter_sig
+```
+
+
+```{r}
+EF_method_TMscore <- chains_full_sequence_method |> 
+  ggplot(aes(x = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")),
+             y = ESMFold_TMscore,
+             fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.07, outlier.shape = NA, fill = "white") + 
+  labs(x = "method of acquisition", y = "TM score") +
+  ylim(0, 1) +
+  annotate("text", x = c(1.15, 2.15, 3.2, 4.35), y = 0.85, label = c("a", "b", "c", "abc")) +
+  scale_x_discrete(labels = c("X-ray\ndiffraction", "solution\nNMR", "electron\nmicroscopy", "other")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        legend.position = "none",
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+EF_method_TMscore
+```
+```{r}
+KWtest <- kruskal.test(chains_full_sequence_method$OmegaFold_RMSD, chains_full_sequence_method$method_of_acquisition)
+KWtest
+```
+
+```{r}
+letter_sig <- FSA::dunnTest(chains_full_sequence_method$OmegaFold_RMSD ~ chains_full_sequence_method$method_of_acquisition, method="bonferroni")$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+letter_sig
+```
+
+
+
+```{r}
+OF_method_RMSD <- chains_full_sequence_method |> 
+  ggplot(aes(x = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")),
+             y = OmegaFold_RMSD,
+             fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.07, outlier.shape = NA, fill = "white") + 
+  labs(x = "method of acquisition", y = "RMSD", title = "OmegaFold") +
+  ylim(0, 40) +
+  annotate("text", x = c(1.15, 2.2, 3.15, 4.35), y = 10, label = c("a", "b", "c", "abc")) +
+  scale_x_discrete(name = "method of acquisition", labels = c("X-ray\ndiffraction", "solution\nNMR", "electron\nmicroscopy", "other")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        plot.title = element_text(hjust=0.5),
+        legend.position = "none",
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+OF_method_RMSD
+```
+
+```{r}
+KWtest <- kruskal.test(chains_full_sequence_method$OmegaFold_TMscore, chains_full_sequence_method$method_of_acquisition)
+KWtest
+```
+
+```{r}
+letter_sig <- FSA::dunnTest(chains_full_sequence_method$OmegaFold_TMscore ~ chains_full_sequence_method$method_of_acquisition, method="bonferroni")$res
+letter_sig <- rcompanion::cldList(P.adj ~ Comparison, data = letter_sig, threshold = 0.05)
+letter_sig
+```
+
+
+
+```{r}
+OF_method_TMscore <- chains_full_sequence_method |> 
+  ggplot(aes(x = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")), 
+             y = OmegaFold_TMscore, 
+             fill = factor(method_of_acquisition, level = c("X RAY DIFFRACTION", "SOLUTION NMR", "ELECTRON MICROSCOPY", "OTHER")))) + 
+  geom_violin() +
+  geom_boxplot(width=0.07, outlier.shape = NA, fill = "white") + 
+  labs(x = "method of acquisition", y = "TM score") +
+  ylim(0, 1) +
+  annotate("text", x = c(1.15, 2.15, 3.2, 4.35), y = 0.85, label = c("a", "b", "c", "abc")) +
+  scale_x_discrete(name = "method of acquisition", labels = c("X-ray\ndiffraction", "solution\nNMR", "electron\nmicroscopy", "other")) +
+  theme(panel.background = element_rect(fill = "white", colour = "black"),
+        legend.position = "none",
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+OF_method_TMscore
+```
+
+```{r}
+(AF_method_RMSD | EF_method_RMSD | OF_method_RMSD) / (AF_method_TMscore | EF_method_TMscore | OF_method_TMscore)
+ggsave("acquisition_method.png", height = 5, width = 10)
+```
+
+
+
+
+
+
 
