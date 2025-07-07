@@ -1,5 +1,6 @@
 # Comparative Analysis of Protein Structure Prediction Tools
-This repository contains code and data related to the bachelor thesis "Comparative Analysis of Protein Structure Prediction Tools", which compares the performance of AlphaFold2, ESMFold, and OmegaFold on proteins with recently published experimental structures. 
+
+This repository contains code and data related to the preprint "Balancing Speed and Precision in Protein Folding: A Comparison of AlphaFold2, ESMFold, and OmegaFold" that has been adapted from of Anna Hyskova's thesis at Masaryk University in Brno.
 
 The folder `dataset_creation` contains two Jupyter notebooks for creating the dataset:
 - `creating_dataset.ipynb` describes the process of selecting suitable protein structures from PDB
@@ -20,3 +21,15 @@ The last part of the analysis focused on exploring the relationship between the 
 - `protein_families.Rmd` tests the significance of the relationships and produces visualisations
 - `data` is a folder containing all the outputted results
 
+If you find this work useful, you can cite us:
+
+```
+@article{hyskova2025balancing,
+  title={Balancing Speed and Precision in Protein Folding: A Comparison of AlphaFold2, ESMFold, and OmegaFold},
+  author={Hyskova, Anna and Marsalkova, Eva and Simecek, Petr},
+  journal={bioRxiv},
+  pages={2025--06},
+  year={2025},
+  publisher={Cold Spring Harbor Laboratory}
+}
+```
